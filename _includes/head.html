@@ -8,14 +8,17 @@
 
 <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
-{%- comment -%} hreflang tags for jekyll-polyglot — use permalink (which stays language-neutral) instead of page.url (which polyglot rewrites and may absolutize) {%- endcomment -%}
-{%- assign rel_path = page.permalink | default: page.url -%}
-{%- assign rel_path = rel_path | replace: site.url, '' -%}
+{%- comment -%}
+  hreflang tags for jekyll-polyglot. polyglot rewrites page.url (and sometimes
+  page.permalink) to be absolute, so we strip http(s)://host from whatever we get.
+{%- endcomment -%}
+{%- assign rel_path = page.url | default: page.permalink -%}
+{%- assign rel_path = rel_path | replace: "https://conexdat.github.io", "" | replace: "http://conexdat.github.io", "" -%}
 {%- if rel_path contains '/en/' -%}{%- assign rel_path = rel_path | remove_first: '/en' -%}{%- elsif rel_path contains '/fr/' -%}{%- assign rel_path = rel_path | remove_first: '/fr' -%}{%- endif -%}
-<link rel="alternate" hreflang="es" href="{{ site.url }}{{ base_path }}{{ rel_path }}">
-<link rel="alternate" hreflang="en" href="{{ site.url }}{{ base_path }}/en{{ rel_path }}">
-<link rel="alternate" hreflang="fr" href="{{ site.url }}{{ base_path }}/fr{{ rel_path }}">
-<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ base_path }}{{ rel_path }}">
+<link rel="alternate" hreflang="es" href="{{ site.url }}{{ rel_path }}">
+<link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ rel_path }}">
+<link rel="alternate" hreflang="fr" href="{{ site.url }}/fr{{ rel_path }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ rel_path }}">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
