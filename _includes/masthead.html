@@ -27,9 +27,10 @@
               <a href="{{ domain }}{{ target_url }}">{{ label }}</a>
             </li>
           {% endfor %}
-          {%- comment -%} Language switcher {%- endcomment -%}
+          {%- comment -%} Language switcher: rebuild a language-neutral path from page.permalink (or page.url stripped of {site.url, /en, /fr}) {%- endcomment -%}
           <li class="masthead__menu-item">
             {%- assign rel_path = page.permalink | default: page.url -%}
+            {%- assign rel_path = rel_path | replace: site.url, '' -%}
             {%- if rel_path contains '/en/' -%}
               {%- assign rel_path = rel_path | remove_first: '/en' -%}
             {%- elsif rel_path contains '/fr/' -%}
