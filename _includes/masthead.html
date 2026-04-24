@@ -42,12 +42,19 @@
             {%- elsif rel_path contains '/fr/' -%}
               {%- assign rel_path = rel_path | remove_first: '/fr' -%}
             {%- endif -%}
-            <!-- DEBUG lang_switcher: page.url='{{ page.url }}' page.permalink='{{ page.permalink }}' rel_path_after='{{ rel_path }}' lang='{{ lang }}' -->
-            <a href="{{ site.url }}{{ rel_path }}" {% if lang == 'es' %}class="selected"{% endif %}>ES</a>
+            {%- comment -%}
+              Protocol-relative URLs ("//host/path") bypass jekyll-polyglot's
+              `correct_url` regex, which only matches absolute URLs starting
+              with site.url ("https://conexdat.github.io/...") or relative
+              URLs starting with "/<single-char>". Without this, polyglot
+              rewrites `href="/"` and `href="https://conexdat.github.io/"` on
+              an /en/ page to point back at /en/ — defeating the switcher.
+            {%- endcomment -%}
+            <a href="//conexdat.github.io{{ rel_path }}" {% if lang == 'es' %}class="selected"{% endif %}>ES</a>
             &nbsp;|&nbsp;
-            <a href="{{ site.url }}/en{{ rel_path }}" {% if lang == 'en' %}class="selected"{% endif %}>EN</a>
+            <a href="//conexdat.github.io/en{{ rel_path }}" {% if lang == 'en' %}class="selected"{% endif %}>EN</a>
             &nbsp;|&nbsp;
-            <a href="{{ site.url }}/fr{{ rel_path }}" {% if lang == 'fr' %}class="selected"{% endif %}>FR</a>
+            <a href="//conexdat.github.io/fr{{ rel_path }}" {% if lang == 'fr' %}class="selected"{% endif %}>FR</a>
           </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
