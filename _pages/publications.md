@@ -12,6 +12,9 @@ archivos BibTeX en `_bibliography/` mediante
 ## CoNexDat (grupo)
 {% bibliography --file conexdat %}
 
+## J. Ignacio Alvarez-Hamelin
+{% bibliography --file alvarez-hamelin %}
+
 ## Mariano G. Beiró
 {% bibliography --file beiro %}
 

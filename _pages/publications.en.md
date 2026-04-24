@@ -12,6 +12,9 @@ Group-wide and per-author lists. Entries are generated from BibTeX files in
 ## CoNexDat (group)
 {% bibliography --file conexdat %}
 
+## J. Ignacio Alvarez-Hamelin
+{% bibliography --file alvarez-hamelin %}
+
 ## Mariano G. Beiró
 {% bibliography --file beiro %}
 
