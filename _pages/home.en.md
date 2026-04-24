@@ -3,34 +3,41 @@ permalink: /
 lang: en
 title: "Complex Networks and Data Communication Group"
 author_profile: true
+feature_row:
+  - title: "Complex Systems"
+    excerpt: "Models and properties of complex networks and multi-agent systems."
+  - title: "Data Science"
+    excerpt: "Large-scale analysis of web, social, and mobility traces."
+  - title: "Internet"
+    excerpt: "Routing protocols and topology modelling of the Internet."
+  - title: "Network traffic"
+    excerpt: "Statistical *(self-similar)* analysis of data-network traffic."
+  - title: "Ad-hoc networks"
+    excerpt: "Routing protocols for infrastructure-less wireless networks."
 ---
 
-[Departamento de Electrónica](http://electronica.fi.uba.ar) ·
-[Facultad de Ingeniería](http://www.fi.uba.ar) ·
-[Universidad de Buenos Aires](http://www.uba.ar)
+[Departamento de Electrónica](http://electronica.fi.uba.ar) · [Facultad de Ingeniería](http://www.fi.uba.ar) · [Universidad de Buenos Aires](http://www.uba.ar)
 
-Our research areas:
+## Research areas
 
-- Complex Systems
-- Data Science
-- Internet: routing protocols and topology modelling
-- Network traffic: statistical analysis *(self-similar)*
-- Ad-hoc networks: routing protocols
+{% include feature_row %}
 
 ## News
 
-{% for item in site.data.news %}
-- {% if item.url and item.url != "" %}[**{{ item.title.en }}**]({{ item.url }}){% else %}**{{ item.title.en }}**{% endif %}
-{% endfor %}
+{% include news.html lang="en" %}
 
 ## Featured projects
 
-<div class="grid__wrapper">
+<div class="feature__wrapper">
 {% for h in site.data.highlights %}
-  <div class="archive__item">
-    <h3 class="archive__item-title">{{ h.title }}</h3>
-    <p>{{ h.blurb.en }}</p>
-    {% if h.url and h.url != "" %}<p><a class="btn btn--info" href="{{ h.url }}">Visit site &raquo;</a></p>{% endif %}
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-body">
+        <h2 class="archive__item-title">{{ h.title }}</h2>
+        <div class="archive__item-excerpt"><p>{{ h.blurb.en }}</p></div>
+        {% if h.url and h.url != "" %}<p><a class="btn btn--info" href="{{ h.url }}">Visit site &raquo;</a></p>{% endif %}
+      </div>
+    </div>
   </div>
 {% endfor %}
 </div>

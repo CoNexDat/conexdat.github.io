@@ -96,6 +96,11 @@ kramdown:
   enable_coderay: false
 
 # ---- Defaults ---------------------------------------------------------------
+collections:
+  news:
+    output: false
+    sort_by: date
+
 defaults:
   - scope:
       path: ""
@@ -103,6 +108,12 @@ defaults:
     values:
       layout: single
       author_profile: true
+  - scope:
+      path: ""
+      type: news
+    values:
+      lang: es
+      inline: true
 
 # ---- Sass / output ----------------------------------------------------------
 sass:

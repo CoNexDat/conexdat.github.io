@@ -27,10 +27,13 @@
               <a href="{{ domain }}{{ target_url }}">{{ label }}</a>
             </li>
           {% endfor %}
-          {%- comment -%} Language switcher: rebuild a language-neutral path from page.permalink (or page.url stripped of {site.url, /en, /fr}) {%- endcomment -%}
+          {%- comment -%}
+            Language switcher. polyglot rewrites page.url (and sometimes page.permalink)
+            to absolute, so we strip http(s)://host literally before slicing /en or /fr.
+          {%- endcomment -%}
           <li class="masthead__menu-item">
-            {%- assign rel_path = page.permalink | default: page.url -%}
-            {%- assign rel_path = rel_path | replace: site.url, '' -%}
+            {%- assign rel_path = page.url | default: page.permalink -%}
+            {%- assign rel_path = rel_path | replace: "https://conexdat.github.io", "" | replace: "http://conexdat.github.io", "" -%}
             {%- if rel_path contains '/en/' -%}
               {%- assign rel_path = rel_path | remove_first: '/en' -%}
             {%- elsif rel_path contains '/fr/' -%}

@@ -1,0 +1,29 @@
+{%- comment -%}
+  Renders the news collection filtered by language.
+  Required: include.lang (es|en|fr), optional include.limit.
+  Mirrors al-folio's news table: date | message.
+{%- endcomment -%}
+{%- assign lang = include.lang | default: site.default_lang -%}
+{%- assign limit = include.limit | default: 10 -%}
+{%- assign news_items = site.news | where: "lang", lang | sort: "date" | reverse -%}
+
+{% if news_items.size > 0 %}
+  <div class="news">
+    <table class="table table-sm table-borderless">
+      {% for item in news_items limit: limit %}
+        <tr>
+          <th scope="row" style="white-space: nowrap;">
+            <em>{{ item.date | date: "%b %-d, %Y" }}</em>
+          </th>
+          <td>
+            {%- if item.inline -%}
+              {{ item.content | markdownify | remove: "<p>" | remove: "</p>" }}
+            {%- else -%}
+              <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {%- endif -%}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endif %}

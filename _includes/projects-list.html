@@ -1,19 +1,23 @@
 {%- comment -%}
-  Renders all entries from _data/projects.yml in a given language.
-  Required: include.lang (es|en|fr)
+  Renders all entries from _data/projects.yml as an HTML5 <details> accordion.
+  Required: include.lang (es|en|fr).
 {%- endcomment -%}
-<div class="projects-list">
-{%- for p in site.data.projects %}
-  <article class="project-item">
-    <h3>
-      <small>{{ p.funder }} · {{ p.period }}</small><br>
-      {{ p.title[include.lang] }}
-    </h3>
-    <p><strong>{% if include.lang == 'es' %}Código del proyecto{% elsif include.lang == 'en' %}Project code{% else %}Code du projet{% endif %}:</strong> {{ p.code }}</p>
-    <div class="project-abstract">
+{%- assign code_label = "Código del proyecto" -%}
+{%- if include.lang == "en" -%}{%- assign code_label = "Project code" -%}
+{%- elsif include.lang == "fr" -%}{%- assign code_label = "Code du projet" -%}
+{%- endif -%}
+
+<div class="projects-accordion">
+{%- for p in site.data.projects -%}
+  <details>
+    <summary>
+      <span class="projects-accordion__meta">{{ p.funder }} · {{ p.period }}</span>
+      <span class="projects-accordion__title">{{ p.title[include.lang] }}</span>
+    </summary>
+    <div class="projects-accordion__abstract">
       {{ p.abstract[include.lang] | markdownify }}
     </div>
-  </article>
-  <hr>
-{%- endfor %}
+    <div class="projects-accordion__code"><strong>{{ code_label }}:</strong> <code>{{ p.code }}</code></div>
+  </details>
+{%- endfor -%}
 </div>

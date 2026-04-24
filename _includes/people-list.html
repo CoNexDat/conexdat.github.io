@@ -1,15 +1,34 @@
 {%- comment -%}
-  Renders members of a given category in a given language.
-  Required: include.category (current|external|alumni), include.lang (es|en|fr)
+  Members of a given category, rendered as a card grid.
+  Required: include.category (current|external|alumni), include.lang (es|en|fr).
+  Each card looks for /images/people/<slug>.jpg, where <slug> is either
+  member.slug (front-matter) or the kebab-cased name. Fallback: profile.png.
 {%- endcomment -%}
-<ul class="people-list">
 {%- assign members = site.data.members | where: "category", include.category -%}
-{%- for m in members %}
-  <li class="people-item">
-    <strong>{{ m.name }}</strong>
-    {%- if m.role[include.lang] %} — <em>{{ m.role[include.lang] }}</em>{%- endif -%}
-    {%- if m.affiliation[include.lang] %}<br><span class="people-affiliation">{{ m.affiliation[include.lang] }}</span>{%- endif -%}
-    {%- if m.homepage and m.homepage != "" %}<br><a href="{{ m.homepage }}">{{ m.homepage }}</a>{%- endif -%}
-  </li>
-{%- endfor %}
-</ul>
+{%- if members.size == 0 -%}{%- comment -%}silently skip{%- endcomment -%}
+{%- else -%}
+<div class="people-grid">
+{%- for m in members -%}
+  {%- assign slug = m.slug | default: m.name | downcase | replace: '.', '' | replace: ',', '' | replace: "'", '' | replace: '"', '' | replace: 'á', 'a' | replace: 'é', 'e' | replace: 'í', 'i' | replace: 'ó', 'o' | replace: 'ú', 'u' | replace: 'ñ', 'n' | replace: 'ü', 'u' | strip | replace: '  ', ' ' | replace: ' ', '-' -%}
+  <div class="person-card">
+    <div class="person-card__avatar">
+      <img src="{{ '/images/people/' | append: slug | append: '.jpg' | relative_url }}"
+           alt="{{ m.name }}"
+           onerror="this.onerror=null;this.src='{{ '/images/profile.png' | relative_url }}';this.classList.add('person-card__avatar--placeholder');"
+           loading="lazy">
+    </div>
+    <div class="person-card__body">
+      <div class="person-card__name">{{ m.name }}</div>
+      {%- if m.role[include.lang] -%}<div class="person-card__role">{{ m.role[include.lang] }}</div>{%- endif -%}
+      {%- if m.affiliation[include.lang] -%}<div class="person-card__affiliation">{{ m.affiliation[include.lang] }}</div>{%- endif -%}
+      {%- if m.homepage and m.homepage != "" -%}
+        <div class="person-card__link"><a href="{{ m.homepage }}" rel="noopener">
+          <i class="fas fa-fw fa-link" aria-hidden="true"></i>
+          {%- if include.lang == 'en' -%}homepage{%- elsif include.lang == 'fr' -%}site web{%- else -%}sitio web{%- endif -%}
+        </a></div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endfor -%}
+</div>
+{%- endif -%}
