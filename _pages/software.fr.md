@@ -1,5 +1,5 @@
 ---
-permalink: /fr/software/
+permalink: /software/
 lang: fr
 title: "Logiciels publiés"
 author_profile: true

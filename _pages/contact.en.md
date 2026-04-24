@@ -1,5 +1,5 @@
 ---
-permalink: /en/contact/
+permalink: /contact/
 lang: en
 title: "Contact"
 author_profile: true

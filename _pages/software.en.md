@@ -1,5 +1,5 @@
 ---
-permalink: /en/software/
+permalink: /software/
 lang: en
 title: "Published software"
 author_profile: true

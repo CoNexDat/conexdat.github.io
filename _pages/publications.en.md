@@ -1,5 +1,5 @@
 ---
-permalink: /en/publications/
+permalink: /publications/
 lang: en
 title: "Publications"
 author_profile: true

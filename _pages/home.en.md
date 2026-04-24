@@ -1,5 +1,5 @@
 ---
-permalink: /en/
+permalink: /
 lang: en
 title: "Complex Networks and Data Communication Group"
 author_profile: true

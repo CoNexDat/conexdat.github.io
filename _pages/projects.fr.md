@@ -1,5 +1,5 @@
 ---
-permalink: /fr/projects/
+permalink: /projects/
 lang: fr
 title: "Projets de recherche"
 author_profile: true

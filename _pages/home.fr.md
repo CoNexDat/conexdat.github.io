@@ -1,5 +1,5 @@
 ---
-permalink: /fr/
+permalink: /
 lang: fr
 title: "Groupe de Réseaux Complexes et Communication de Données"
 author_profile: true

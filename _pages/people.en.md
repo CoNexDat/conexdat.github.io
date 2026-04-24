@@ -1,5 +1,5 @@
 ---
-permalink: /en/people/
+permalink: /people/
 lang: en
 title: "People"
 author_profile: true

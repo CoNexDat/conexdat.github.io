@@ -1,5 +1,5 @@
 ---
-permalink: /fr/people/
+permalink: /people/
 lang: fr
 title: "Membres"
 author_profile: true

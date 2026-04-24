@@ -1,5 +1,5 @@
 ---
-permalink: /fr/theses/
+permalink: /theses/
 lang: fr
 title: "Thèses"
 author_profile: true
