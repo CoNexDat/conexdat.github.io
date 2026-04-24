@@ -44,26 +44,59 @@
 
 .archive__item-title { color: var(--cnet-navy); }
 
+// ---- Masthead: solid CONICET navy with white text (the visible palette) ----
+.masthead {
+  background: var(--cnet-navy) !important;
+  color: #fff;
+  border-bottom: 3px solid var(--cnet-celeste);
+}
+.masthead__menu-item {
+  background-color: transparent !important;
+  a, & > a {
+    color: #fff !important;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    &:hover, &:focus {
+      color: var(--cnet-gold) !important;
+      border-bottom-color: var(--cnet-gold) !important;
+    }
+  }
+}
 .masthead__menu-item.selected a {
-  border-bottom-color: var(--cnet-celeste) !important;
+  color: #fff !important;
+  border-bottom: 2px solid var(--cnet-celeste) !important;
+}
+.masthead__menu-item.lang-switch a {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+.masthead__menu-item.lang-switch.selected a {
+  color: var(--cnet-celeste) !important;
+  font-weight: 700;
+}
+// theme-toggle icon
+#theme-toggle a, #theme-icon { color: #fff; }
+
+// Sidebar text on a light surface — keep readable
+.sidebar .author__bio,
+.sidebar .author__urls li {
+  color: var(--cnet-ink);
 }
 
-// ---- Affiliations block (home page) -----------------------------------------
-.affiliations {
-  margin: 0 0 1.5rem;
-  padding: 0.75rem 1rem;
-  background: var(--cnet-surface);
-  border-left: 4px solid var(--cnet-navy);
-  border-radius: 4px;
+// Section H2s: navy with celeste underline
+.page__content h2 {
+  color: var(--cnet-navy);
+  border-bottom: 2px solid var(--cnet-celeste);
+  padding-bottom: 0.25em;
+}
 
-  &__label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--cnet-navy);
-    margin-bottom: 0.4rem;
-  }
+// ---- Affiliations row (inline pill tags, no callout box) -------------------
+.affiliations {
+  margin: -0.25rem 0 1.5rem;
+  padding: 0;
+  background: none;
+  border: none;
+
+  &__label { display: none; }   // remove the all-caps "Pertenencia institucional" label
 
   &__list {
     list-style: none;
@@ -71,20 +104,26 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem 0.6rem;
+    gap: 0.45rem;
 
     li {
-      &:not(:last-child)::after {
-        content: "·";
-        margin-left: 0.6rem;
-        color: var(--cnet-navy);
-        opacity: 0.5;
-      }
       a {
+        display: inline-block;
+        padding: 0.18rem 0.65rem;
+        background: var(--cnet-surface);
         color: var(--cnet-navy);
+        border: 1px solid var(--cnet-border);
+        border-radius: 999px;
+        font-size: 0.82rem;
         font-weight: 500;
         text-decoration: none;
-        &:hover { color: var(--cnet-gold); text-decoration: underline; }
+        transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        &:hover {
+          background: var(--cnet-navy);
+          color: #fff;
+          border-color: var(--cnet-navy);
+          text-decoration: none;
+        }
       }
     }
   }
@@ -97,17 +136,32 @@
   & + .lang-switch a { border-left: 1px solid var(--cnet-border); }
 }
 
-// ---- Feature cards (research areas) — tighter, icon support ----------------
+// ---- Feature cards (research areas) — equal-height grid, override Susy ----
+// academicpages' default _archive.scss applies @include gallery(4 of 12) to
+// .feature__item which sets `float: left` + a fixed width. We replace that
+// with CSS Grid so cards line up cleanly and stretch to equal height.
 .feature__wrapper {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  align-items: stretch;
   gap: 1rem;
   margin: 1rem 0 2rem;
+  border-bottom: none !important;          // kill the default underline
+  padding-bottom: 0 !important;
 }
 .feature__item {
-  margin: 0;
-  padding: 0;
+  display: flex !important;
+  flex-direction: column;
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1rem !important;
+
   .archive__item {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     border: 1px solid var(--cnet-border);
     border-radius: 6px;
@@ -120,9 +174,17 @@
       transform: translateY(-1px);
     }
   }
+  .archive__item-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
   .archive__item-title {
     font-size: 1.05rem;
     margin: 0 0 0.5rem;
+    color: var(--cnet-navy);
+    border-bottom: none;     // override the page-h2 rule above for in-card titles
+    padding-bottom: 0;
     .fa, .fas, .far, .fab {
       color: var(--cnet-celeste);
       margin-right: 0.4em;
@@ -131,6 +193,7 @@
   .archive__item-excerpt {
     font-size: 0.92rem;
     line-height: 1.45;
+    margin: 0;
     p { margin: 0; }
   }
 }
