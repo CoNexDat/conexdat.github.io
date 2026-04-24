@@ -69,10 +69,23 @@ html[data-theme="dark"] {
 .archive__item-title { color: var(--cnet-navy); }
 
 // ---- Masthead: solid CONICET navy with white text (the visible palette) ----
+// Override every nested element that academicpages paints with
+// var(--global-bg-color), since that resolves to white in light mode and
+// would otherwise hide the navy masthead.
 .masthead {
   background: var(--cnet-navy) !important;
   color: #fff;
   border-bottom: 3px solid var(--cnet-celeste);
+
+  &::after { background: var(--cnet-celeste) !important; height: 0 !important; }
+}
+.masthead .greedy-nav,
+.greedy-nav {
+  background: transparent !important;
+}
+.greedy-nav button {
+  background-color: transparent !important;
+  color: #fff !important;
 }
 .masthead__menu-item {
   background-color: transparent !important;
@@ -98,7 +111,17 @@ html[data-theme="dark"] {
   font-weight: 700;
 }
 // theme-toggle icon
-#theme-toggle a, #theme-icon { color: #fff; }
+#theme-toggle a, #theme-icon { color: #fff !important; }
+#theme-toggle a:hover, #theme-toggle a:focus i { color: var(--cnet-gold) !important; }
+
+// Greedy-nav overflow ("hidden-links" dropdown) — keep navy/white inside it
+.greedy-nav .hidden-links {
+  background: var(--cnet-navy) !important;
+  border: 1px solid var(--cnet-celeste);
+  &::before { border-color: transparent transparent var(--cnet-navy) transparent !important; }
+  li, li a { background: transparent !important; color: #fff !important; }
+  li a:hover { color: var(--cnet-gold) !important; }
+}
 
 // Sidebar text on a light surface — keep readable
 .sidebar .author__bio,
