@@ -1,0 +1,45 @@
+# =============================================================================
+# CoNexDat — flagship project cards shown on the home page.
+# =============================================================================
+
+- title: "Twitter — Elecciones 2019"
+  blurb:
+    es: "Seguimiento de las Elecciones presidenciales de 2019."
+    en: "Tracking the 2019 Argentinian presidential elections."
+    fr: "Suivi des élections présidentielles argentines de 2019."
+  url: "http://elecciones2019.fi.uba.ar"
+
+- title: "CDNs"
+  blurb:
+    es: "Cómo los proveedores de contenido pasaron a estar en el centro de Internet."
+    en: "How Content Providers became central to the AS ecosystem after the rise of private CDNs."
+    fr: "Comment les fournisseurs de contenu sont devenus centraux dans l'écosystème des AS après l'essor des CDN privés."
+  url: "https://cnet.fi.uba.ar/TMA2018/"
+
+- title: "LaNet-vi"
+  blurb:
+    es: "Software de visualización de redes grandes mediante k-núcleos."
+    en: "Large-network visualization software using k-cores and k-denses decomposition."
+    fr: "Logiciel de visualisation de grands réseaux par décomposition en k-cœurs et k-denses."
+  url: "http://lanet-vi.fi.uba.ar/"
+
+- title: "I'm Here!"
+  blurb:
+    es: "Visualizá un mapa de la topología de Internet indicando dónde estás."
+    en: "Visualize a map of the Internet topology, showing where you are."
+    fr: "Visualisez la topologie d'Internet et le point où vous vous trouvez."
+  url: "http://lanet-vi.fi.uba.ar/i_am_here"
+
+- title: "TiX"
+  blurb:
+    es: "Traffic information eXchange — herramienta para medir la calidad de su acceso a Internet."
+    en: "Traffic information eXchange — a tool to measure the quality of your Internet access."
+    fr: "Traffic information eXchange — outil de mesure de la qualité de votre accès Internet."
+  url: ""
+
+- title: "UBACyT"
+  blurb:
+    es: "Internet: medición de QoS domiciliaria, análisis tomográfico y propuestas de algoritmos de ruteo."
+    en: "Internet: residential QoS measurement, tomographic analysis, and routing-algorithm proposals."
+    fr: "Internet : mesure de la QoS résidentielle, analyse tomographique et propositions d'algorithmes de routage."
+  url: "http://www.uba.ar/secyt/"

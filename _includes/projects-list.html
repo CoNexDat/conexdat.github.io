@@ -1,0 +1,19 @@
+{%- comment -%}
+  Renders all entries from _data/projects.yml in a given language.
+  Required: include.lang (es|en|fr)
+{%- endcomment -%}
+<div class="projects-list">
+{%- for p in site.data.projects %}
+  <article class="project-item">
+    <h3>
+      <small>{{ p.funder }} · {{ p.period }}</small><br>
+      {{ p.title[include.lang] }}
+    </h3>
+    <p><strong>{% if include.lang == 'es' %}Código del proyecto{% elsif include.lang == 'en' %}Project code{% else %}Code du projet{% endif %}:</strong> {{ p.code }}</p>
+    <div class="project-abstract">
+      {{ p.abstract[include.lang] | markdownify }}
+    </div>
+  </article>
+  <hr>
+{%- endfor %}
+</div>

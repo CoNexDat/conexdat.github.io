@@ -1,0 +1,159 @@
+# =============================================================================
+# CoNexDat — Grupo de Redes Complejas y Comunicación de Datos
+# Site config (Jekyll + academicpages + jekyll-polyglot + jekyll-scholar)
+# =============================================================================
+
+# ---- Basic site settings ----------------------------------------------------
+locale                   : "es-AR"
+site_theme               : "default"
+title                    : "CoNexDat"
+title_separator          : "|"
+name                     : &name "CoNexDat"
+description              : &description "Grupo de Redes Complejas y Comunicación de Datos — Departamento de Electrónica, Facultad de Ingeniería, UBA"
+url                      : "https://conexdat.github.io"
+baseurl                  : ""
+repository               : "conexdat/conexdat.github.io"
+
+# ---- Author / group profile (used by the left sidebar) ---------------------
+author:
+  avatar           : "logo_conexdat.png"
+  name             : "CoNexDat"
+  pronouns         :
+  bio              : "Grupo de Redes Complejas y Comunicación de Datos"
+  location         : "Buenos Aires, Argentina"
+  employer         : "FIUBA · UBA"
+  uri              : "https://conexdat.github.io"
+  email            : "cnet@fi.uba.ar"
+  googlescholar    :
+  orcid            :
+  github           : "conexdat"
+
+# ---- Site behaviour ---------------------------------------------------------
+breadcrumbs              : false
+words_per_minute         : 160
+future                   : true
+read_more                : "disabled"
+talkmap_link             : false
+atom_feed:
+  hide                   : false
+
+# ---- SEO / analytics --------------------------------------------------------
+google_site_verification :
+analytics:
+  provider               : "false"
+
+# ---- Reading files ----------------------------------------------------------
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .github
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - CHANGELOG
+  - Capfile
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json*
+  - Rakefile
+  - README*
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# ---- Conversion -------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# ---- Defaults ---------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# ---- Sass / output ----------------------------------------------------------
+sass:
+  sass_dir: _sass
+  style: compressed
+
+permalink: /:title/
+timezone: America/Argentina/Buenos_Aires
+
+# ---- Plugins ----------------------------------------------------------------
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-polyglot
+  - jekyll-scholar
+
+whitelist:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-polyglot
+  - jekyll-scholar
+
+# ---- Multilingual (jekyll-polyglot) -----------------------------------------
+languages:               ["es", "en", "fr"]
+default_lang:            "es"
+exclude_from_localization: ["assets", "files", "404.html"]
+parallel_localization:   false
+
+# ---- Bibliography (jekyll-scholar) ------------------------------------------
+scholar:
+  source:                ./_bibliography
+  bibliography:          conexdat.bib
+  bibliography_template: bib
+  style:                 ieee
+  sort_by:               year
+  order:                 descending
+  details_dir:           publications
+  details_layout:        single
+
+# ---- Archives (kept simple) -------------------------------------------------
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# ---- HTML compression -------------------------------------------------------
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

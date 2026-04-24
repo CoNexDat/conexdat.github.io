@@ -1,0 +1,43 @@
+# =============================================================================
+# CoNexDat — top navigation, multilingual.
+# Each entry has a multilingual title and a permalink (the path under the
+# language root: jekyll-polyglot prefixes /en/ or /fr/ automatically when the
+# active language is not the default).
+# =============================================================================
+
+main:
+  - title:
+      es: "¿Quiénes somos?"
+      en: "People"
+      fr: "Membres"
+    url: /people/
+
+  - title:
+      es: "Proyectos"
+      en: "Projects"
+      fr: "Projets"
+    url: /projects/
+
+  - title:
+      es: "Publicaciones"
+      en: "Publications"
+      fr: "Publications"
+    url: /publications/
+
+  - title:
+      es: "Tesis"
+      en: "Theses"
+      fr: "Thèses"
+    url: /theses/
+
+  - title:
+      es: "Software"
+      en: "Software"
+      fr: "Logiciels"
+    url: /software/
+
+  - title:
+      es: "Contacto"
+      en: "Contact"
+      fr: "Contact"
+    url: /contact/

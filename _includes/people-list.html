@@ -1,0 +1,15 @@
+{%- comment -%}
+  Renders members of a given category in a given language.
+  Required: include.category (current|external|alumni), include.lang (es|en|fr)
+{%- endcomment -%}
+<ul class="people-list">
+{%- assign members = site.data.members | where: "category", include.category -%}
+{%- for m in members %}
+  <li class="people-item">
+    <strong>{{ m.name }}</strong>
+    {%- if m.role[include.lang] %} — <em>{{ m.role[include.lang] }}</em>{%- endif -%}
+    {%- if m.affiliation[include.lang] %}<br><span class="people-affiliation">{{ m.affiliation[include.lang] }}</span>{%- endif -%}
+    {%- if m.homepage and m.homepage != "" %}<br><a href="{{ m.homepage }}">{{ m.homepage }}</a>{%- endif -%}
+  </li>
+{%- endfor %}
+</ul>

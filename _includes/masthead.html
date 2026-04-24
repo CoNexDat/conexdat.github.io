@@ -1,0 +1,52 @@
+{% include base_path %}
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- assign lang_prefix = '' -%}
+{%- if lang != site.default_lang -%}
+  {%- assign lang_prefix = '/' | append: lang -%}
+{%- endif -%}
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><span class="navicon"></span></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/en/' or page.url == '/fr/' %}selected{% endif %}">
+            <a href="{{ base_path }}{{ lang_prefix }}/">{{ site.title }}</a>
+          </li>
+          {% for link in site.data.navigation.main %}
+            {%- assign label = link.title[lang] | default: link.title.en | default: link.title -%}
+            {% if link.url contains 'http' %}
+              {% assign domain = '' %}
+              {% assign target_url = link.url %}
+            {% else %}
+              {% assign domain = base_path %}
+              {% assign target_url = lang_prefix | append: link.url %}
+            {% endif %}
+            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
+              <a href="{{ domain }}{{ target_url }}">{{ label }}</a>
+            </li>
+          {% endfor %}
+          {%- comment -%} Language switcher {%- endcomment -%}
+          <li class="masthead__menu-item">
+            {%- assign rel_path = page.permalink | default: page.url -%}
+            {%- if rel_path contains '/en/' -%}
+              {%- assign rel_path = rel_path | remove_first: '/en' -%}
+            {%- elsif rel_path contains '/fr/' -%}
+              {%- assign rel_path = rel_path | remove_first: '/fr' -%}
+            {%- endif -%}
+            <a href="{{ base_path }}{{ rel_path }}" {% if lang == 'es' %}class="selected"{% endif %}>ES</a>
+            &nbsp;|&nbsp;
+            <a href="{{ base_path }}/en{{ rel_path }}" {% if lang == 'en' %}class="selected"{% endif %}>EN</a>
+            &nbsp;|&nbsp;
+            <a href="{{ base_path }}/fr{{ rel_path }}" {% if lang == 'fr' %}class="selected"{% endif %}>FR</a>
+          </li>
+          <li id="theme-toggle" class="masthead__menu-item persist tail">
+            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+          </li>
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>

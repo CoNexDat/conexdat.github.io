@@ -1,0 +1,202 @@
+# =============================================================================
+# CoNexDat — research projects.
+# Each entry is a funded project (UBACyT, STIC_AmSud, PICT, …) with code,
+# title, period, and a brief multilingual abstract.
+# =============================================================================
+
+- code: "20020130200122BA"
+  funder: "UBACyT"
+  period: "2014–2017"
+  title:
+    es: "Internet: Medición de la calidad de servicio domiciliaria, análisis tomográfico y propuesta de algoritmos de ruteo"
+    en: "Internet: residential Quality-of-Service measurement, tomographic analysis, and routing-algorithm proposals"
+    fr: "Internet : mesure de la qualité de service à domicile, analyse tomographique et propositions d'algorithmes de routage"
+  abstract:
+    es: |
+      Estudiamos la Calidad de Servicio del acceso domiciliario, la tomografía
+      de Internet y los protocolos de ruteo, todos orientados al estudio de
+      Internet. Las técnicas de QoS también se aplican a la tomografía de
+      Internet para obtener más información que la topología sola, y para
+      generar mejores modelos sobre los que probar los protocolos de ruteo
+      propuestos. Proponemos una nueva metodología para medir QoS en accesos
+      domiciliarios mediante mediciones continuas con muy baja carga del canal,
+      generamos un nuevo mapa anotado con QoS y túneles MPLS, y proponemos un
+      nuevo protocolo de ruteo EGP basado en consideraciones de topología, con
+      complejidad sub-lineal del tamaño de las tablas de ruteo.
+    en: |
+      We study residential-access Quality of Service, Internet tomography, and
+      routing protocols — all aimed at understanding Internet itself. QoS
+      techniques are also applied to Internet tomography to obtain richer
+      information than just topology, and to derive better models on which to
+      test the proposed routing protocols. We propose a new methodology to
+      measure residential-access QoS via continuous, very-low-load probes; we
+      build a new map annotated with QoS and MPLS tunnels; and we propose a new
+      EGP routing protocol based on topological considerations, with
+      sub-linear complexity in routing-table size.
+    fr: |
+      Nous étudions la qualité de service de l'accès résidentiel, la
+      tomographie de l'Internet et les protocoles de routage. Les techniques
+      QoS sont également appliquées à la tomographie pour obtenir des données
+      plus riches que la seule topologie, et pour construire de meilleurs
+      modèles sur lesquels tester les protocoles de routage proposés. Nous
+      proposons une nouvelle méthodologie de mesure de la QoS résidentielle
+      par sondages continus à très faible charge, une nouvelle carte annotée
+      avec QoS et tunnels MPLS, et un nouveau protocole de routage EGP fondé
+      sur la topologie, avec une complexité sous-linéaire dans la taille des
+      tables de routage.
+
+- code: "14STIC-08"
+  funder: "STIC_AmSud"
+  period: "2013"
+  title:
+    es: "UCOOL — Understanding and predicting human demanded COntents And mObiLity"
+    en: "UCOOL — Understanding and predicting human demanded COntents And mObiLity"
+    fr: "UCOOL — Understanding and predicting human demanded COntents And mObiLity"
+  abstract:
+    es: |
+      Encontrar nuevas formas de gestionar el aumento del consumo de datos y
+      mejorar el nivel de servicio que demandan las nuevas aplicaciones para
+      smartphones es hoy una cuestión esencial. Comprender mejor la movilidad
+      del usuario y los contenidos que demanda es fundamental al buscar
+      soluciones. UCOOL deriva modelos apropiados para la correlación entre
+      intereses del usuario y su movilidad, y desarrolla algoritmos eficientes
+      para predecir movilidad e intereses. Los socios — en Francia, Brasil,
+      Chile y Argentina — aportan capacidades complementarias para abordar la
+      correlación contexto/contenido y la predicción asociada en redes
+      móviles inalámbricas.
+    en: |
+      Finding new ways to manage growing data usage and to improve the level
+      of service required by new smartphone applications is an essential
+      issue. Understanding user mobility (the context they experience) and
+      the content they demand is fundamental when looking for solutions in
+      the modern communication landscape. UCOOL derives appropriate models
+      for the correlation between user interests and their mobility, and
+      develops efficient prediction algorithms for both. The partners —
+      France, Brazil, Chile, Argentina — bring complementary background to
+      address context-content correlation and prediction in mobile wireless
+      networks.
+    fr: |
+      Trouver de nouveaux moyens pour gérer l'augmentation de l'usage des
+      données et améliorer le niveau de service exigé par les nouvelles
+      applications pour smartphones est aujourd'hui une question essentielle.
+      Mieux comprendre la mobilité des utilisateurs et les contenus qu'ils
+      demandent est fondamental. UCOOL dérive des modèles appropriés pour la
+      corrélation entre intérêts et mobilité, et développe des algorithmes de
+      prédiction efficaces. Les partenaires — France, Brésil, Chili, Argentine
+      — apportent des compétences complémentaires pour traiter la corrélation
+      contexte/contenu et la prédiction associée dans les réseaux mobiles.
+
+- code: "1108"
+  funder: "PICT-BICENTENARIO"
+  period: "2011–2014"
+  title:
+    es: "Internet: mediciones de tráfico y topología, modelado de la red, propuesta y análisis de nuevos algoritmos de ruteo"
+    en: "Internet: traffic and topology measurements, network modelling, and proposals/analysis of new routing algorithms"
+    fr: "Internet : mesures de trafic et de topologie, modélisation du réseau, propositions et analyse de nouveaux algorithmes de routage"
+  abstract:
+    es: |
+      El proyecto tiene como objetivos la medición, modelización y propuesta de
+      nuevos algoritmos de ruteo para Internet. Considerando algoritmos de
+      ruteo capaces de encontrar rutas dinámicamente, es necesario verificar
+      su funcionamiento en redes artificiales con las mismas características
+      que las reales — lo que requiere un buen modelo de las redes reales.
+      Las exploraciones relevarán también datos de tráfico y QoS, y se
+      propondrán protocolos de ruteo cuyas tablas crezcan de forma sub-lineal
+      en función del tamaño de la red. Colaboran UBA, ENS Lyon (Francia) y
+      LNCC (Brasil).
+    en: |
+      Goals: measurement, modelling, and proposal of new routing algorithms
+      for the Internet. Algorithms that find routes dynamically must be
+      verified on artificial networks with the same characteristics as real
+      ones — which requires a good model of real networks. Probes also
+      capture traffic and QoS data; we propose routing protocols whose
+      tables grow sub-linearly with network size. Collaboration with
+      UBA, ENS Lyon (France), and LNCC (Brazil).
+    fr: |
+      Objectifs : mesure, modélisation et proposition de nouveaux algorithmes
+      de routage pour Internet. Les algorithmes capables de trouver
+      dynamiquement des routes doivent être vérifiés sur des réseaux
+      artificiels présentant les mêmes caractéristiques que les réseaux réels
+      — ce qui exige un bon modèle. Les sondages relèveront aussi des données
+      de trafic et de QoS ; nous proposerons des protocoles de routage dont
+      les tables croissent de façon sous-linéaire avec la taille du réseau.
+      Collaboration UBA, ENS Lyon (France), LNCC (Brésil).
+
+- code: "20020110200181"
+  funder: "UBACyT"
+  period: "2012–2015"
+  title:
+    es: "Internet: tomografía, ruteo y análisis de conectividad"
+    en: "Internet: tomography, routing, and connectivity analysis"
+    fr: "Internet : tomographie, routage et analyse de la connectivité"
+  abstract:
+    es: |
+      Estudiamos la estructura de Internet mediante tomografía de la red
+      (topología y tráfico), proponemos protocolos de ruteo capaces de
+      soportar el constante crecimiento, y la analizamos como sistema
+      complejo, principalmente orientados a la búsqueda de comunidades.
+    en: |
+      We study Internet structure via network tomography (topology + traffic),
+      propose routing protocols that scale with continuous growth, and
+      analyse it as a complex system, primarily focused on community
+      detection.
+    fr: |
+      Nous étudions la structure d'Internet par tomographie du réseau
+      (topologie + trafic), proposons des protocoles de routage capables
+      d'absorber la croissance continue, et l'analysons en tant que système
+      complexe, principalement orienté vers la détection de communautés.
+
+- code: "20020090200119"
+  funder: "UBACyT"
+  period: "2010–2012"
+  title:
+    es: "Tomografía de Internet y ruteo orientado a las aplicaciones"
+    en: "Internet tomography and application-oriented routing"
+    fr: "Tomographie d'Internet et routage orienté applications"
+  abstract:
+    es: |
+      Análisis de Internet (topología y tráfico) y ruteo de aplicaciones
+      desde tres perspectivas: tomografía (exploración topológica y de uso),
+      medición de tráfico (específico a una aplicación, enlace o destino), y
+      ruteo en redes P2P.
+    en: |
+      Internet analysis (topology and traffic) and application-routing from
+      three angles: tomography (topology + utilisation exploration),
+      traffic measurement (per application, link, or destination), and P2P
+      routing.
+    fr: |
+      Analyse d'Internet (topologie et trafic) et routage applicatif sous
+      trois angles : tomographie (topologie + utilisation), mesure du trafic
+      (par application, lien ou destination), et routage en réseaux P2P.
+
+- code: "I413"
+  funder: "UBACyT"
+  period: "2008–2010"
+  title:
+    es: "Internet y ruteo de datos"
+    en: "Internet and data routing"
+    fr: "Internet et routage des données"
+  abstract:
+    es: |
+      Estudio de redes de computadoras y ruteo de datos en áreas
+      particulares con el fin de mejorar las tecnologías existentes:
+      topología de Internet y sus propiedades, redes ad-hoc, y tráfico
+      de datos según los requerimientos de las aplicaciones. Continuamos
+      el análisis topológico mediante k-núcleos (LaNet-vi); desarrollamos
+      el protocolo ad-hoc ANTop (simulado en QUENAS); y modelamos tráfico
+      por aplicación buscando su relación con la QoS.
+    en: |
+      Study of computer networks and data routing in selected areas to
+      improve existing technologies: Internet topology and its properties,
+      ad-hoc networks, and data traffic from the applications' viewpoint.
+      We continue topological analysis through k-cores (LaNet-vi), develop
+      the ANTop ad-hoc protocol (simulated in QUENAS), and model traffic
+      per application linking it to QoS.
+    fr: |
+      Étude des réseaux informatiques et du routage des données dans des
+      domaines particuliers pour améliorer les technologies existantes :
+      topologie d'Internet et ses propriétés, réseaux ad-hoc, et trafic
+      de données du point de vue applicatif. Analyse topologique par
+      k-cœurs (LaNet-vi), développement du protocole ad-hoc ANTop (simulé
+      sous QUENAS), et modélisation du trafic par application en lien
+      avec la QoS.
