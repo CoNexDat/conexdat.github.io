@@ -1,5 +1,142 @@
 // =============================================================================
-// CoNexDat overrides — people grid, news table, projects accordion
+// CoNexDat overrides — palette, layout, components
+// =============================================================================
+
+// ---- CONICET-inspired palette ----------------------------------------------
+// Loaded after the academicpages default-light theme, so these CSS custom
+// properties win.  Anchored on CONICET institutional navy + Argentine celeste
+// + a CONICET gold accent.
+:root {
+  --cnet-navy:   #003975;   // CONICET dark navy
+  --cnet-link:   #005CB9;   // brighter blue for links
+  --cnet-celeste:#74ACDF;   // Argentine celeste accent
+  --cnet-gold:   #F2A900;   // CONICET-style gold accent
+  --cnet-ink:    #1A2A3D;   // body text (very dark navy)
+  --cnet-bg:     #FFFFFF;
+  --cnet-surface:#F4F6FA;   // subtle navy-tinted surface
+  --cnet-border: #D6E0EC;
+
+  --global-base-color                : var(--cnet-navy);
+  --global-bg-color                  : var(--cnet-bg);
+  --global-footer-bg-color           : var(--cnet-surface);
+  --global-border-color              : var(--cnet-border);
+  --global-dark-border-color         : #B6C5D9;
+  --global-link-color                : var(--cnet-link);
+  --global-link-color-hover          : var(--cnet-navy);
+  --global-link-color-visited        : #5085C6;
+  --global-masthead-link-color       : var(--cnet-navy);
+  --global-masthead-link-color-hover : var(--cnet-gold);
+  --global-text-color                : var(--cnet-ink);
+  --global-text-color-light          : #6B7B8E;
+  --global-thead-color               : var(--cnet-surface);
+}
+
+// Accent applications -- map academicpages' existing classes onto the palette.
+.btn--info {
+  background-color: var(--cnet-navy);
+  border-color:     var(--cnet-navy);
+  &:hover, &:focus {
+    background-color: var(--cnet-link);
+    border-color:     var(--cnet-link);
+    color: #fff;
+  }
+}
+
+.archive__item-title { color: var(--cnet-navy); }
+
+.masthead__menu-item.selected a {
+  border-bottom-color: var(--cnet-celeste) !important;
+}
+
+// ---- Affiliations block (home page) -----------------------------------------
+.affiliations {
+  margin: 0 0 1.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--cnet-surface);
+  border-left: 4px solid var(--cnet-navy);
+  border-radius: 4px;
+
+  &__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cnet-navy);
+    margin-bottom: 0.4rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+
+    li {
+      &:not(:last-child)::after {
+        content: "·";
+        margin-left: 0.6rem;
+        color: var(--cnet-navy);
+        opacity: 0.5;
+      }
+      a {
+        color: var(--cnet-navy);
+        font-weight: 500;
+        text-decoration: none;
+        &:hover { color: var(--cnet-gold); text-decoration: underline; }
+      }
+    }
+  }
+}
+
+// ---- Lang switcher (3 separate <li>s) --------------------------------------
+.masthead__menu-item.lang-switch {
+  padding: 0;
+  a { padding: 0 0.45rem; }
+  & + .lang-switch a { border-left: 1px solid var(--cnet-border); }
+}
+
+// ---- Feature cards (research areas) — tighter, icon support ----------------
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+.feature__item {
+  margin: 0;
+  padding: 0;
+  .archive__item {
+    height: 100%;
+    border: 1px solid var(--cnet-border);
+    border-radius: 6px;
+    padding: 1rem;
+    background: var(--cnet-bg);
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    &:hover {
+      border-color: var(--cnet-celeste);
+      box-shadow: 0 4px 14px rgba(0, 57, 117, 0.10);
+      transform: translateY(-1px);
+    }
+  }
+  .archive__item-title {
+    font-size: 1.05rem;
+    margin: 0 0 0.5rem;
+    .fa, .fas, .far, .fab {
+      color: var(--cnet-celeste);
+      margin-right: 0.4em;
+    }
+  }
+  .archive__item-excerpt {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    p { margin: 0; }
+  }
+}
+
+// =============================================================================
+// Existing component overrides
 // =============================================================================
 
 // ---- People card grid -------------------------------------------------------
@@ -72,27 +209,34 @@
   }
 }
 
-// ---- News table (al-folio style) -------------------------------------------
+// ---- News table (al-folio look — clean, no grid lines) --------------------
 .news {
   margin: 1rem 0 2rem;
 
   table {
     width: 100%;
     border-collapse: collapse;
+    border: none;
+
     th, td {
-      padding: 0.4rem 0.75rem 0.4rem 0;
+      padding: 0.35rem 0.9rem 0.35rem 0;
       vertical-align: top;
       border: none;
+      background: transparent;
     }
     th {
-      font-weight: normal;
+      font-weight: 500;
+      white-space: nowrap;
       width: 1%;
-      color: rgba(0, 0, 0, 0.55);
-      em { font-style: normal; font-size: 0.85rem; }
+      color: var(--cnet-navy);
+      font-size: 0.85rem;
+      letter-spacing: 0.01em;
     }
-    td { font-size: 0.95rem; }
-    tr + tr th, tr + tr td {
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    td {
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--cnet-ink);
+      a { color: var(--cnet-link); }
     }
   }
 }

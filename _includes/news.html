@@ -9,12 +9,10 @@
 
 {% if news_items.size > 0 %}
   <div class="news">
-    <table class="table table-sm table-borderless">
+    <table>
       {% for item in news_items limit: limit %}
         <tr>
-          <th scope="row" style="white-space: nowrap;">
-            <em>{{ item.date | date: "%b %-d, %Y" }}</em>
-          </th>
+          <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
           <td>
             {%- if item.inline -%}
               {{ item.content | markdownify | remove: "<p>" | remove: "</p>" }}

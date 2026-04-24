@@ -4,19 +4,27 @@ lang: en
 title: "Complex Networks and Data Communication Group"
 author_profile: true
 feature_row:
-  - title: "Complex Systems"
-    excerpt: "Models and properties of complex networks and multi-agent systems."
-  - title: "Data Science"
-    excerpt: "Large-scale analysis of web, social, and mobility traces."
-  - title: "Internet"
-    excerpt: "Routing protocols and topology modelling of the Internet."
-  - title: "Network traffic"
-    excerpt: "Statistical *(self-similar)* analysis of data-network traffic."
-  - title: "Ad-hoc networks"
-    excerpt: "Routing protocols for infrastructure-less wireless networks."
+  - title: '<i class="fas fa-project-diagram"></i> Complex Systems'
+    excerpt: "We study complex networks via *k-core* decomposition and community detection. Graph theory and propagation models applied to biological, social and technological networks."
+  - title: '<i class="fas fa-database"></i> Data Science'
+    excerpt: "Large-scale analysis of Twitter traces, electoral data, and Call Detail Records (CDR). We infer human mobility, content demand, and online community dynamics."
+  - title: '<i class="fas fa-globe"></i> Internet'
+    excerpt: "Internet tomography and topology modelling (BGP, IXPs, AS-level). We design routing protocols whose tables grow sub-linearly with network size."
+  - title: '<i class="fas fa-chart-line"></i> Network traffic'
+    excerpt: "Statistical *self-similar* characterization of residential traffic. Continuous low-load probing for QoS assessment and IXP/CDN traffic detection."
+  - title: '<i class="fas fa-broadcast-tower"></i> Ad-hoc networks'
+    excerpt: "Routing protocols for infrastructure-less wireless networks. We developed *ANTop* (bio-inspired algorithm) and evaluated it on the QUENAS simulator."
 ---
 
-[Departamento de Electrónica](http://electronica.fi.uba.ar) · [Facultad de Ingeniería](http://www.fi.uba.ar) · [Universidad de Buenos Aires](http://www.uba.ar)
+<div class="affiliations">
+  <div class="affiliations__label">Affiliations</div>
+  <ul class="affiliations__list">
+    <li><a href="http://electronica.fi.uba.ar">Departamento de Electrónica</a></li>
+    <li><a href="http://www.fi.uba.ar">Facultad de Ingeniería</a></li>
+    <li><a href="http://www.uba.ar">Universidad de Buenos Aires</a></li>
+    <li><a href="https://www.conicet.gov.ar">CONICET</a></li>
+  </ul>
+</div>
 
 ## Research areas
 

@@ -4,19 +4,27 @@ lang: fr
 title: "Groupe de Réseaux Complexes et Communication de Données"
 author_profile: true
 feature_row:
-  - title: "Systèmes complexes"
-    excerpt: "Modèles et propriétés des réseaux complexes et systèmes multi-agents."
-  - title: "Science des données"
-    excerpt: "Analyse à grande échelle de traces web, sociales et de mobilité."
-  - title: "Internet"
-    excerpt: "Protocoles de routage et modélisation de la topologie d'Internet."
-  - title: "Trafic réseau"
-    excerpt: "Analyse statistique *(auto-similaire)* du trafic des réseaux de données."
-  - title: "Réseaux ad-hoc"
-    excerpt: "Protocoles de routage pour réseaux sans-fil sans infrastructure."
+  - title: '<i class="fas fa-project-diagram"></i> Systèmes complexes'
+    excerpt: "Étude des réseaux complexes par décomposition en *k-cœurs* et détection de communautés. Théorie des graphes et modèles de propagation appliqués aux réseaux biologiques, sociaux et technologiques."
+  - title: '<i class="fas fa-database"></i> Science des données'
+    excerpt: "Analyse à grande échelle de traces Twitter, de données électorales et de registres mobiles (CDR). Inférence de la mobilité humaine, de la demande de contenu et de la dynamique des communautés en ligne."
+  - title: '<i class="fas fa-globe"></i> Internet'
+    excerpt: "Tomographie d'Internet et modélisation de sa topologie (BGP, IXP, niveau AS). Conception de protocoles de routage dont les tables croissent sous-linéairement avec la taille du réseau."
+  - title: '<i class="fas fa-chart-line"></i> Trafic réseau'
+    excerpt: "Caractérisation statistique *auto-similaire* du trafic résidentiel. Sondages continus à faible charge pour l'évaluation de la QoS et la détection du trafic IXP/CDN."
+  - title: '<i class="fas fa-broadcast-tower"></i> Réseaux ad-hoc'
+    excerpt: "Protocoles de routage pour réseaux sans-fil sans infrastructure. Nous avons développé *ANTop* (algorithme bio-inspiré) et l'avons évalué sur le simulateur QUENAS."
 ---
 
-[Departamento de Electrónica](http://electronica.fi.uba.ar) · [Facultad de Ingeniería](http://www.fi.uba.ar) · [Universidad de Buenos Aires](http://www.uba.ar)
+<div class="affiliations">
+  <div class="affiliations__label">Affiliations institutionnelles</div>
+  <ul class="affiliations__list">
+    <li><a href="http://electronica.fi.uba.ar">Departamento de Electrónica</a></li>
+    <li><a href="http://www.fi.uba.ar">Facultad de Ingeniería</a></li>
+    <li><a href="http://www.uba.ar">Universidad de Buenos Aires</a></li>
+    <li><a href="https://www.conicet.gov.ar">CONICET</a></li>
+  </ul>
+</div>
 
 ## Axes de recherche
 

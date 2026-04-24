@@ -28,33 +28,29 @@
             </li>
           {% endfor %}
           {%- comment -%}
-            Language switcher. Emit ABSOLUTE URLs because jekyll-polyglot's
-            `relativize_urls` post-processor rewrites any relative href that
-            starts with "/" to the current language root — i.e. <a href="/">
-            on /en/ becomes /en/, defeating the switcher. Absolute URLs with
-            site.url prefix bypass that rewrite.
+            Language switcher: 3 separate <li>s so academicpages' greedy-nav
+            doesn't shove a wide composite item into the overflow stack
+            (which renders the inner anchors stacked vertically).
+            Each link uses data-cnet-goto + a JS click handler (see end of
+            this file) because polyglot's relativize_urls rewrites any href
+            starting with "/" or site.url into the current language root —
+            defeating the switcher. dataset attrs are invisible to polyglot.
           {%- endcomment -%}
-          <li class="masthead__menu-item">
-            {%- assign rel_path = page.url | default: page.permalink -%}
-            {%- assign rel_path = rel_path | replace: "https://conexdat.github.io", "" | replace: "http://conexdat.github.io", "" -%}
-            {%- if rel_path contains '/en/' -%}
-              {%- assign rel_path = rel_path | remove_first: '/en' -%}
-            {%- elsif rel_path contains '/fr/' -%}
-              {%- assign rel_path = rel_path | remove_first: '/fr' -%}
-            {%- endif -%}
-            {%- comment -%}
-              jekyll-polyglot rewrites every href starting with "/" or
-              "https://<site.url>/" on a non-default-lang page to add the
-              language prefix — there is no per-link opt-out. So we put the
-              real target in `data-cnet-goto`, give the anchor a noop
-              href, and route the click through tiny inline JS at the end of
-              this include. The dataset attribute is invisible to polyglot.
-            {%- endcomment -%}
-            <a href="javascript:void(0)" data-cnet-goto="{{ site.url }}{{ rel_path }}" {% if lang == 'es' %}class="selected"{% endif %}>ES</a>
-            &nbsp;|&nbsp;
-            <a href="javascript:void(0)" data-cnet-goto="{{ site.url }}/en{{ rel_path }}" {% if lang == 'en' %}class="selected"{% endif %}>EN</a>
-            &nbsp;|&nbsp;
-            <a href="javascript:void(0)" data-cnet-goto="{{ site.url }}/fr{{ rel_path }}" {% if lang == 'fr' %}class="selected"{% endif %}>FR</a>
+          {%- assign rel_path = page.url | default: page.permalink -%}
+          {%- assign rel_path = rel_path | replace: "https://conexdat.github.io", "" | replace: "http://conexdat.github.io", "" -%}
+          {%- if rel_path contains '/en/' -%}
+            {%- assign rel_path = rel_path | remove_first: '/en' -%}
+          {%- elsif rel_path contains '/fr/' -%}
+            {%- assign rel_path = rel_path | remove_first: '/fr' -%}
+          {%- endif -%}
+          <li class="masthead__menu-item lang-switch lang-switch--first {% if lang == 'es' %}selected{% endif %}">
+            <a href="javascript:void(0)" data-cnet-goto="{{ site.url }}{{ rel_path }}">ES</a>
+          </li>
+          <li class="masthead__menu-item lang-switch {% if lang == 'en' %}selected{% endif %}">
+            <a href="javascript:void(0)" data-cnet-goto="{{ site.url }}/en{{ rel_path }}">EN</a>
+          </li>
+          <li class="masthead__menu-item lang-switch {% if lang == 'fr' %}selected{% endif %}">
+            <a href="javascript:void(0)" data-cnet-goto="{{ site.url }}/fr{{ rel_path }}">FR</a>
           </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>

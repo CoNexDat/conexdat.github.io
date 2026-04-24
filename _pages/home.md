@@ -4,19 +4,27 @@ lang: es
 title: "Grupo de Redes Complejas y Comunicación de Datos"
 author_profile: true
 feature_row:
-  - title: "Sistemas Complejos"
-    excerpt: "Modelos y propiedades de redes complejas y sistemas multi-agente."
-  - title: "Ciencia de Datos"
-    excerpt: "Análisis a gran escala de trazas web, sociales y de movilidad."
-  - title: "Internet"
-    excerpt: "Protocolos de ruteo y modelado de la topología de Internet."
-  - title: "Tráfico de red"
-    excerpt: "Análisis estadístico *(autosimilar)* de tráfico en redes de datos."
-  - title: "Redes ad-hoc"
-    excerpt: "Protocolos de ruteo para redes inalámbricas sin infraestructura."
+  - title: '<i class="fas fa-project-diagram"></i> Sistemas Complejos'
+    excerpt: "Estudiamos redes complejas con métodos como descomposición en *k-núcleos* y detección de comunidades. Aplicamos teoría de grafos y modelos de propagación a redes biológicas, sociales y tecnológicas."
+  - title: '<i class="fas fa-database"></i> Ciencia de Datos'
+    excerpt: "Análisis a gran escala de trazas de Twitter, datos electorales y registros móviles (CDR). Inferimos movilidad humana, demanda de contenidos y dinámica de comunidades online."
+  - title: '<i class="fas fa-globe"></i> Internet'
+    excerpt: "Tomografía de Internet y modelado de su topología (BGP, IXPs, AS-level). Diseñamos protocolos de ruteo cuyas tablas crecen sub-linealmente con el tamaño de la red."
+  - title: '<i class="fas fa-chart-line"></i> Tráfico de red'
+    excerpt: "Caracterización estadística *autosimilar* del tráfico residencial. Mediciones continuas de baja carga para evaluar QoS y detectar tráfico de IXPs y CDNs."
+  - title: '<i class="fas fa-broadcast-tower"></i> Redes ad-hoc'
+    excerpt: "Protocolos de ruteo para redes inalámbricas sin infraestructura. Desarrollamos *ANTop* (algoritmo bio-inspirado) y lo evaluamos sobre el simulador QUENAS."
 ---
 
-[Departamento de Electrónica](http://electronica.fi.uba.ar) · [Facultad de Ingeniería](http://www.fi.uba.ar) · [Universidad de Buenos Aires](http://www.uba.ar)
+<div class="affiliations">
+  <div class="affiliations__label">Pertenencia institucional</div>
+  <ul class="affiliations__list">
+    <li><a href="http://electronica.fi.uba.ar">Departamento de Electrónica</a></li>
+    <li><a href="http://www.fi.uba.ar">Facultad de Ingeniería</a></li>
+    <li><a href="http://www.uba.ar">Universidad de Buenos Aires</a></li>
+    <li><a href="https://www.conicet.gov.ar">CONICET</a></li>
+  </ul>
+</div>
 
 ## Áreas de investigación
 
