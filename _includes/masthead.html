@@ -28,8 +28,11 @@
             </li>
           {% endfor %}
           {%- comment -%}
-            Language switcher. polyglot rewrites page.url (and sometimes page.permalink)
-            to absolute, so we strip http(s)://host literally before slicing /en or /fr.
+            Language switcher. Emit ABSOLUTE URLs because jekyll-polyglot's
+            `relativize_urls` post-processor rewrites any relative href that
+            starts with "/" to the current language root — i.e. <a href="/">
+            on /en/ becomes /en/, defeating the switcher. Absolute URLs with
+            site.url prefix bypass that rewrite.
           {%- endcomment -%}
           <li class="masthead__menu-item">
             {%- assign rel_path = page.url | default: page.permalink -%}
@@ -39,11 +42,11 @@
             {%- elsif rel_path contains '/fr/' -%}
               {%- assign rel_path = rel_path | remove_first: '/fr' -%}
             {%- endif -%}
-            <a href="{{ base_path }}{{ rel_path }}" {% if lang == 'es' %}class="selected"{% endif %}>ES</a>
+            <a href="{{ site.url }}{{ rel_path }}" {% if lang == 'es' %}class="selected"{% endif %}>ES</a>
             &nbsp;|&nbsp;
-            <a href="{{ base_path }}/en{{ rel_path }}" {% if lang == 'en' %}class="selected"{% endif %}>EN</a>
+            <a href="{{ site.url }}/en{{ rel_path }}" {% if lang == 'en' %}class="selected"{% endif %}>EN</a>
             &nbsp;|&nbsp;
-            <a href="{{ base_path }}/fr{{ rel_path }}" {% if lang == 'fr' %}class="selected"{% endif %}>FR</a>
+            <a href="{{ site.url }}/fr{{ rel_path }}" {% if lang == 'fr' %}class="selected"{% endif %}>FR</a>
           </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
