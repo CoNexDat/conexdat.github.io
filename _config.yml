@@ -137,12 +137,12 @@ parallel_localization:   false
 scholar:
   source:                ./_bibliography
   bibliography:          conexdat.bib
-  bibliography_template: bib
   style:                 ieee
   sort_by:               year
   order:                 descending
   details_dir:           publications
   details_layout:        single
+  query:                 "@*"
 
 # ---- Archives (kept simple) -------------------------------------------------
 category_archive:
