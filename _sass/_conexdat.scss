@@ -3,18 +3,20 @@
 // =============================================================================
 
 // ---- CONICET-inspired palette ----------------------------------------------
-// Loaded after the academicpages default-light theme, so these CSS custom
-// properties win.  Anchored on CONICET institutional navy + Argentine celeste
-// + a CONICET gold accent.
+// Loaded after the academicpages default light + dark themes, so these
+// custom properties win on both. Anchored on CONICET institutional navy +
+// Argentine celeste + a CONICET gold accent.
 :root {
-  --cnet-navy:   #003975;   // CONICET dark navy
-  --cnet-link:   #005CB9;   // brighter blue for links
-  --cnet-celeste:#74ACDF;   // Argentine celeste accent
-  --cnet-gold:   #F2A900;   // CONICET-style gold accent
-  --cnet-ink:    #1A2A3D;   // body text (very dark navy)
-  --cnet-bg:     #FFFFFF;
-  --cnet-surface:#F4F6FA;   // subtle navy-tinted surface
-  --cnet-border: #D6E0EC;
+  --cnet-navy:        #003975;   // CONICET dark navy
+  --cnet-navy-deep:   #002b5c;   // even darker navy (for dark-mode bg)
+  --cnet-link:        #005CB9;   // brighter blue for links (light mode)
+  --cnet-link-bright: #74ACDF;   // celeste — used as link in dark mode
+  --cnet-celeste:     #74ACDF;   // Argentine celeste accent
+  --cnet-gold:        #F2A900;   // CONICET-style gold accent
+  --cnet-ink:         #1A2A3D;   // body text (very dark navy)
+  --cnet-bg:          #FFFFFF;
+  --cnet-surface:     #F4F6FA;   // subtle navy-tinted surface
+  --cnet-border:      #D6E0EC;
 
   --global-base-color                : var(--cnet-navy);
   --global-bg-color                  : var(--cnet-bg);
@@ -29,6 +31,28 @@
   --global-text-color                : var(--cnet-ink);
   --global-text-color-light          : #6B7B8E;
   --global-thead-color               : var(--cnet-surface);
+}
+
+// Dark mode: replace academicpages' default grey (#474747) with CONICET navy.
+html[data-theme="dark"] {
+  --cnet-bg:          #002b5c;       // deep navy as page background
+  --cnet-surface:     #003975;       // navy for surfaces (cards, footer)
+  --cnet-ink:         #FFFFFF;
+  --cnet-border:      rgba(116, 172, 223, 0.35);
+
+  --global-bg-color                  : var(--cnet-navy-deep);
+  --global-footer-bg-color           : var(--cnet-navy);
+  --global-border-color              : var(--cnet-border);
+  --global-dark-border-color         : var(--cnet-celeste);
+  --global-text-color                : #FFFFFF;
+  --global-text-color-light          : #C9D7EA;
+  --global-link-color                : var(--cnet-celeste);
+  --global-link-color-hover          : var(--cnet-gold);
+  --global-link-color-visited        : #B0CDE8;
+  --global-masthead-link-color       : #FFFFFF;
+  --global-masthead-link-color-hover : var(--cnet-gold);
+  --global-thead-color               : var(--cnet-navy);
+  --global-base-color                : var(--cnet-celeste);
 }
 
 // Accent applications -- map academicpages' existing classes onto the palette.
@@ -142,12 +166,19 @@
 // with CSS Grid so cards line up cleanly and stretch to equal height.
 .feature__wrapper {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: 1fr;
   align-items: stretch;
   gap: 1rem;
   margin: 1rem 0 2rem;
   border-bottom: none !important;          // kill the default underline
   padding-bottom: 0 !important;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 980px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .feature__item {
   display: flex !important;
@@ -165,12 +196,12 @@
     height: 100%;
     border: 1px solid var(--cnet-border);
     border-radius: 6px;
-    padding: 1rem;
-    background: var(--cnet-bg);
+    padding: 1.1rem 1.2rem;
+    background: var(--cnet-surface);    // light surface in light mode, navy in dark mode
     transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
     &:hover {
       border-color: var(--cnet-celeste);
-      box-shadow: 0 4px 14px rgba(0, 57, 117, 0.10);
+      box-shadow: 0 4px 14px rgba(0, 57, 117, 0.18);
       transform: translateY(-1px);
     }
   }
@@ -180,8 +211,8 @@
     flex-direction: column;
   }
   .archive__item-title {
-    font-size: 1.05rem;
-    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    margin: 0 0 0.6rem;
     color: var(--cnet-navy);
     border-bottom: none;     // override the page-h2 rule above for in-card titles
     padding-bottom: 0;
@@ -191,11 +222,34 @@
     }
   }
   .archive__item-excerpt {
-    font-size: 0.92rem;
-    line-height: 1.45;
+    font-size: 0.95rem;
+    line-height: 1.5;
     margin: 0;
     p { margin: 0; }
   }
+}
+
+// In dark mode, in-card titles use celeste (navy on navy is invisible).
+html[data-theme="dark"] {
+  .feature__item .archive__item-title { color: var(--cnet-celeste); }
+  .person-card { background: var(--cnet-surface); border-color: var(--cnet-border); }
+  .person-card__name { color: #fff; }
+  .projects-accordion details { background: var(--cnet-surface); border-color: var(--cnet-border); }
+  .projects-accordion details[open] { background: rgba(255,255,255,0.04); }
+  .projects-accordion summary { color: #fff; }
+  .projects-accordion__meta {
+    background: rgba(255,255,255,0.10);
+    color: var(--cnet-celeste);
+  }
+  .news table th { color: var(--cnet-celeste); }
+  .news table td { color: #fff; a { color: var(--cnet-celeste); } }
+  .affiliations__list li a {
+    background: var(--cnet-surface);
+    color: #fff;
+    border-color: var(--cnet-border);
+    &:hover { background: var(--cnet-celeste); color: var(--cnet-navy-deep); border-color: var(--cnet-celeste); }
+  }
+  .page__content h2 { color: #fff; border-bottom-color: var(--cnet-celeste); }
 }
 
 // =============================================================================
