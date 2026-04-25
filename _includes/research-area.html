@@ -13,19 +13,19 @@
 
 {%- if lang == "en" -%}
   {%- assign axes_label = "Lines of work" -%}
-  {%- assign collab_label = "Featured collaboration" -%}
+  {%- assign collab_label = "Flagship initiative" -%}
   {%- assign projects_label = "Related projects" -%}
   {%- assign papers_label = "Selected publications" -%}
   {%- assign visit_label = "Visit site" -%}
 {%- elsif lang == "fr" -%}
   {%- assign axes_label = "Axes de travail" -%}
-  {%- assign collab_label = "Collaboration en vedette" -%}
+  {%- assign collab_label = "Initiative phare" -%}
   {%- assign projects_label = "Projets associés" -%}
   {%- assign papers_label = "Publications sélectionnées" -%}
   {%- assign visit_label = "Visiter le site" -%}
 {%- else -%}
   {%- assign axes_label = "Líneas de trabajo" -%}
-  {%- assign collab_label = "Colaboración destacada" -%}
+  {%- assign collab_label = "Iniciativa destacada" -%}
   {%- assign projects_label = "Proyectos relacionados" -%}
   {%- assign papers_label = "Publicaciones seleccionadas" -%}
   {%- assign visit_label = "Ir al sitio" -%}
@@ -58,7 +58,7 @@
     <h2 id="collaborations">{{ collab_label }}</h2>
     {%- for c in a.collaborations -%}
       <div class="research-area__collab">
-        <h3 class="research-area__collab-name">{{ c.name }}</h3>
+        <h3 class="research-area__collab-name">{{ c.name[lang] }}</h3>
         <div class="research-area__collab-blurb">{{ c.blurb[lang] | markdownify }}</div>
         {%- if c.links -%}
           <p class="research-area__collab-links">

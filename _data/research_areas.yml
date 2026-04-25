@@ -173,17 +173,15 @@
         en: "IETF contributions — *RFC 9198 (AURA)* on standardising unidirectional measurements — and proposals for **sub-linear EGP routing**."
         fr: "Contributions à l'IETF — *RFC 9198 (AURA)* sur la mesure unidirectionnelle — et propositions de **routage EGP** sous-linéaire."
   collaborations:
-    - name: "Hernán Galperin (USC Annenberg, ex-Universidad de San Andrés)"
+    - name:
+        es: "Primeros IXPs de Bolivia y Paraguay — Internet Society"
+        en: "First IXPs of Bolivia and Paraguay — Internet Society"
+        fr: "Premiers IXP de Bolivie et du Paraguay — Internet Society"
       blurb:
-        es: "Junto al Dr. Galperin trabajamos en el proyecto de la **Internet Society** que dio lugar a los **primeros IXPs de Bolivia y Paraguay**. La colaboración combina mediciones activas de red con un análisis económico y regulatorio del impacto de los IXPs en el acceso a Internet en países en desarrollo."
-        en: "With Dr. Galperin we work on the **Internet Society** project that led to the **first IXPs of Bolivia and Paraguay**. The collaboration combines active network measurement with an economic and regulatory analysis of how IXPs change Internet access in developing countries."
-        fr: "Avec le Dr Galperin, nous travaillons sur le projet de l'**Internet Society** qui a donné naissance aux **premiers IXP de Bolivie et du Paraguay**. La collaboration combine des mesures actives de réseau avec une analyse économique et réglementaire de l'impact des IXP sur l'accès à Internet dans les pays en développement."
+        es: "Contribuimos al diseño, puesta en marcha y medición de los **primeros Internet Exchange Points (IXPs)** nacionales de **Bolivia** y **Paraguay**, en el marco del programa de la **Internet Society**. El trabajo combina mediciones activas de red con un análisis económico y regulatorio del impacto de los IXPs sobre el acceso a Internet en países en desarrollo. Colaboramos con el [Dr. Hernán Galperin](https://annenberg.usc.edu/faculty/hernan-galperin) (USC Annenberg, ex-Universidad de San Andrés)."
+        en: "We contributed to the design, deployment, and measurement of the **first national Internet Exchange Points (IXPs)** of **Bolivia** and **Paraguay**, under the **Internet Society** program. The work combines active network measurement with an economic and regulatory analysis of how IXPs change Internet access in developing countries. In collaboration with [Dr. Hernán Galperin](https://annenberg.usc.edu/faculty/hernan-galperin) (USC Annenberg, formerly Universidad de San Andrés)."
+        fr: "Nous avons contribué à la conception, au déploiement et à la mesure des **premiers Internet Exchange Points (IXP)** nationaux de **Bolivie** et du **Paraguay**, dans le cadre du programme de l'**Internet Society**. Ce travail combine des mesures actives de réseau avec une analyse économique et réglementaire de l'impact des IXP sur l'accès à Internet dans les pays en développement. En collaboration avec le [Dr Hernán Galperin](https://annenberg.usc.edu/faculty/hernan-galperin) (USC Annenberg, anciennement Universidad de San Andrés)."
       links:
-        - label:
-            es: "Perfil USC"
-            en: "USC profile"
-            fr: "Profil USC"
-          url: "https://annenberg.usc.edu/faculty/hernan-galperin"
         - label:
             es: "PIT Paraguay"
             en: "PIT Paraguay"
@@ -194,6 +192,11 @@
             en: "PIT Bolivia (August 2014)"
             fr: "PIT Bolivie (août 2014)"
           url: "https://cnet.fi.uba.ar/PIT/PIT_Bolivia/puertos/Agosto_2014/"
+        - label:
+            es: "Internet Society"
+            en: "Internet Society"
+            fr: "Internet Society"
+          url: "https://www.internetsociety.org/"
   projects:
     - title: "CDNs en el núcleo de Internet (TMA 2018)"
       url: "https://cnet.fi.uba.ar/TMA2018/"
