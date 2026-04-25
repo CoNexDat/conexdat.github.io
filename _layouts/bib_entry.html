@@ -1,0 +1,125 @@
+---
+---
+{%- comment -%}
+  jekyll-scholar entry template (CoNexDat).
+  Adapted from al-folio's _layouts/bib.liquid — keeps the same class names so
+  the SCSS in _sass/_conexdat.scss .publications block hooks in cleanly.
+
+  Author highlighting: any author whose last name (downcased, accents stripped,
+  spaces removed) matches a value in `site.cnet.highlighted_authors` gets
+  wrapped in <em>...</em>.
+{%- endcomment -%}
+<div class="row">
+  <div id="{{ entry.key }}" class="col-sm-12">
+    <div class="title">{{ entry.title }}</div>
+    <div class="author">
+      {%- for author in entry.author_array -%}
+        {%- assign last_clean = author.last
+            | downcase
+            | replace: 'á', 'a' | replace: 'é', 'e' | replace: 'í', 'i'
+            | replace: 'ó', 'o' | replace: 'ú', 'u' | replace: 'ñ', 'n'
+            | replace: 'à', 'a' | replace: 'è', 'e' | replace: 'ì', 'i'
+            | replace: 'ò', 'o' | replace: 'ù', 'u'
+            | replace: 'ä', 'a' | replace: 'ë', 'e' | replace: 'ï', 'i'
+            | replace: 'ö', 'o' | replace: 'ü', 'u'
+            | replace: 'ç', 'c'
+            | replace: ' ', ''
+            | strip -%}
+        {%- assign is_highlighted = false -%}
+        {%- for h in site.cnet.highlighted_authors -%}
+          {%- if last_clean == h -%}{%- assign is_highlighted = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- unless forloop.first -%}
+          {%- if forloop.length == 2 %} and {% elsif forloop.last %}, and {% else %}, {% endif -%}
+        {%- endunless -%}
+        {%- if is_highlighted -%}
+          <em>{{ author.first }} {{ author.last }}</em>
+        {%- else -%}
+          {{ author.first }} {{ author.last }}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- assign proceedings = 'inproceedings,incollection' | split: ',' -%}
+    {%- assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' -%}
+    {%- if entry.type == 'article' -%}
+      {%- capture entrytype -%}<em>{{ entry.journal }}</em>{%- endcapture -%}
+    {%- elsif proceedings contains entry.type -%}
+      {%- capture entrytype -%}<em>In {{ entry.booktitle }}</em>{%- endcapture -%}
+    {%- elsif thesis contains entry.type -%}
+      {%- capture entrytype -%}<em>{{ entry.school }}</em>{%- endcapture -%}
+    {%- elsif entry.howpublished -%}
+      {%- capture entrytype -%}<em>{{ entry.howpublished }}</em>{%- endcapture -%}
+    {%- else -%}
+      {%- capture entrytype -%}{%- endcapture -%}
+    {%- endif -%}
+    {%- assign entrymonth = '' -%}
+    {%- if entry.month -%}
+      {%- capture entrymonth %} {{ entry.month | capitalize }}{%- endcapture -%}
+    {%- endif -%}
+    {%- assign entryyear = '' -%}
+    {%- if entry.year -%}
+      {%- capture entryyear %} {{ entry.year }}{%- endcapture -%}
+    {%- endif -%}
+    {%- assign entrytype_text = entrytype | strip_html | strip -%}
+    {%- capture periodical -%}{{ entrytype }}{%- if entrytype_text != "" and entryyear != "" -%}, {%- endif -%}{{ entrymonth }}{{ entryyear }}{%- endcapture -%}
+    <div class="periodical">{{ periodical | strip }}</div>
+
+    <div class="links">
+      {%- if entry.abstract -%}
+        <a class="abstract btn btn-sm" role="button">Abs</a>
+      {%- endif -%}
+      {%- if entry.doi -%}
+        {%- assign doi_clean = entry.doi | replace: 'https://doi.org/', '' | replace: 'http://dx.doi.org/', '' -%}
+        <a href="https://doi.org/{{ doi_clean }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">DOI</a>
+      {%- endif -%}
+      {%- if entry.eprint and entry.archiveprefix == 'arXiv' -%}
+        <a href="https://arxiv.org/abs/{{ entry.eprint }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">arXiv</a>
+      {%- elsif entry.arxiv -%}
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">arXiv</a>
+      {%- endif -%}
+      {%- if entry.pdf -%}
+        {%- if entry.pdf contains '://' -%}
+          <a href="{{ entry.pdf }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">PDF</a>
+        {%- else -%}
+          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">PDF</a>
+        {%- endif -%}
+      {%- endif -%}
+      {%- if entry.html -%}
+        <a href="{{ entry.html }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">HTML</a>
+      {%- elsif entry.url and entry.pdf == nil -%}
+        <a href="{{ entry.url }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">URL</a>
+      {%- endif -%}
+      {%- if entry.code -%}
+        <a href="{{ entry.code }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">Code</a>
+      {%- endif -%}
+      {%- if entry.slides -%}
+        {%- if entry.slides contains '://' -%}
+          <a href="{{ entry.slides }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">Slides</a>
+        {%- else -%}
+          <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">Slides</a>
+        {%- endif -%}
+      {%- endif -%}
+      {%- if entry.poster -%}
+        {%- if entry.poster contains '://' -%}
+          <a href="{{ entry.poster }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">Poster</a>
+        {%- else -%}
+          <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">Poster</a>
+        {%- endif -%}
+      {%- endif -%}
+      {%- if entry.website -%}
+        <a href="{{ entry.website }}" class="btn btn-sm" role="button" target="_blank" rel="noopener">Website</a>
+      {%- endif -%}
+      {%- if entry.bibtex_show -%}
+        <a class="bibtex btn btn-sm" role="button">Bib</a>
+      {%- endif -%}
+    </div>
+
+    {%- if entry.abstract -%}
+      <div class="abstract hidden"><p>{{ entry.abstract }}</p></div>
+    {%- endif -%}
+    {%- if entry.bibtex_show -%}
+      <div class="bibtex hidden"><pre>{{ entry.bibtex }}</pre></div>
+    {%- endif -%}
+  </div>
+</div>

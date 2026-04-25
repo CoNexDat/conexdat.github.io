@@ -381,6 +381,166 @@ html[data-theme="dark"] {
   }
 }
 
+// ---- Publications (al-folio-style entry cards via jekyll-scholar) ----------
+// Markup is emitted by _layouts/bib_entry.html. Each entry is a <div class="row">
+// with .title, .author (optionally containing <em> for highlighted authors),
+// .periodical, .links (button row), and optional .abstract.hidden / .bibtex.hidden
+// blocks toggled by assets/js/publications.js.
+.publications {
+  margin: 1rem 0 2rem;
+
+  // jekyll-scholar wraps the list in <ol class="bibliography"> with default
+  // browser numbering / padding — strip both so each entry is its own card.
+  ol.bibliography {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+      margin: 0 0 0.65rem;
+      padding: 0;
+      &::marker { content: ''; }
+    }
+  }
+
+  // jekyll-scholar emits an <a class="details"> link to the auto-generated
+  // detail page after each entry. Tone it down so it sits quietly beneath the
+  // button row instead of competing with it.
+  .details {
+    display: inline-block;
+    margin-top: 0.35rem;
+    margin-left: 0.85rem;
+    font-size: 0.78rem;
+    color: var(--global-text-color-light);
+    text-decoration: none;
+    &:hover { color: var(--cnet-link); text-decoration: underline; }
+  }
+
+  > .row {
+    display: block;
+    padding: 0.85rem 1rem;
+    margin: 0 0 0.65rem;
+    border: 1px solid var(--cnet-border);
+    border-radius: 6px;
+    background: var(--cnet-surface);
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      border-color: var(--cnet-celeste);
+      box-shadow: 0 4px 14px rgba(0, 57, 117, 0.18);
+      transform: translateY(-1px);
+    }
+  }
+
+  .title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--cnet-navy);
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+
+  .author {
+    font-size: 0.92rem;
+    line-height: 1.4;
+    color: var(--global-text-color);
+    margin-bottom: 0.2rem;
+
+    em {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--cnet-navy);
+    }
+  }
+
+  .periodical {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: var(--global-text-color-light);
+    margin-bottom: 0.5rem;
+
+    em { font-style: italic; }
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+
+    .btn,
+    .btn-sm {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      line-height: 1.35;
+      border: 1px solid var(--cnet-navy);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--cnet-navy);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+      &:hover, &:focus {
+        background: var(--cnet-navy);
+        color: #fff;
+        border-color: var(--cnet-navy);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .abstract.hidden,
+  .bibtex.hidden {
+    display: none;
+    margin-top: 0.6rem;
+    padding: 0.6rem 0.85rem;
+    background: rgba(116, 172, 223, 0.10);   // very light celeste tint
+    border-left: 3px solid var(--cnet-celeste);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    p { margin: 0; }
+    pre {
+      margin: 0;
+      font-size: 0.78rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    &.open { display: block; }
+  }
+}
+
+// Dark-mode tweaks for the publications block
+html[data-theme="dark"] {
+  .publications > .row {
+    background: var(--cnet-surface);     // navy in dark mode
+    border-color: var(--cnet-border);
+  }
+  .publications .title { color: #fff; }
+  .publications .author { color: #fff; }
+  .publications .author em { color: var(--cnet-celeste); }
+  .publications .periodical { color: var(--cnet-celeste); }
+  .publications .links .btn {
+    border-color: var(--cnet-celeste);
+    color: var(--cnet-celeste);
+    &:hover, &:focus {
+      background: var(--cnet-celeste);
+      color: var(--cnet-navy-deep);
+      border-color: var(--cnet-celeste);
+    }
+  }
+  .publications .abstract.hidden,
+  .publications .bibtex.hidden {
+    background: rgba(116, 172, 223, 0.12);
+    color: #fff;
+  }
+}
+
 // ---- Projects accordion -----------------------------------------------------
 .projects-accordion {
   margin: 1rem 0 2rem;
