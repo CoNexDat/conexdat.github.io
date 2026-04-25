@@ -462,27 +462,33 @@ html[data-theme="dark"] {
     gap: 0.55rem;
     margin-top: 0.55rem;
 
+    // academicpages' base .btn ships with `color: #fff !important` and
+    // `border: 0 !important` — we have to match that force or buttons render
+    // as white-on-white.
     .btn,
     .btn-sm {
       display: inline-block;
-      padding: 0.2rem 0.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      line-height: 1.35;
-      border: 1.5px solid var(--cnet-navy);
-      border-radius: 4px;
-      background: #fff;                       // solid white — stands out on the light-tinted card surface
-      color: var(--cnet-navy);
-      text-decoration: none !important;       // beat academicpages' a underline
+      margin-bottom: 0;
+      padding: 0.2rem 0.75rem !important;
+      font-size: 0.78rem !important;
+      font-weight: 600 !important;
+      line-height: 1.35 !important;
+      border: 1.5px solid var(--cnet-navy) !important;
+      border-radius: 4px !important;
+      background: #fff !important;
+      background-color: #fff !important;
+      color: var(--cnet-navy) !important;
+      text-decoration: none !important;
       cursor: pointer;
       box-shadow: 0 1px 0 rgba(0, 57, 117, 0.06);
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 
-      &:visited { color: var(--cnet-navy); }
+      &:visited { color: var(--cnet-navy) !important; }
       &:hover, &:focus, &:active {
-        background: var(--cnet-navy);
-        color: #fff;
-        border-color: var(--cnet-navy);
+        background: var(--cnet-navy) !important;
+        background-color: var(--cnet-navy) !important;
+        color: #fff !important;
+        border-color: var(--cnet-navy) !important;
         text-decoration: none !important;
         box-shadow: 0 2px 6px rgba(0, 57, 117, 0.25);
       }
@@ -526,15 +532,17 @@ html[data-theme="dark"] {
   }
   .publications .periodical { color: var(--cnet-celeste); }
   .publications .links .btn {
-    background: var(--cnet-navy-deep);          // darker than the navy card surface — buttons pop
-    border-color: var(--cnet-celeste);
-    color: var(--cnet-celeste);
+    background: var(--cnet-navy-deep) !important;
+    background-color: var(--cnet-navy-deep) !important;
+    border-color: var(--cnet-celeste) !important;
+    color: var(--cnet-celeste) !important;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-    &:visited { color: var(--cnet-celeste); }
+    &:visited { color: var(--cnet-celeste) !important; }
     &:hover, &:focus, &:active {
-      background: var(--cnet-celeste);
-      color: var(--cnet-navy-deep);
-      border-color: var(--cnet-celeste);
+      background: var(--cnet-celeste) !important;
+      background-color: var(--cnet-celeste) !important;
+      color: var(--cnet-navy-deep) !important;
+      border-color: var(--cnet-celeste) !important;
       box-shadow: 0 2px 8px rgba(116, 172, 223, 0.35);
     }
   }
