@@ -12,16 +12,19 @@
 {%- assign lang = page.lang -%}
 
 {%- if lang == "en" -%}
+  {%- assign axes_label = "Lines of work" -%}
   {%- assign collab_label = "Featured collaboration" -%}
   {%- assign projects_label = "Related projects" -%}
   {%- assign papers_label = "Selected publications" -%}
   {%- assign visit_label = "Visit site" -%}
 {%- elsif lang == "fr" -%}
+  {%- assign axes_label = "Axes de travail" -%}
   {%- assign collab_label = "Collaboration en vedette" -%}
   {%- assign projects_label = "Projets associés" -%}
   {%- assign papers_label = "Publications sélectionnées" -%}
   {%- assign visit_label = "Visiter le site" -%}
 {%- else -%}
+  {%- assign axes_label = "Líneas de trabajo" -%}
   {%- assign collab_label = "Colaboración destacada" -%}
   {%- assign projects_label = "Proyectos relacionados" -%}
   {%- assign papers_label = "Publicaciones seleccionadas" -%}
@@ -32,9 +35,24 @@
 
   <p class="research-area__excerpt">{{ a.excerpt[lang] | markdownify | remove: '<p>' | remove: '</p>' }}</p>
 
-  <div class="research-area__body">
-    {{ a.body[lang] | markdownify }}
-  </div>
+  {%- if a.axes -%}
+    <h2 id="axes">{{ axes_label }}</h2>
+    <div class="feature__wrapper">
+      {%- for ax in a.axes -%}
+        <div class="feature__item">
+          <div class="archive__item">
+            <div class="archive__item-body">
+              <h3 class="archive__item-title">
+                {%- if ax.icon -%}<i class="{{ ax.icon }}"></i> {% endif -%}
+                {{ ax.title[lang] }}
+              </h3>
+              <div class="archive__item-excerpt">{{ ax.blurb[lang] | markdownify }}</div>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
 
   {%- if a.collaborations -%}
     <h2 id="collaborations">{{ collab_label }}</h2>

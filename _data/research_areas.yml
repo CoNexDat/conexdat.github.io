@@ -16,47 +16,34 @@
     es: "Estudiamos redes complejas con métodos como descomposición en *k-núcleos* y detección de comunidades. Aplicamos teoría de grafos y modelos de propagación a redes biológicas, sociales y tecnológicas."
     en: "We study complex networks via *k-core* decomposition and community detection. Graph theory and propagation models applied to biological, social and technological networks."
     fr: "Étude des réseaux complexes par décomposition en *k-cœurs* et détection de communautés. Théorie des graphes et modèles de propagation appliqués aux réseaux biologiques, sociaux et technologiques."
-  body:
-    es: |
-      Investigamos la estructura y la dinámica de las **redes complejas**
-      desde una perspectiva matemática y experimental. Nuestras
-      contribuciones se concentran en tres frentes:
-
-      - **Descomposición en *k-núcleos*** como herramienta para revelar
-        jerarquías y para visualizar redes muy grandes — base teórica del
-        software [LaNet-vi](http://lanet-vi.fi.uba.ar/).
-      - **Detección de comunidades** mediante procesos de crecimiento
-        local con función de adecuación dinámica, para superar los
-        límites de resolución de la modularidad global.
-      - Aplicaciones a **ecosistemas mutualistas** (redes
-        plantas–polinizadores) y a otros sistemas físicos como los
-        **gases granulares**.
-    en: |
-      We study the structure and dynamics of **complex networks** from
-      both a mathematical and an experimental angle. Our contributions
-      cluster around three lines of work:
-
-      - **k-core decomposition** as a tool to reveal hierarchies and to
-        visualise very large networks — the theoretical backbone of the
-        [LaNet-vi](http://lanet-vi.fi.uba.ar/) software.
-      - **Community detection** via local fitness-growth processes, to
-        bypass the resolution limits of global modularity.
-      - Applications to **mutualistic ecosystems** (plant–pollinator
-        networks) and to physical systems such as **granular gases**.
-    fr: |
-      Nous étudions la structure et la dynamique des **réseaux complexes**
-      à la fois sous un angle mathématique et expérimental. Nos
-      contributions se concentrent sur trois axes :
-
-      - **décomposition en *k-cœurs*** comme outil pour révéler les
-        hiérarchies et visualiser les très grands réseaux — fondement
-        théorique du logiciel [LaNet-vi](http://lanet-vi.fi.uba.ar/) ;
-      - **détection de communautés** par processus de croissance local
-        à fonction de pertinence dynamique, pour dépasser les limites
-        de résolution de la modularité globale ;
-      - applications aux **écosystèmes mutualistes** (réseaux
-        plantes–pollinisateurs) et à des systèmes physiques comme les
-        **gaz granulaires**.
+  axes:
+    - icon: "fas fa-layer-group"
+      title:
+        es: "Descomposición en k-núcleos"
+        en: "k-core decomposition"
+        fr: "Décomposition en k-cœurs"
+      blurb:
+        es: "Herramienta para revelar jerarquías y visualizar redes muy grandes — base teórica del software [LaNet-vi](http://lanet-vi.fi.uba.ar/)."
+        en: "Reveals hierarchies and scales to very large networks — the theoretical backbone of the [LaNet-vi](http://lanet-vi.fi.uba.ar/) software."
+        fr: "Révèle les hiérarchies et passe à l'échelle pour les très grands réseaux — fondement théorique du logiciel [LaNet-vi](http://lanet-vi.fi.uba.ar/)."
+    - icon: "fas fa-circle-nodes"
+      title:
+        es: "Detección de comunidades"
+        en: "Community detection"
+        fr: "Détection de communautés"
+      blurb:
+        es: "Procesos de crecimiento local con función de adecuación dinámica, que superan los límites de resolución de la modularidad global."
+        en: "Local fitness-growth processes that bypass the resolution limits of global modularity."
+        fr: "Processus de croissance local à fonction de pertinence dynamique qui dépassent la limite de résolution de la modularité globale."
+    - icon: "fas fa-seedling"
+      title:
+        es: "Sistemas biológicos y físicos"
+        en: "Biological and physical systems"
+        fr: "Systèmes biologiques et physiques"
+      blurb:
+        es: "Ecosistemas mutualistas (plantas–polinizadores) y sistemas físicos como los gases granulares."
+        en: "Mutualistic ecosystems (plant–pollinator networks) and physical systems such as granular gases."
+        fr: "Écosystèmes mutualistes (plantes–pollinisateurs) et systèmes physiques comme les gaz granulaires."
   projects:
     - title: "LaNet-vi"
       url: "http://lanet-vi.fi.uba.ar/"
@@ -90,51 +77,34 @@
     es: "Análisis a gran escala de trazas de Twitter, datos electorales y registros móviles (CDR). Inferimos movilidad humana, demanda de contenidos y dinámica de comunidades online."
     en: "Large-scale analysis of Twitter traces, electoral data, and Call Detail Records (CDR). We infer human mobility, content demand, and online community dynamics."
     fr: "Analyse à grande échelle de traces Twitter, de données électorales et de registres mobiles (CDR). Inférence de la mobilité humaine, de la demande de contenu et de la dynamique des communautés en ligne."
-  body:
-    es: |
-      Combinamos teoría de redes complejas con técnicas de aprendizaje
-      automático para extraer estructura y significado de huellas
-      digitales masivas:
-
-      - **Redes políticas en Twitter** durante las elecciones argentinas
-        de 2015 y 2019 — detectamos la formación dinámica de opiniones a
-        partir de la estructura comunitaria de las redes semánticas de
-        hashtags.
-      - **Movilidad humana** a partir de registros de telefonía móvil
-        (CDR) y de redes sociales geolocalizadas; estudio de la
-        regularidad y la estratificación socioeconómica.
-      - **Sesgo, equidad y valores** en plataformas digitales —
-        predicción de atributos demográficos, fundamentos morales y
-        actitudes (p. ej. hacia la vacunación) a partir del comportamiento
-        online.
-    en: |
-      We combine complex-network theory with machine-learning techniques
-      to extract structure and meaning from massive digital footprints:
-
-      - **Political networks on Twitter** during the 2015 and 2019
-        Argentinian elections — we detect the dynamic formation of
-        opinion via the community structure of hashtag semantic networks.
-      - **Human mobility** from Call Detail Records (CDR) and
-        geolocated social-media data; regularity and socio-economic
-        stratification.
-      - **Bias, fairness and values** in digital platforms — predicting
-        demographics, moral foundations, and attitudes (e.g. towards
-        vaccination) from online behaviour.
-    fr: |
-      Nous combinons la théorie des réseaux complexes avec des
-      techniques d'apprentissage automatique pour extraire structure et
-      sens des empreintes numériques massives :
-
-      - **réseaux politiques sur Twitter** lors des élections
-        argentines de 2015 et 2019 — détection dynamique de l'opinion
-        via la structure communautaire des réseaux sémantiques de
-        hashtags ;
-      - **mobilité humaine** à partir des registres mobiles (CDR) et
-        des réseaux sociaux géolocalisés — régularité et
-        stratification socio-économique ;
-      - **biais, équité et valeurs** sur les plateformes numériques —
-        prédiction de données démographiques, fondements moraux et
-        attitudes (vaccination, etc.) à partir du comportement en ligne.
+  axes:
+    - icon: "fab fa-twitter"
+      title:
+        es: "Política en Twitter"
+        en: "Politics on Twitter"
+        fr: "Politique sur Twitter"
+      blurb:
+        es: "Redes semánticas de hashtags durante las elecciones argentinas de 2015 y 2019; formación dinámica de opinión a partir de la estructura comunitaria."
+        en: "Hashtag semantic networks during the 2015 and 2019 Argentinian elections; dynamic opinion formation from community structure."
+        fr: "Réseaux sémantiques de hashtags lors des élections argentines de 2015 et 2019 ; formation dynamique de l'opinion à partir de la structure communautaire."
+    - icon: "fas fa-map-marked-alt"
+      title:
+        es: "Movilidad humana"
+        en: "Human mobility"
+        fr: "Mobilité humaine"
+      blurb:
+        es: "Registros de telefonía móvil (CDR) y redes sociales geolocalizadas; regularidad y estratificación socioeconómica."
+        en: "Call Detail Records (CDR) and geolocated social-media data; regularity and socio-economic stratification."
+        fr: "Registres mobiles (CDR) et réseaux sociaux géolocalisés ; régularité et stratification socio-économique."
+    - icon: "fas fa-balance-scale"
+      title:
+        es: "Sesgo, equidad y valores"
+        en: "Bias, fairness, and values"
+        fr: "Biais, équité et valeurs"
+      blurb:
+        es: "Predicción de demografía, fundamentos morales y actitudes (p. ej. hacia la vacunación) a partir del comportamiento en línea."
+        en: "Predicting demographics, moral foundations, and attitudes (e.g. towards vaccination) from online behaviour."
+        fr: "Prédiction de la démographie, des fondements moraux et des attitudes (vaccination, etc.) à partir du comportement en ligne."
   projects:
     - title: "Twitter — Elecciones 2019"
       url: "http://elecciones2019.fi.uba.ar"
@@ -165,65 +135,43 @@
     es: "Tomografía de Internet y modelado de su topología (BGP, IXPs, AS-level). Diseñamos protocolos de ruteo cuyas tablas crecen sub-linealmente con el tamaño de la red."
     en: "Internet tomography and topology modelling (BGP, IXPs, AS-level). We design routing protocols whose tables grow sub-linearly with network size."
     fr: "Tomographie d'Internet et modélisation de sa topologie (BGP, IXP, niveau AS). Conception de protocoles de routage dont les tables croissent sous-linéairement avec la taille du réseau."
-  body:
-    es: |
-      Estudiamos la estructura de Internet desde tres ángulos
-      complementarios:
-
-      - **Tomografía** activa y pasiva — exploración topológica con
-        sondas tipo *traceroute*, análisis del sesgo de las mediciones
-        y descubrimiento de túneles MPLS ocultos.
-      - **Topología a nivel AS** y **BGP** — modelado del grafo de
-        sistemas autónomos, descomposición en *k-núcleos* del Internet
-        y seguimiento de los proveedores de contenido (CDN) en el
-        núcleo de la red.
-      - **Internet Exchange Points (IXPs)** en América Latina,
-        especialmente en países en vías de desarrollo, donde la
-        creación de IXPs cambia drásticamente la calidad de servicio y
-        la economía del tráfico.
-
-      También proponemos protocolos de **ruteo EGP** cuyas tablas
-      crecen de manera sub-lineal con el tamaño de la red, y
-      participamos del IETF (RFC 9198 — *AURA*) para estandarizar
-      mediciones unidireccionales.
-    en: |
-      We study Internet structure from three complementary angles:
-
-      - **Tomography**, both active and passive — topological
-        exploration via *traceroute*-like probes, analysis of
-        measurement bias, and discovery of hidden MPLS tunnels.
-      - **AS-level topology** and **BGP** — modelling the
-        autonomous-system graph, *k-core* decomposition of the
-        Internet, and tracking the rise of content providers (CDNs)
-        in the network core.
-      - **Internet Exchange Points (IXPs)** in Latin America, with a
-        special focus on developing countries where IXP deployment
-        radically changes Quality of Service and traffic economics.
-
-      We also propose **EGP routing** protocols whose tables grow
-      sub-linearly with network size, and contribute at the IETF
-      (RFC 9198 — *AURA*) on standardising unidirectional
-      measurements.
-    fr: |
-      Nous étudions la structure d'Internet sous trois angles
-      complémentaires :
-
-      - **tomographie** active et passive — exploration topologique
-        par sondes *traceroute*, analyse du biais de mesure et
-        découverte des tunnels MPLS cachés ;
-      - **topologie au niveau AS** et **BGP** — modélisation du
-        graphe des systèmes autonomes, décomposition en *k-cœurs*
-        d'Internet et suivi de la montée des fournisseurs de contenu
-        (CDN) au cœur du réseau ;
-      - **Internet Exchange Points (IXP)** en Amérique latine, avec
-        un focus sur les pays en développement, où le déploiement
-        d'un IXP modifie radicalement la qualité de service et
-        l'économie du trafic.
-
-      Nous proposons aussi des protocoles de **routage EGP** dont
-      les tables croissent sous-linéairement avec la taille du
-      réseau, et contribuons à l'IETF (RFC 9198 — *AURA*) sur la
-      mesure unidirectionnelle.
+  axes:
+    - icon: "fas fa-route"
+      title:
+        es: "Tomografía"
+        en: "Tomography"
+        fr: "Tomographie"
+      blurb:
+        es: "Sondas tipo *traceroute*, análisis del sesgo de medición y descubrimiento de túneles MPLS ocultos."
+        en: "*traceroute*-like probes, analysis of measurement bias, and discovery of hidden MPLS tunnels."
+        fr: "Sondes type *traceroute*, analyse du biais de mesure et découverte des tunnels MPLS cachés."
+    - icon: "fas fa-sitemap"
+      title:
+        es: "Topología AS y BGP"
+        en: "AS-level topology and BGP"
+        fr: "Topologie AS et BGP"
+      blurb:
+        es: "Modelado del grafo de sistemas autónomos, descomposición en *k-núcleos* del Internet y seguimiento de los CDN en el núcleo de la red."
+        en: "Modelling the autonomous-system graph, *k-core* decomposition of the Internet, and tracking CDNs in the network core."
+        fr: "Modélisation du graphe des systèmes autonomes, décomposition en *k-cœurs* d'Internet et suivi des CDN au cœur du réseau."
+    - icon: "fas fa-globe-americas"
+      title:
+        es: "IXPs en América Latina"
+        en: "Latin American IXPs"
+        fr: "IXP en Amérique latine"
+      blurb:
+        es: "Despliegue de IXPs en países en desarrollo y su impacto sobre la calidad de servicio y la economía del tráfico."
+        en: "IXP deployment in developing countries and its impact on Quality of Service and traffic economics."
+        fr: "Déploiement d'IXP dans les pays en développement et son impact sur la qualité de service et l'économie du trafic."
+    - icon: "fas fa-cogs"
+      title:
+        es: "Estándares (IETF)"
+        en: "Standards (IETF)"
+        fr: "Normes (IETF)"
+      blurb:
+        es: "Contribuciones al IETF — *RFC 9198 (AURA)* para estandarizar mediciones unidireccionales — y propuestas de **ruteo EGP** sub-lineal."
+        en: "IETF contributions — *RFC 9198 (AURA)* on standardising unidirectional measurements — and proposals for **sub-linear EGP routing**."
+        fr: "Contributions à l'IETF — *RFC 9198 (AURA)* sur la mesure unidirectionnelle — et propositions de **routage EGP** sous-linéaire."
   collaborations:
     - name: "Hernán Galperin (USC Annenberg, ex-Universidad de San Andrés)"
       blurb:
@@ -277,43 +225,34 @@
     es: "Caracterización estadística *autosimilar* del tráfico residencial. Mediciones continuas de baja carga para evaluar QoS y detectar tráfico de IXPs y CDNs."
     en: "Statistical *self-similar* characterization of residential traffic. Continuous low-load probing for QoS assessment and IXP/CDN traffic detection."
     fr: "Caractérisation statistique *auto-similaire* du trafic résidentiel. Sondages continus à faible charge pour l'évaluation de la QoS et la détection du trafic IXP/CDN."
-  body:
-    es: |
-      Caracterizamos el tráfico de red — y la calidad del servicio que
-      este recibe — desde una óptica estadística:
-
-      - **Autosimilitud y dependencias de largo alcance** en el tráfico
-        residencial, y su impacto sobre la pérdida de paquetes.
-      - **QoS domiciliaria** medida con sondas continuas de muy baja
-        carga del canal, integradas a un mapa anotado con QoS y
-        túneles MPLS.
-      - **Modelos de RTT y latencia** que capturan la influencia
-        estocástica del tráfico cruzado, incluso en presencia de
-        IXPs y CDNs.
-    en: |
-      We characterise network traffic — and the quality of service it
-      experiences — from a statistical viewpoint:
-
-      - **Self-similarity and long-range dependence** in residential
-        traffic, and its impact on packet loss.
-      - **Residential-access QoS** measured via continuous, very
-        low-load probes, integrated into a map annotated with QoS and
-        MPLS tunnels.
-      - **RTT and latency models** that capture the stochastic
-        influence of cross traffic, even in the presence of IXPs
-        and CDNs.
-    fr: |
-      Nous caractérisons le trafic réseau — et la qualité de service
-      qu'il subit — d'un point de vue statistique :
-
-      - **auto-similarité et dépendances à longue portée** dans le
-        trafic résidentiel, et leur impact sur la perte de paquets ;
-      - **QoS résidentielle** mesurée par sondages continus à très
-        faible charge, intégrée à une carte annotée avec QoS et
-        tunnels MPLS ;
-      - **modèles de RTT et de latence** capturant l'influence
-        stochastique du trafic concurrent, même en présence d'IXP
-        et de CDN.
+  axes:
+    - icon: "fas fa-wave-square"
+      title:
+        es: "Autosimilitud y largo alcance"
+        en: "Self-similarity and long-range dependence"
+        fr: "Auto-similarité et longue portée"
+      blurb:
+        es: "Tráfico residencial como proceso autosimilar; impacto sobre la pérdida de paquetes."
+        en: "Residential traffic as a self-similar process; impact on packet loss."
+        fr: "Trafic résidentiel comme processus auto-similaire ; impact sur la perte de paquets."
+    - icon: "fas fa-tachometer-alt"
+      title:
+        es: "QoS domiciliaria"
+        en: "Residential-access QoS"
+        fr: "QoS résidentielle"
+      blurb:
+        es: "Sondas continuas de muy baja carga, integradas a un mapa anotado con QoS y túneles MPLS."
+        en: "Continuous, very low-load probes integrated into a map annotated with QoS and MPLS tunnels."
+        fr: "Sondages continus à très faible charge, intégrés à une carte annotée avec QoS et tunnels MPLS."
+    - icon: "fas fa-stopwatch"
+      title:
+        es: "Modelos de RTT y latencia"
+        en: "RTT and latency models"
+        fr: "Modèles de RTT et de latence"
+      blurb:
+        es: "Influencia estocástica del tráfico cruzado, incluso en presencia de IXPs y CDNs."
+        en: "Stochastic influence of cross traffic, even in the presence of IXPs and CDNs."
+        fr: "Influence stochastique du trafic concurrent, même en présence d'IXP et de CDN."
   projects:
     - title: "TiX — Traffic information eXchange"
       url: "https://cnet.fi.uba.ar/TiX/"
@@ -342,41 +281,34 @@
     es: "Protocolos de ruteo para redes inalámbricas sin infraestructura. Desarrollamos *ANTop* (algoritmo bio-inspirado) y lo evaluamos sobre el simulador QUENAS."
     en: "Routing protocols for infrastructure-less wireless networks. We developed *ANTop* (bio-inspired algorithm) and evaluated it on the QUENAS simulator."
     fr: "Protocoles de routage pour réseaux sans-fil sans infrastructure. Nous avons développé *ANTop* (algorithme bio-inspiré) et l'avons évalué sur le simulateur QUENAS."
-  body:
-    es: |
-      Diseñamos y evaluamos protocolos para redes que no disponen de
-      infraestructura fija:
-
-      - **ANTop**, algoritmo bio-inspirado de ruteo ad-hoc, simulado
-        sobre el entorno **QUENAS**.
-      - **Multicast con QoS** — árboles de congestión mínima, soporte
-        de QoS y planificación distribuida (M*λ*T y antecesores).
-      - Aplicaciones modernas a **RPL en redes inalámbricas** y a
-        **rigidez en redes multi-robot** (control basado en
-        sub-marcos).
-    en: |
-      We design and evaluate protocols for infrastructure-less
-      networks:
-
-      - **ANTop**, a bio-inspired ad-hoc routing algorithm, simulated
-        on the **QUENAS** environment.
-      - **QoS-aware multicast** — minimum-congestion trees, QoS
-        support, and distributed scheduling (M*λ*T and ancestors).
-      - Modern applications to **RPL wireless networks** and to
-        **rigidity control in multi-robot networks** (sub-framework
-        based control).
-    fr: |
-      Nous concevons et évaluons des protocoles pour réseaux sans
-      infrastructure fixe :
-
-      - **ANTop**, algorithme de routage ad-hoc bio-inspiré, simulé
-        sur l'environnement **QUENAS** ;
-      - **multicast avec QoS** — arbres de congestion minimale,
-        support QoS et ordonnancement distribué (M*λ*T et
-        prédécesseurs) ;
-      - applications modernes aux **réseaux sans-fil RPL** et au
-        **contrôle de rigidité dans les réseaux multi-robots**
-        (commande par sous-cadres).
+  axes:
+    - icon: "fas fa-bug"
+      title:
+        es: "ANTop (bio-inspirado)"
+        en: "ANTop (bio-inspired)"
+        fr: "ANTop (bio-inspiré)"
+      blurb:
+        es: "Algoritmo de ruteo ad-hoc inspirado en colonias de hormigas, simulado sobre el entorno **QUENAS**."
+        en: "Ant-colony-inspired ad-hoc routing algorithm, simulated on the **QUENAS** environment."
+        fr: "Algorithme de routage ad-hoc inspiré des colonies de fourmis, simulé sur l'environnement **QUENAS**."
+    - icon: "fas fa-broadcast-tower"
+      title:
+        es: "Multicast con QoS"
+        en: "QoS-aware multicast"
+        fr: "Multicast avec QoS"
+      blurb:
+        es: "Árboles de congestión mínima, soporte de QoS y planificación distribuida (M*λ*T y antecesores)."
+        en: "Minimum-congestion trees, QoS support, and distributed scheduling (M*λ*T and ancestors)."
+        fr: "Arbres de congestion minimale, support QoS et ordonnancement distribué (M*λ*T et prédécesseurs)."
+    - icon: "fas fa-robot"
+      title:
+        es: "Aplicaciones modernas"
+        en: "Modern applications"
+        fr: "Applications modernes"
+      blurb:
+        es: "**RPL** en redes inalámbricas y **rigidez en redes multi-robot** mediante control basado en sub-marcos."
+        en: "**RPL** wireless networks and **rigidity control in multi-robot networks** via sub-framework based control."
+        fr: "**RPL** sans-fil et **contrôle de rigidité multi-robots** par commande à sous-cadres."
   projects:
     - title: "ANTop / QUENAS"
       url: "https://cnet.fi.uba.ar/PaD/"
