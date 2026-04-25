@@ -252,8 +252,31 @@ html[data-theme="dark"] {
   }
 }
 
+// ---- Research-area collaboration subsection ------------------------------
+// Featured collaborators (e.g. Galperin on the Internet area) read as a
+// flowing subsection: heading + paragraph + button row — not a card.
+.research-area__collab {
+  margin: 1rem 0 2rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--cnet-celeste);
+}
+.research-area__collab-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cnet-navy);
+  margin: 0 0 0.4rem;
+}
+.research-area__collab-blurb p:last-child { margin-bottom: 0.8rem; }
+.research-area__collab-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.8rem 0 0;
+}
+
 // In dark mode, in-card titles use celeste (navy on navy is invisible).
 html[data-theme="dark"] {
+  .research-area__collab-name { color: #fff; }
   .feature__item .archive__item-title { color: var(--cnet-celeste); }
   .person-card { background: var(--cnet-surface); border-color: var(--cnet-border); }
   .person-card__name { color: #fff; }

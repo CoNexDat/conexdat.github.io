@@ -56,21 +56,19 @@
 
   {%- if a.collaborations -%}
     <h2 id="collaborations">{{ collab_label }}</h2>
-    <div class="feature__wrapper">
-      {%- for c in a.collaborations -%}
-        <div class="feature__item">
-          <div class="archive__item">
-            <div class="archive__item-body">
-              <h3 class="archive__item-title">{{ c.name }}</h3>
-              <div class="archive__item-excerpt">{{ c.blurb[lang] | markdownify }}</div>
-              {%- if c.url and c.url != "" -%}
-                <p><a class="btn btn--info" href="{{ c.url }}" target="_blank" rel="noopener">{{ c.btn_label[lang] | default: visit_label }} &raquo;</a></p>
-              {%- endif -%}
-            </div>
-          </div>
-        </div>
-      {%- endfor -%}
-    </div>
+    {%- for c in a.collaborations -%}
+      <div class="research-area__collab">
+        <h3 class="research-area__collab-name">{{ c.name }}</h3>
+        <div class="research-area__collab-blurb">{{ c.blurb[lang] | markdownify }}</div>
+        {%- if c.links -%}
+          <p class="research-area__collab-links">
+            {%- for link in c.links -%}
+              <a class="btn btn--info" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label[lang] }} &raquo;</a>
+            {%- endfor -%}
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
   {%- endif -%}
 
   {%- if a.projects -%}

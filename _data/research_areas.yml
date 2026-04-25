@@ -175,14 +175,25 @@
   collaborations:
     - name: "Hernán Galperin (USC Annenberg, ex-Universidad de San Andrés)"
       blurb:
-        es: "Trabajamos con el Dr. Hernán Galperin, investigador en USC Annenberg (ex-Universidad de San Andrés), en el proyecto de la **Internet Society** que dio lugar a los **primeros IXPs de Bolivia y Paraguay**. La colaboración combina mediciones de red activas con análisis económico y regulatorio del impacto de los IXPs en el acceso a Internet en países en desarrollo."
-        en: "We collaborate with Dr. Hernán Galperin, researcher at USC Annenberg (formerly Universidad de San Andrés), on the **Internet Society** project that led to the **first IXPs of Bolivia and Paraguay**. The work combines active network measurement with an economic and regulatory analysis of how IXPs change Internet access in developing countries."
-        fr: "Nous collaborons avec le Dr Hernán Galperin, chercheur à USC Annenberg (anciennement Universidad de San Andrés), sur le projet de l'**Internet Society** qui a donné naissance aux **premiers IXP de Bolivie et du Paraguay**. Ce travail combine mesures de réseau actives et analyse économique et réglementaire de l'impact des IXP sur l'accès à Internet dans les pays en développement."
-      url: "https://annenberg.usc.edu/faculty/hernan-galperin"
-      btn_label:
-        es: "Ver perfil"
-        en: "Visit profile"
-        fr: "Voir le profil"
+        es: "Junto al Dr. Galperin trabajamos en el proyecto de la **Internet Society** que dio lugar a los **primeros IXPs de Bolivia y Paraguay**. La colaboración combina mediciones activas de red con un análisis económico y regulatorio del impacto de los IXPs en el acceso a Internet en países en desarrollo."
+        en: "With Dr. Galperin we work on the **Internet Society** project that led to the **first IXPs of Bolivia and Paraguay**. The collaboration combines active network measurement with an economic and regulatory analysis of how IXPs change Internet access in developing countries."
+        fr: "Avec le Dr Galperin, nous travaillons sur le projet de l'**Internet Society** qui a donné naissance aux **premiers IXP de Bolivie et du Paraguay**. La collaboration combine des mesures actives de réseau avec une analyse économique et réglementaire de l'impact des IXP sur l'accès à Internet dans les pays en développement."
+      links:
+        - label:
+            es: "Perfil USC"
+            en: "USC profile"
+            fr: "Profil USC"
+          url: "https://annenberg.usc.edu/faculty/hernan-galperin"
+        - label:
+            es: "PIT Paraguay"
+            en: "PIT Paraguay"
+            fr: "PIT Paraguay"
+          url: "https://cnet.fi.uba.ar/PIT/PIT_Paraguay/#"
+        - label:
+            es: "PIT Bolivia (Agosto 2014)"
+            en: "PIT Bolivia (August 2014)"
+            fr: "PIT Bolivie (août 2014)"
+          url: "https://cnet.fi.uba.ar/PIT/PIT_Bolivia/puertos/Agosto_2014/"
   projects:
     - title: "CDNs en el núcleo de Internet (TMA 2018)"
       url: "https://cnet.fi.uba.ar/TMA2018/"
@@ -196,12 +207,6 @@
         es: "Visualizá un mapa de la topología de Internet indicando dónde estás."
         en: "Visualise a map of the Internet topology, showing where you are."
         fr: "Visualisez la topologie d'Internet et le point où vous vous trouvez."
-    - title: "Bolivia IXP measurement"
-      url: "https://cnet.fi.uba.ar/Bolivia/"
-      blurb:
-        es: "Plataforma de medición activa desplegada entre ASes bolivianos para evaluar el impacto del IXP nacional."
-        en: "Active-measurement platform deployed across Bolivian ASes to assess the impact of the national IXP."
-        fr: "Plateforme de mesure active déployée entre AS boliviens pour évaluer l'impact de l'IXP national."
     - title: "RFC 9198 — AURA"
       url: "https://www.rfc-editor.org/rfc/rfc9198"
       blurb:
