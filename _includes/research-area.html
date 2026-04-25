@@ -75,25 +75,22 @@
   {%- endif -%}
 
   {%- comment -%}
-    Build a bibtex-ruby query that selects exactly the curated keys for
-    this area, then hand it to {% bibliography %} so the output matches
-    /publications/ exactly: <ol class="bibliography"><li><div class="row">...
-    jekyll-scholar's interpolate() (utilities.rb#878) substitutes
-    {{ papers_query }} against the Liquid context at render time.
+    Match the DOM that {% bibliography %} emits on /publications/:
+    <ol class="bibliography"><li><div class="row">...</div></li></ol>
+    so the .publications SCSS applies identically. We can't use
+    {% bibliography --query %} here because feeding it a Liquid-interpolated
+    key list returns nil from bibtex-ruby on CI; instead we wrap a
+    {% reference %} loop manually — `reference` resolves the loop variable
+    via Liquid context (utilities.rb keys#873).
   {%- endcomment -%}
   {%- if a.papers and a.papers.size > 0 -%}
-    {%- assign papers_query = "" -%}
-    {%- for k in a.papers -%}
-      {%- if forloop.first -%}
-        {%- assign papers_query = papers_query | append: "@*[key=" | append: k | append: "]" -%}
-      {%- else -%}
-        {%- assign papers_query = papers_query | append: " || @*[key=" | append: k | append: "]" -%}
-      {%- endif -%}
-    {%- endfor -%}
-
     <h2 id="papers">{{ papers_label }}</h2>
     <div class="publications">
-      {% bibliography --query "{{ papers_query }}" --file conexdat %}
+      <ol class="bibliography">
+        {%- for k in a.papers -%}
+          <li>{% reference k --file conexdat %}</li>
+        {%- endfor -%}
+      </ol>
     </div>
   {%- endif -%}
 
