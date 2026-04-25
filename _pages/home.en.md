@@ -3,17 +3,6 @@ permalink: /
 lang: en
 title: "Complex Networks and Data Communication Group"
 author_profile: true
-feature_row:
-  - title: '<i class="fas fa-project-diagram"></i> Complex Systems'
-    excerpt: "We study complex networks via *k-core* decomposition and community detection. Graph theory and propagation models applied to biological, social and technological networks."
-  - title: '<i class="fas fa-database"></i> Data Science'
-    excerpt: "Large-scale analysis of Twitter traces, electoral data, and Call Detail Records (CDR). We infer human mobility, content demand, and online community dynamics."
-  - title: '<i class="fas fa-globe"></i> Internet'
-    excerpt: "Internet tomography and topology modelling (BGP, IXPs, AS-level). We design routing protocols whose tables grow sub-linearly with network size."
-  - title: '<i class="fas fa-chart-line"></i> Network traffic'
-    excerpt: "Statistical *self-similar* characterization of residential traffic. Continuous low-load probing for QoS assessment and IXP/CDN traffic detection."
-  - title: '<i class="fas fa-broadcast-tower"></i> Ad-hoc networks'
-    excerpt: "Routing protocols for infrastructure-less wireless networks. We developed *ANTop* (bio-inspired algorithm) and evaluated it on the QUENAS simulator."
 ---
 
 <div class="affiliations">
@@ -28,7 +17,19 @@ feature_row:
 
 ## Research areas
 
-{% include feature_row %}
+<div class="feature__wrapper">
+{% for a in site.data.research_areas %}
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-body">
+        <h2 class="archive__item-title"><i class="{{ a.icon }}"></i> {{ a.title[page.lang] }}</h2>
+        <div class="archive__item-excerpt">{{ a.excerpt[page.lang] | markdownify }}</div>
+        <p><a class="btn btn--info" href="/research/{{ a.slug }}/">Learn more &raquo;</a></p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
 
 ## News
 

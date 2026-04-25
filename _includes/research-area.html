@@ -1,0 +1,84 @@
+{%- comment -%}
+  Renders one research-area landing page driven by:
+    page.area_id  → key into site.data.research_areas (e.g. "internet")
+    page.lang     → "es" | "en" | "fr"
+
+  Reuses styles already defined in _sass/_conexdat.scss:
+    .feature__wrapper / .feature__item / .archive__item / .btn--info
+    .publications (jekyll-scholar bib_entry.html)
+{%- endcomment -%}
+
+{%- assign a = site.data.research_areas | where: "slug", page.area_id | first -%}
+{%- assign lang = page.lang -%}
+
+{%- if lang == "en" -%}
+  {%- assign collab_label = "Featured collaboration" -%}
+  {%- assign projects_label = "Related projects" -%}
+  {%- assign papers_label = "Selected publications" -%}
+  {%- assign visit_label = "Visit site" -%}
+{%- elsif lang == "fr" -%}
+  {%- assign collab_label = "Collaboration en vedette" -%}
+  {%- assign projects_label = "Projets associés" -%}
+  {%- assign papers_label = "Publications sélectionnées" -%}
+  {%- assign visit_label = "Visiter le site" -%}
+{%- else -%}
+  {%- assign collab_label = "Colaboración destacada" -%}
+  {%- assign projects_label = "Proyectos relacionados" -%}
+  {%- assign papers_label = "Publicaciones seleccionadas" -%}
+  {%- assign visit_label = "Ir al sitio" -%}
+{%- endif -%}
+
+<div class="research-area">
+
+  <p class="research-area__excerpt">{{ a.excerpt[lang] | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+
+  <div class="research-area__body">
+    {{ a.body[lang] | markdownify }}
+  </div>
+
+  {%- if a.collaborations -%}
+    <h2 id="collaborations">{{ collab_label }}</h2>
+    <div class="feature__wrapper">
+      {%- for c in a.collaborations -%}
+        <div class="feature__item">
+          <div class="archive__item">
+            <div class="archive__item-body">
+              <h3 class="archive__item-title">{{ c.name }}</h3>
+              <div class="archive__item-excerpt">{{ c.blurb[lang] | markdownify }}</div>
+              {%- if c.url and c.url != "" -%}
+                <p><a class="btn btn--info" href="{{ c.url }}" target="_blank" rel="noopener">{{ c.btn_label[lang] | default: visit_label }} &raquo;</a></p>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if a.projects -%}
+    <h2 id="projects">{{ projects_label }}</h2>
+    <div class="feature__wrapper">
+      {%- for p in a.projects -%}
+        <div class="feature__item">
+          <div class="archive__item">
+            <div class="archive__item-body">
+              <h3 class="archive__item-title">{{ p.title }}</h3>
+              <div class="archive__item-excerpt">{{ p.blurb[lang] | markdownify }}</div>
+              {%- if p.url and p.url != "" -%}
+                <p><a class="btn btn--info" href="{{ p.url }}">{{ visit_label }} &raquo;</a></p>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if a.papers and a.papers.size > 0 -%}
+    <h2 id="papers">{{ papers_label }}</h2>
+    <div class="publications">
+      {%- for k in a.papers -%}{% reference k --file conexdat %}{%- endfor -%}
+    </div>
+  {%- endif -%}
+
+</div>

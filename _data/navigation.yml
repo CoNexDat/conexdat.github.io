@@ -13,6 +13,12 @@ main:
     url: /people/
 
   - title:
+      es: "Áreas de investigación"
+      en: "Research areas"
+      fr: "Axes de recherche"
+    url: /research/
+
+  - title:
       es: "Proyectos"
       en: "Projects"
       fr: "Projets"

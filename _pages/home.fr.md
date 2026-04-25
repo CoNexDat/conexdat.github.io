@@ -3,17 +3,6 @@ permalink: /
 lang: fr
 title: "Groupe de Réseaux Complexes et Communication de Données"
 author_profile: true
-feature_row:
-  - title: '<i class="fas fa-project-diagram"></i> Systèmes complexes'
-    excerpt: "Étude des réseaux complexes par décomposition en *k-cœurs* et détection de communautés. Théorie des graphes et modèles de propagation appliqués aux réseaux biologiques, sociaux et technologiques."
-  - title: '<i class="fas fa-database"></i> Science des données'
-    excerpt: "Analyse à grande échelle de traces Twitter, de données électorales et de registres mobiles (CDR). Inférence de la mobilité humaine, de la demande de contenu et de la dynamique des communautés en ligne."
-  - title: '<i class="fas fa-globe"></i> Internet'
-    excerpt: "Tomographie d'Internet et modélisation de sa topologie (BGP, IXP, niveau AS). Conception de protocoles de routage dont les tables croissent sous-linéairement avec la taille du réseau."
-  - title: '<i class="fas fa-chart-line"></i> Trafic réseau'
-    excerpt: "Caractérisation statistique *auto-similaire* du trafic résidentiel. Sondages continus à faible charge pour l'évaluation de la QoS et la détection du trafic IXP/CDN."
-  - title: '<i class="fas fa-broadcast-tower"></i> Réseaux ad-hoc'
-    excerpt: "Protocoles de routage pour réseaux sans-fil sans infrastructure. Nous avons développé *ANTop* (algorithme bio-inspiré) et l'avons évalué sur le simulateur QUENAS."
 ---
 
 <div class="affiliations">
@@ -28,7 +17,19 @@ feature_row:
 
 ## Axes de recherche
 
-{% include feature_row %}
+<div class="feature__wrapper">
+{% for a in site.data.research_areas %}
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-body">
+        <h2 class="archive__item-title"><i class="{{ a.icon }}"></i> {{ a.title[page.lang] }}</h2>
+        <div class="archive__item-excerpt">{{ a.excerpt[page.lang] | markdownify }}</div>
+        <p><a class="btn btn--info" href="/research/{{ a.slug }}/">En savoir plus &raquo;</a></p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
 
 ## Actualités
 
