@@ -8,7 +8,7 @@ author_profile: true
 ## Membres actuels
 {% include people-list.html category="current" lang="fr" %}
 
-## Collaboratrice externe active
+## Collaborateurs externes actifs
 {% include people-list.html category="external" lang="fr" %}
 
 ## Anciens membres internes

@@ -18,14 +18,14 @@
     fr: "Professeur Titulaire UBA · Chercheur Indépendant CONICET"
   homepage: "http://cnet.fi.uba.ar/ignacio.alvarez-hamelin/index_es.html"
 
+# ---- Active external collaborators ------------------------------------------
 - name: "Dr. Sebastián Grynberg"
-  category: current
+  category: external
   role:
     es: "Profesor Adjunto UBA"
     en: "Assistant Professor UBA"
     fr: "Maître de Conférences UBA"
 
-# ---- Active external collaborator -------------------------------------------
 - name: "Dr. Laura Hernández"
   category: external
   role:
@@ -42,7 +42,7 @@
     fr: "Professeur et Co-Directeur du Programme d'IA, Universidad de San Andrés"
   homepage: "http://cnet.fi.uba.ar/mariano.beiro/"
 
-- name: "Ing. Esteban Carísimo"
+- name: "Dr. Ing. Esteban Carísimo"
   category: former-inhouse
   role:
     es: "Cloudflare"

@@ -8,7 +8,7 @@ author_profile: true
 ## Current members
 {% include people-list.html category="current" lang="en" %}
 
-## Active external collaborator
+## Active external collaborators
 {% include people-list.html category="external" lang="en" %}
 
 ## Former in-house members
