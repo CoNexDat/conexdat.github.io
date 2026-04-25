@@ -70,22 +70,15 @@
         es: "Paradigma alternativo para visualizar la estructura interna de redes complejas."
         en: "Alternative paradigm for visualising the inner structure of complex networks."
         fr: "Paradigme alternatif pour visualiser la structure interne des réseaux complexes."
+  # Curated top-5 — bibliography on the area page renders these via
+  # {% nocite %} + {% bibliography --cited %}, sorted by year (desc) by
+  # the same scholar config that drives /publications/.
   papers:
-    - BBGAH13
-    - BBGAH12
-    - BBAH2010c
-    - BBAH10b
-    - BBAH2010a
-    - AHGGW05
-    - BAHB2008
-    - PHCBAH14
-    - PHCBAH12
-    - PHCBAH2010
-    - AHP2007
-    - AH11
-    - AHB08
-    - AHBB2011
-    - CSBAHB13a
+    - PHCBAH14       # mutualistic ecosystems
+    - BBGAH13        # community detection via fitness growth
+    - AHBB2011       # edge connectivity through k-core
+    - BBAH2010a      # SnailVis paradigm
+    - AHP2007        # granular-gas collision network
 
 - slug: ciencia-de-datos
   icon: "fas fa-database"
@@ -156,23 +149,11 @@
         en: "Opinion-landscape dynamics during electoral periods."
         fr: "Dynamique du paysage d'opinion en période électorale."
   papers:
-    - schawe2023understanding
-    - beiro2022fairness
-    - SBAHKH2022
-    - Mussi-Reyero2021
-    - reyero2020evolution
-    - selmo2020learning
-    - MRAHB2019
-    - LFAHSK_2016
-    - ROCVSBAH_2016
-    - SBBWZAH_2015
-    - LSAHK_2015
-    - kalimeri2020traditional
-    - kalimeri2019predicting
-    - kalimeri2019human
-    - beiro2018shopping
-    - parino2018analysis
-    - beiro2016predicting
+    - schawe2023understanding   # NYT vs followers — info treatment
+    - beiro2022fairness         # fairness in vulnerable-attribute prediction
+    - Mussi-Reyero2021          # opinion-landscape dynamics, electoral periods
+    - kalimeri2019predicting    # demographics from digital behaviours
+    - LFAHSK_2016               # socioeconomic correlations on CDR
 
 - slug: internet
   icon: "fas fa-globe"
@@ -280,33 +261,11 @@
         en: "Advanced Unidirectional Route Assessment — informational IETF RFC."
         fr: "Advanced Unidirectional Route Assessment — RFC informatif de l'IETF."
   papers:
-    - CDFDPAH20
-    - CSAHD19
-    - CSAHD18
-    - CGAH_2015
-    - GAHV_2014
-    - KGAH2018
-    - SBCAHVP16
-    - DRARDAH16
-    - BGAH_2015
-    - AHBB2011
-    - AHDBV08
-    - BDAHV07
-    - AH2006
-    - DAHBVV2006
-    - AHDBV2006
-    - AHDBV2005d
-    - AHDBV2005b
-    - AHDBV2005a
-    - DAHBVV2004
-    - AHDBV2005
-    - AlvSch2004
-    - AlvSch2003
-    - PAH2012
-    - AHVDA006
-    - AHSOG2018
-    - RFC9198
-    - AHMFPG2018
+    - CDFDPAH20      # First Look at Latin American IXPs (CCR 2020)
+    - CSAHD19        # CDNs in IPv4/IPv6 Internet cores
+    - KGAH2018       # Atlas Vision of IPv6 in Latin America
+    - CGAH_2015      # IXP performance in Bolivia (with Galperin)
+    - AHDBV08        # k-core decomposition of Internet graphs (foundational)
 
 - slug: trafico-de-red
   icon: "fas fa-chart-line"
@@ -426,13 +385,8 @@
         en: "Bio-inspired protocol for ad-hoc networks and associated simulator."
         fr: "Protocole bio-inspiré pour réseaux ad-hoc et simulateur associé."
   papers:
-    - "9219646"
-    - PAHMG2022
-    - presenza2021subframeworkbased
-    - AlvFra2003
-    - AlvFra2001-2
-    - AlvFra2001
-    - AlvMar2001
-    - AlvFra2000
-    - AlvFra99
-    - AlvFra99-2
+    - PAHMG2022      # subframework-based rigidity in multi-robot networks
+    - "9219646"      # multipath in RPL wireless networks (ISCC 2020)
+    - AlvFra2003     # MλT — multicast with QoS
+    - AlvFra2001     # multicast tree with minimum congestion
+    - AlvFra2000     # short survey of multicast protocols

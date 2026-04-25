@@ -75,20 +75,16 @@
   {%- endif -%}
 
   {%- comment -%}
-    Match the DOM that the bibliography tag emits on /publications/:
-    <ol class="bibliography"><li><div class="row">...</div></li></ol>
-    so the .publications SCSS applies identically. We wrap a per-key
-    reference-tag loop manually here; reference resolves the loop
-    variable via Liquid context (jekyll-scholar utilities.rb keys#873).
+    Render the curated paper list with the same jekyll-scholar pipeline
+    used by /publications/ so the markup and aesthetics are identical:
+    populate the page-scoped cited list via nocite (no inline output),
+    then let the bibliography tag emit the cited entries the normal way.
   {%- endcomment -%}
   {%- if a.papers and a.papers.size > 0 -%}
     <h2 id="papers">{{ papers_label }}</h2>
+    {%- for k in a.papers -%}{% nocite k --file conexdat %}{%- endfor -%}
     <div class="publications">
-      <ol class="bibliography">
-        {%- for k in a.papers -%}
-          <li>{% reference k --file conexdat %}</li>
-        {%- endfor -%}
-      </ol>
+      {% bibliography --cited --file conexdat %}
     </div>
   {%- endif -%}
 
