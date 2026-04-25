@@ -1,7 +1,8 @@
 # =============================================================================
 # CoNexDat — group members.
 # Each entry: name, role (es/en/fr), affiliation (es/en/fr), homepage (optional),
-# category: current | external | alumni
+# category: current | external | former-inhouse | past-collaborator | alumni
+# tier (alumni only): faculty | phd | masters | undergraduate | intern
 # =============================================================================
 
 # ---- Current members --------------------------------------------------------
@@ -12,18 +13,10 @@
     en: "Group Director"
     fr: "Directeur du Groupe"
   affiliation:
-    es: "Profesor Asociado UBA · Investigador CONICET"
-    en: "Associate Professor UBA · CONICET Researcher"
-    fr: "Professeur Associé UBA · Chercheur CONICET"
+    es: "Profesor Titular UBA · Investigador Independiente CONICET"
+    en: "Full Professor UBA · Independent Researcher CONICET"
+    fr: "Professeur Titulaire UBA · Chercheur Indépendant CONICET"
   homepage: "http://cnet.fi.uba.ar/ignacio.alvarez-hamelin/index_es.html"
-
-- name: "Dr. Ing. Mariano Gastón Beiró"
-  category: current
-  role:
-    es: "Profesor UBA"
-    en: "UBA Professor"
-    fr: "Professeur UBA"
-  homepage: "http://cnet.fi.uba.ar/mariano.beiro/"
 
 - name: "Dr. Sebastián Grynberg"
   category: current
@@ -32,45 +25,34 @@
     en: "Assistant Professor UBA"
     fr: "Maître de Conférences UBA"
 
-- name: "Dr. Julián Martinez"
-  category: current
+# ---- Active external collaborator -------------------------------------------
+- name: "Dr. Laura Hernández"
+  category: external
   role:
-    es: "Profesor Adjunto UBA"
-    en: "Assistant Professor UBA"
-    fr: "Maître de Conférences UBA"
+    es: "Investigadora ETIS, CY Cergy Paris Université"
+    en: "Researcher, ETIS, CY Cergy Paris Université"
+    fr: "Chercheuse ETIS, CY Cergy Paris Université"
+
+# ---- Former in-house members ------------------------------------------------
+- name: "Dr. Ing. Mariano Gastón Beiró"
+  category: former-inhouse
+  role:
+    es: "Profesor y Co-Director de la Carrera de IA, Universidad de San Andrés"
+    en: "Professor and Co-Director of the AI Program, Universidad de San Andrés"
+    fr: "Professeur et Co-Directeur du Programme d'IA, Universidad de San Andrés"
+  homepage: "http://cnet.fi.uba.ar/mariano.beiro/"
 
 - name: "Ing. Esteban Carísimo"
-  category: current
+  category: former-inhouse
   role:
-    es: "Tesista Doctoral"
-    en: "Doctoral Thesis Student"
-    fr: "Doctorant"
+    es: "Cloudflare"
+    en: "Cloudflare"
+    fr: "Cloudflare"
   homepage: "http://cnet.fi.uba.ar/esteban_carisimo/"
 
-- name: "Ing. Carlos Selmo"
-  category: current
-  role:
-    es: "Tesista Doctoral"
-    en: "Doctoral Thesis Student"
-    fr: "Doctorant"
-
-- name: "Lucía Ailén Kasman"
-  category: current
-  role:
-    es: "Estudiante de Ingeniería Informática"
-    en: "Computer Science Student"
-    fr: "Étudiante en Informatique"
-
-- name: "Martina Ágata Panetta"
-  category: current
-  role:
-    es: "Estudiante de Licenciatura en Análisis de Sistemas"
-    en: "Systems Analysis Degree Student"
-    fr: "Étudiante en Analyse des Systèmes"
-
-# ---- External collaborators -------------------------------------------------
+# ---- Past collaborators -----------------------------------------------------
 - name: "Dr. Alessandro Vespignani"
-  category: external
+  category: past-collaborator
   role:
     es: "Profesor Indiana University"
     en: "Professor, Indiana University"
@@ -78,7 +60,7 @@
   homepage: "http://www.northeastern.edu/physics/people/faculty/alessandro-vespignani/"
 
 - name: "Dr. Alain Barrat"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador CNRS Université Paris-Sud"
     en: "Researcher, CNRS Université Paris-Sud"
@@ -86,7 +68,7 @@
   homepage: "http://www.cpt.univ-mrs.fr/~barrat/"
 
 - name: "Dr. Luca Dall'Asta"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador Post-Doc International Centre for Theoretical Physics"
     en: "Post-Doc Researcher, International Centre for Theoretical Physics"
@@ -94,14 +76,14 @@
   homepage: "http://areeweb.polito.it/ricerca/cmp/people/luca.dall.asta"
 
 - name: "Victor Alexis Bettachini"
-  category: external
+  category: past-collaborator
   role:
     es: "Estudiante de doctorado en física"
     en: "PhD Student in Physics"
     fr: "Doctorant en Physique"
 
 - name: "Dr. Alfredo Ortega"
-  category: external
+  category: past-collaborator
   role:
     es: "Doctor en Ingeniería Informática ITBA"
     en: "PhD in Computer Engineering, ITBA"
@@ -109,7 +91,7 @@
   homepage: "https://sites.google.com/site/ortegaalfredo/"
 
 - name: "Aline Carneiro Viana"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador INRIA"
     en: "INRIA Researcher"
@@ -117,7 +99,7 @@
   homepage: "https://sites.google.com/site/alinecviana/"
 
 - name: "Marcelo Dias de Amorim"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador CNRS, Université Pierre et Marie Curie"
     en: "CNRS Researcher, Université Pierre et Marie Curie"
@@ -125,14 +107,14 @@
   homepage: "http://www-npa.lip6.fr/~amorim/"
 
 - name: "Pablo Fierens"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador del CONICET y docente en ITBA"
     en: "CONICET Researcher · ITBA Faculty"
     fr: "Chercheur CONICET · Enseignant ITBA"
 
 - name: "Marian Boguñá"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador en Icrea Academia"
     en: "Researcher, Icrea Academia"
@@ -140,14 +122,14 @@
   homepage: "http://complex.ffn.ub.es/~mbogunya/"
 
 - name: "Pol Colomer-de-Simón"
-  category: external
+  category: past-collaborator
   role:
     es: "Estudiante de Doctorado, Universitat de Barcelona"
     en: "PhD Student, Universitat de Barcelona"
     fr: "Doctorant, Universitat de Barcelona"
 
 - name: "Dr. Pierre Fraigniaud"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador CNRS, LIAFA"
     en: "CNRS Researcher, LIAFA"
@@ -155,7 +137,7 @@
   homepage: "http://www.liafa.jussieu.fr/~pierref/"
 
 - name: "Dr. Andrea Puglisi"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador, Università di Roma 'La Sapienza'"
     en: "Researcher, Università di Roma 'La Sapienza'"
@@ -163,7 +145,7 @@
   homepage: "http://denali.phys.uniroma1.it/twiki/bin/view/TNTgroup/AndreaPuglisi"
 
 - name: "Artur Ziviani"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador, National Laboratory for Scientific Computing"
     en: "Researcher, National Laboratory for Scientific Computing"
@@ -171,7 +153,7 @@
   homepage: "http://www.lncc.br/~ziviani/Artur_Ziviani_Website/Home.html"
 
 - name: "Alexei Vazquez"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador, Institute of New Jersey"
     en: "Researcher, Institute of New Jersey"
@@ -179,7 +161,7 @@
   homepage: "http://cinjweb.cinj.rutgers.edu/~vazqueal/"
 
 - name: "Dr. Nicolas Schabanel"
-  category: external
+  category: past-collaborator
   role:
     es: "Investigador CNRS, Centro de Modelamiento Matemático"
     en: "CNRS Researcher, Center for Mathematical Modeling"
@@ -187,50 +169,11 @@
   homepage: "http://www.liafa.jussieu.fr/~nschaban/"
 
 # ---- Alumni / former members ------------------------------------------------
-- name: "Malte Hansen"
-  category: alumni
-  role:
-    es: "Becario de Intercambio"
-    en: "Exchange Fellow"
-    fr: "Boursier d'Échange"
 
-- name: "Ing. Gabriel Dávila"
-  category: alumni
-  role:
-    es: "Colaborador · Magister en Telecomunicaciones UBA"
-    en: "Collaborator · Master in Telecommunications, UBA"
-    fr: "Collaborateur · Master en Télécommunications, UBA"
-
-- name: "Ing. David Samaniego"
-  category: alumni
-  role:
-    es: "Tesista de Maestría"
-    en: "Master's Thesis Student"
-    fr: "Étudiant en Master"
-
-- name: "Mauricio Anderson Ricci"
-  category: alumni
-  role:
-    es: "Tesista de Grado de Ingeniería Electrónica"
-    en: "Electronic Engineering Undergraduate Thesis"
-    fr: "Mémoire d'Ingénieur en Électronique"
-
-- name: "Ezequiel Meinero"
-  category: alumni
-  role:
-    es: "Tesista de Grado de Ingeniería Electrónica · Alumno FIUBA"
-    en: "Electronic Engineering Undergraduate Thesis · FIUBA Student"
-    fr: "Mémoire d'Ingénieur en Électronique · Étudiant FIUBA"
-
-- name: "Gisela Farace"
-  category: alumni
-  role:
-    es: "Pasante · Alumna FIUBA"
-    en: "Intern · FIUBA Student"
-    fr: "Stagiaire · Étudiante FIUBA"
-
+# Faculty
 - name: "Lic. Jorge Busch"
   category: alumni
+  tier: faculty
   role:
     es: "Profesor Adjunto UBA"
     en: "Assistant Professor UBA"
@@ -238,20 +181,74 @@
 
 - name: "Ing. Luis Marrone"
   category: alumni
+  tier: faculty
   role:
     es: "Profesor Titular UBA"
     en: "Full Professor UBA"
     fr: "Professeur Titulaire UBA"
 
-- name: "Ing. Juan Pablo Astudillo León"
+- name: "Dr. Julián Martinez"
   category: alumni
+  tier: faculty
+  role:
+    es: "Profesor Adjunto UBA"
+    en: "Assistant Professor UBA"
+    fr: "Maître de Conférences UBA"
+
+# PhD
+- name: "Ing. Carlos Selmo"
+  category: alumni
+  tier: phd
+  role:
+    es: "Doctorado en Ingeniería"
+    en: "PhD in Engineering"
+    fr: "Doctorat en Ingénierie"
+
+# Master's
+- name: "Ing. Gabriel Dávila"
+  category: alumni
+  tier: masters
   role:
     es: "Magister en Telecomunicaciones UBA"
     en: "Master in Telecommunications, UBA"
     fr: "Master en Télécommunications, UBA"
 
+- name: "Ing. David Samaniego"
+  category: alumni
+  tier: masters
+  role:
+    es: "Tesista de Maestría"
+    en: "Master's Thesis Student"
+    fr: "Étudiant en Master"
+
+- name: "Ing. Juan Pablo Astudillo León"
+  category: alumni
+  tier: masters
+  role:
+    es: "Magister en Telecomunicaciones UBA"
+    en: "Master in Telecommunications, UBA"
+    fr: "Master en Télécommunications, UBA"
+
+# Undergraduate thesis
+- name: "Mauricio Anderson Ricci"
+  category: alumni
+  tier: undergraduate
+  role:
+    es: "Tesista de Grado de Ingeniería Electrónica"
+    en: "Electronic Engineering Undergraduate Thesis"
+    fr: "Mémoire d'Ingénieur en Électronique"
+
+- name: "Ezequiel Meinero"
+  category: alumni
+  tier: undergraduate
+  role:
+    es: "Tesista de Grado de Ingeniería Electrónica · Alumno FIUBA"
+    en: "Electronic Engineering Undergraduate Thesis · FIUBA Student"
+    fr: "Mémoire d'Ingénieur en Électronique · Étudiant FIUBA"
+
 - name: "Ing. Esteban Poggio"
   category: alumni
+  tier: undergraduate
   role:
     es: "Tesista de Grado de Ingeniería Electrónica"
     en: "Electronic Engineering Undergraduate Thesis"
@@ -259,6 +256,7 @@
 
 - name: "Ing. Gastón Tejia"
   category: alumni
+  tier: undergraduate
   role:
     es: "Tesista de Grado de Ingeniería Informática"
     en: "Computer Engineering Undergraduate Thesis"
@@ -266,6 +264,7 @@
 
 - name: "Ing. Germán Castignani"
   category: alumni
+  tier: undergraduate
   role:
     es: "Tesista de Grado de Ingeniería Informática"
     en: "Computer Engineering Undergraduate Thesis"
@@ -274,6 +273,7 @@
 
 - name: "Ing. Alejandro José Marcu"
   category: alumni
+  tier: undergraduate
   role:
     es: "Tesista de Grado de Ingeniería Informática"
     en: "Computer Engineering Undergraduate Thesis"
@@ -281,7 +281,41 @@
 
 - name: "Ing. Alejandro Zylberberg"
   category: alumni
+  tier: undergraduate
   role:
     es: "Tesista de Grado de Ingeniería Informática"
     en: "Computer Engineering Undergraduate Thesis"
     fr: "Mémoire d'Ingénieur en Informatique"
+
+# Interns / exchange
+- name: "Malte Hansen"
+  category: alumni
+  tier: intern
+  role:
+    es: "Becario de Intercambio"
+    en: "Exchange Fellow"
+    fr: "Boursier d'Échange"
+
+- name: "Gisela Farace"
+  category: alumni
+  tier: intern
+  role:
+    es: "Pasante · Alumna FIUBA"
+    en: "Intern · FIUBA Student"
+    fr: "Stagiaire · Étudiante FIUBA"
+
+- name: "Lucía Ailén Kasman"
+  category: alumni
+  tier: intern
+  role:
+    es: "Pasante · Estudiante de Ingeniería Informática"
+    en: "Intern · Computer Science Student"
+    fr: "Stagiaire · Étudiante en Informatique"
+
+- name: "Martina Ágata Panetta"
+  category: alumni
+  tier: intern
+  role:
+    es: "Pasante · Estudiante de Licenciatura en Análisis de Sistemas"
+    en: "Intern · Systems Analysis Degree Student"
+    fr: "Stagiaire · Étudiante en Analyse des Systèmes"

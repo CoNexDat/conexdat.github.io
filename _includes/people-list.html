@@ -5,6 +5,7 @@
   member.slug (front-matter) or the kebab-cased name. Fallback: profile.png.
 {%- endcomment -%}
 {%- assign members = site.data.members | where: "category", include.category -%}
+{%- if include.tier -%}{%- assign members = members | where: "tier", include.tier -%}{%- endif -%}
 {%- if members.size == 0 -%}{%- comment -%}silently skip{%- endcomment -%}
 {%- else -%}
 <div class="people-grid">
