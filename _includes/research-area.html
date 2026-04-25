@@ -75,13 +75,11 @@
   {%- endif -%}
 
   {%- comment -%}
-    Match the DOM that {% bibliography %} emits on /publications/:
+    Match the DOM that the bibliography tag emits on /publications/:
     <ol class="bibliography"><li><div class="row">...</div></li></ol>
-    so the .publications SCSS applies identically. We can't use
-    {% bibliography --query %} here because feeding it a Liquid-interpolated
-    key list returns nil from bibtex-ruby on CI; instead we wrap a
-    {% reference %} loop manually — `reference` resolves the loop variable
-    via Liquid context (utilities.rb keys#873).
+    so the .publications SCSS applies identically. We wrap a per-key
+    reference-tag loop manually here; reference resolves the loop
+    variable via Liquid context (jekyll-scholar utilities.rb keys#873).
   {%- endcomment -%}
   {%- if a.papers and a.papers.size > 0 -%}
     <h2 id="papers">{{ papers_label }}</h2>
