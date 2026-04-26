@@ -252,6 +252,24 @@ html[data-theme="dark"] {
   }
 }
 
+// ---- Research-area back link ---------------------------------------------
+// Small "← Back to research areas" link at the top of each subpage so users
+// can return to /research/ without hunting in the top nav.
+.research-area__back {
+  margin: -0.4rem 0 1rem;
+  font-size: 0.88rem;
+  a {
+    color: var(--cnet-celeste);
+    text-decoration: none;
+    &:hover, &:focus { color: var(--cnet-navy); text-decoration: underline; }
+    i { margin-right: 0.35rem; }
+  }
+}
+html[data-theme="dark"] .research-area__back a {
+  color: var(--cnet-celeste);
+  &:hover, &:focus { color: #fff; }
+}
+
 // ---- Research-area collaboration subsection ------------------------------
 // Featured collaborators (e.g. Galperin on the Internet area) read as a
 // flowing subsection: heading + paragraph + button row — not a card.

@@ -17,21 +17,33 @@
   {%- assign projects_label = "Related projects" -%}
   {%- assign papers_label = "Selected publications" -%}
   {%- assign visit_label = "Visit site" -%}
+  {%- assign back_label = "Back to research areas" -%}
 {%- elsif lang == "fr" -%}
   {%- assign axes_label = "Axes de travail" -%}
   {%- assign collab_label = "Initiative phare" -%}
   {%- assign projects_label = "Projets associés" -%}
   {%- assign papers_label = "Publications sélectionnées" -%}
   {%- assign visit_label = "Visiter le site" -%}
+  {%- assign back_label = "Retour aux axes de recherche" -%}
 {%- else -%}
   {%- assign axes_label = "Líneas de trabajo" -%}
   {%- assign collab_label = "Iniciativa destacada" -%}
   {%- assign projects_label = "Proyectos relacionados" -%}
   {%- assign papers_label = "Publicaciones seleccionadas" -%}
   {%- assign visit_label = "Ir al sitio" -%}
+  {%- assign back_label = "Volver a áreas de investigación" -%}
+{%- endif -%}
+
+{%- assign lang_prefix = '' -%}
+{%- if lang and lang != site.default_lang -%}
+  {%- assign lang_prefix = '/' | append: lang -%}
 {%- endif -%}
 
 <div class="research-area">
+
+  <p class="research-area__back">
+    <a href="{{ lang_prefix }}/research/"><i class="fas fa-arrow-left" aria-hidden="true"></i> {{ back_label }}</a>
+  </p>
 
   <p class="research-area__excerpt">{{ a.excerpt[lang] | markdownify | remove: '<p>' | remove: '</p>' }}</p>
 
