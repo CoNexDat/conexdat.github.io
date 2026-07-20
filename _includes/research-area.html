@@ -34,15 +34,10 @@
   {%- assign back_label = "Volver a áreas de investigación" -%}
 {%- endif -%}
 
-{%- assign lang_prefix = '' -%}
-{%- if lang and lang != site.default_lang -%}
-  {%- assign lang_prefix = '/' | append: lang -%}
-{%- endif -%}
-
 <div class="research-area">
 
   <p class="research-area__back">
-    <a href="{{ lang_prefix }}/research/"><i class="fas fa-arrow-left" aria-hidden="true"></i> {{ back_label }}</a>
+    <a href="/research/"><i class="fas fa-arrow-left" aria-hidden="true"></i> {{ back_label }}</a>
   </p>
 
   <p class="research-area__excerpt">{{ a.excerpt[lang] | markdownify | remove: '<p>' | remove: '</p>' }}</p>
