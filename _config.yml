@@ -165,6 +165,11 @@ cnet:
     - alvarez-hamelin
     - beiro
     - carisimo
+  # Per-language meta description (seo.html falls back to top-level `description`)
+  description:
+    es: *description
+    en: "Complex Networks and Data Communication Group — Electronics Department, School of Engineering, University of Buenos Aires"
+    fr: "Groupe Réseaux Complexes et Communication de Données — Département d'Électronique, Faculté d'Ingénierie, Université de Buenos Aires"
 
 # ---- Archives (kept simple) -------------------------------------------------
 category_archive:
