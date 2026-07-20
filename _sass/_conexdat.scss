@@ -102,14 +102,6 @@ html[data-theme="dark"] {
   color: #fff !important;
   border-bottom: 2px solid var(--cnet-celeste) !important;
 }
-.masthead__menu-item.lang-switch a {
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-}
-.masthead__menu-item.lang-switch.selected a {
-  color: var(--cnet-celeste) !important;
-  font-weight: 700;
-}
 // theme-toggle icon
 #theme-toggle a, #theme-icon { color: #fff !important; }
 #theme-toggle a:hover, #theme-toggle a:focus i { color: var(--cnet-gold) !important; }
@@ -176,11 +168,83 @@ html[data-theme="dark"] {
   }
 }
 
-// ---- Lang switcher (3 separate <li>s) --------------------------------------
-.masthead__menu-item.lang-switch {
+// ---- Lang switcher + theme toggle (.masthead__extras) -----------------------
+// The cluster sits OUTSIDE the greedy-nav <ul> so it is never collapsed into
+// the hamburger. It is absolutely positioned inside space reserved with
+// padding-right on .greedy-nav; jQuery's .width() excludes padding, so the
+// plugin's overflow math automatically respects the reserved zone. The
+// hamburger button (theme CSS: right: 0) is shifted left of the cluster.
+$cnet-extras-width: 152px;
+$cnet-extras-width-sm: 136px;
+
+.greedy-nav {
+  padding-right: $cnet-extras-width;
+  button { right: $cnet-extras-width; }
+  .hidden-links { right: $cnet-extras-width; }  // keep the dropdown under the hamburger
+  // slightly tighter than the theme's 0 1rem so the full menu + reserved
+  // switcher zone fit inside the 1280px inner wrap without overflowing
+  .visible-links a { margin: 0 0.7rem; }
+}
+.masthead__extras {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  margin: 0;
   padding: 0;
-  a { padding: 0 0.45rem; }
-  & + .lang-switch a { border-left: 1px solid var(--cnet-border); }
+  list-style: none;
+
+  li { margin: 0; padding: 0; list-style: none; }
+  a { margin: 0; }
+}
+.masthead__extras .lang-switch {
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+
+  a {
+    padding: 0.18rem 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    border-radius: 999px;
+  }
+  & + .lang-switch { border-left: 1px solid rgba(255, 255, 255, 0.18); }
+
+  &.lang-switch--first {
+    border-left: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px 0 0 999px;
+    a { padding-left: 0.65rem; }
+  }
+  &.lang-switch--last {
+    border-right: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 0 999px 999px 0;
+    a { padding-right: 0.65rem; }
+  }
+  &.selected a {
+    background: var(--cnet-celeste);
+    color: var(--cnet-navy) !important;
+    font-weight: 700;
+  }
+  // the underline used for selected nav items doesn't fit the chip look
+  &.selected a { border-bottom: none !important; }
+}
+.masthead__extras #theme-toggle {
+  margin-left: 0.4rem;
+  a { padding: 0.18rem 0.3rem; }
+}
+@media (max-width: 480px) {
+  .greedy-nav {
+    padding-right: $cnet-extras-width-sm;
+    button { right: $cnet-extras-width-sm; }
+    .hidden-links { right: $cnet-extras-width-sm; }
+  }
+  .masthead__extras .lang-switch a {
+    padding: 0.15rem 0.4rem;
+    font-size: 0.75rem;
+  }
+  .masthead__extras #theme-toggle { margin-left: 0.35rem; }
 }
 
 // ---- Feature cards (research areas) — equal-height grid, override Susy ----
