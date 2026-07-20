@@ -1,0 +1,44 @@
+{%- comment -%}
+  Renders entries from _data/theses.yml for one level.
+  Required: include.level (phd|master|grado), include.lang (es|en|fr).
+{%- endcomment -%}
+{%- if include.lang == "en" -%}
+  {%- assign thesis_label = "Thesis" -%}
+  {%- assign slides_label = "Slides" -%}
+  {%- assign thesis_es_label = "Thesis (Spanish)" -%}
+  {%- assign thesis_en_label = "Thesis (English)" -%}
+{%- elsif include.lang == "fr" -%}
+  {%- assign thesis_label = "Thèse" -%}
+  {%- assign slides_label = "Présentation" -%}
+  {%- assign thesis_es_label = "Thèse (espagnol)" -%}
+  {%- assign thesis_en_label = "Thèse (anglais)" -%}
+{%- else -%}
+  {%- assign thesis_label = "Tesis" -%}
+  {%- assign slides_label = "Presentación" -%}
+  {%- assign thesis_es_label = "Tesis (español)" -%}
+  {%- assign thesis_en_label = "Tesis (inglés)" -%}
+{%- endif -%}
+
+{%- assign entries = site.data.theses | where: "level", include.level | sort: "year" | reverse -%}
+<ul class="theses-list">
+  {%- for t in entries -%}
+  <li class="theses-list__item">
+    <span class="theses-list__title">{{ t.title }}</span>
+    <span class="theses-list__author">{{ t.author }}</span>
+    <span class="theses-list__meta">{{ t.degree[include.lang] }} · {{ t.year }}</span>
+    {%- if t.links -%}
+    <span class="theses-list__links">
+      {%- for link in t.links -%}
+        {%- case link.kind -%}
+          {%- when "slides" -%}{%- assign link_label = slides_label -%}
+          {%- when "thesis-es" -%}{%- assign link_label = thesis_es_label -%}
+          {%- when "thesis-en" -%}{%- assign link_label = thesis_en_label -%}
+          {%- else -%}{%- assign link_label = thesis_label -%}
+        {%- endcase -%}
+        <a class="btn btn--info" href="{{ link.url }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> {{ link_label }}</a>
+      {%- endfor -%}
+    </span>
+    {%- endif -%}
+  </li>
+  {%- endfor -%}
+</ul>

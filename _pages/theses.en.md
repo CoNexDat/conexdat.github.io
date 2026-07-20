@@ -7,10 +7,14 @@ author_profile: true
 
 ## Graduate theses
 
-*(Pending migration from the legacy site; pull from the server via
-`rsync /var/www/cnet/tesis_posgrado .`).*
+### PhD
+
+{% include theses-list.html level="phd" lang="en" %}
+
+### Master's
+
+{% include theses-list.html level="master" lang="en" %}
 
 ## Engineering undergraduate theses
 
-*(Pending migration from the legacy site; pull from the server via
-`rsync /var/www/cnet/tesis_grado .`).*
+{% include theses-list.html level="grado" lang="en" %}

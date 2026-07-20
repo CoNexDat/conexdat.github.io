@@ -7,10 +7,14 @@ author_profile: true
 
 ## Thèses de doctorat / master
 
-*(En attente de migration depuis le site existant ; à récupérer via
-`rsync /var/www/cnet/tesis_posgrado .`).*
+### Doctorat
+
+{% include theses-list.html level="phd" lang="fr" %}
+
+### Master
+
+{% include theses-list.html level="master" lang="fr" %}
 
 ## Mémoires d'ingénieur
 
-*(En attente de migration depuis le site existant ; à récupérer via
-`rsync /var/www/cnet/tesis_grado .`).*
+{% include theses-list.html level="grado" lang="fr" %}

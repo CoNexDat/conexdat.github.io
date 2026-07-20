@@ -7,10 +7,14 @@ author_profile: true
 
 ## Tesis de Posgrado
 
-*(Pendiente de migración desde el sitio anterior; pull desde el servidor con
-`rsync /var/www/cnet/tesis_posgrado .`).*
+### Doctorado
+
+{% include theses-list.html level="phd" lang="es" %}
+
+### Maestría
+
+{% include theses-list.html level="master" lang="es" %}
 
 ## Tesis de Grado de Ingeniería
 
-*(Pendiente de migración desde el sitio anterior; pull desde el servidor con
-`rsync /var/www/cnet/tesis_grado .`).*
+{% include theses-list.html level="grado" lang="es" %}

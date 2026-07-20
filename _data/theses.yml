@@ -1,0 +1,269 @@
+# =============================================================================
+# CoNexDat — theses (rendered by _includes/theses-list.html on /theses/).
+#
+# level:  phd | master | grado          (section grouping key)
+# title:  single string, kept in its original language — the legacy site
+#         never translated thesis titles.
+# degree: trilingual, like `role` in members.yml.
+# links:  kind: thesis | slides | thesis-es | thesis-en
+#         PDFs live in files/theses/ (pulled from cnet.fi.uba.ar, Jul 2026).
+# =============================================================================
+
+# ---- PhD --------------------------------------------------------------------
+- title: "Internet tomography: measurement of traffic and its relation to the topology"
+  author: "Esteban Carisimo"
+  level: phd
+  year: 2020
+  degree:
+    es: "Doctorado en Ingeniería (UBA)"
+    en: "PhD in Engineering (UBA)"
+    fr: "Doctorat en Ingénierie (UBA)"
+  links:
+    - kind: thesis
+      url: "/files/theses/esteban-carisimo-2020-phd-thesis.pdf"
+
+- title: "Secured Point-to-point and multipoint Transmission System on shared media"
+  author: "Alfredo Adrián Ortega"
+  level: phd
+  year: 2015
+  degree:
+    es: "Doctorado en Informática (ITBA)"
+    en: "PhD in Informatics (ITBA)"
+    fr: "Doctorat en Informatique (ITBA)"
+  links:
+    - kind: thesis
+      url: "/files/theses/alfredo-ortega-2015-phd-thesis.pdf"
+
+- title: "Combinatorial Models of Complex Systems: Method and algorithms"
+  author: "Mariano Beiró"
+  level: phd
+  year: 2013
+  degree:
+    es: "Doctorado en Ingeniería (UBA)"
+    en: "PhD in Engineering (UBA)"
+    fr: "Doctorat en Ingénierie (UBA)"
+  links:
+    - kind: thesis-es
+      url: "/files/theses/mariano-beiro-2013-phd-thesis-es.pdf"
+    - kind: thesis-en
+      url: "/files/theses/mariano-beiro-2013-phd-thesis-en.pdf"
+
+# ---- Master -----------------------------------------------------------------
+- title: "Clock Synchronization on the Internet"
+  author: "David Sebastián Samaniego Bermeo"
+  level: master
+  year: 2018
+  degree:
+    es: "Maestría en Ingeniería en Telecomunicaciones"
+    en: "Master in Telecommunications Engineering"
+    fr: "Master en Ingénierie des Télécommunications"
+  links:
+    - kind: thesis
+      url: "/files/theses/david-samaniego-2018-master-thesis.pdf"
+
+- title: "Evaluating Contact Graph Routing algorithm in LEO satellite constellations"
+  author: "Juan Pablo Astudillo León"
+  level: master
+  year: 2015
+  degree:
+    es: "Maestría en Ingeniería en Telecomunicaciones"
+    en: "Master in Telecommunications Engineering"
+    fr: "Master en Ingénierie des Télécommunications"
+  links:
+    - kind: thesis
+      url: "/files/theses/juan-pablo-astudillo-leon-2015-master-thesis.pdf"
+    - kind: slides
+      url: "/files/theses/juan-pablo-astudillo-leon-2015-master-slides.pdf"
+
+- title: "Impact of MPLS tunnels on Internet topology"
+  author: "Fernando Dávila"
+  level: master
+  year: 2014
+  degree:
+    es: "Maestría en Ingeniería en Telecomunicaciones"
+    en: "Master in Telecommunications Engineering"
+    fr: "Master en Ingénierie des Télécommunications"
+  links:
+    - kind: thesis
+      url: "/files/theses/fernando-davila-2014-master-thesis.pdf"
+    - kind: slides
+      url: "/files/theses/fernando-davila-2014-master-slides.pdf"
+
+# ---- Ingeniería (grado) -----------------------------------------------------
+- title: "Construcción y Evaluación Experimental de un Sistema de Banco de Pruebas Intravehicular para Ethernet Automotriz"
+  author: "Sofía Morseletto"
+  level: grado
+  year: 2020
+  degree:
+    es: "Ingeniería en Informática"
+    en: "Computer Science and Engineering"
+    fr: "Ingénierie Informatique"
+  links:
+    - kind: thesis
+      url: "/files/theses/sofia-morseletto-2020-grado-thesis.pdf"
+    - kind: slides
+      url: "/files/theses/sofia-morseletto-2020-grado-slides.pdf"
+
+- title: "Dinámicas del discurso político en una red de Twitter en la Argentina"
+  author: "Tomás Mussi Reyero"
+  level: grado
+  year: 2019
+  degree:
+    es: "Ingeniería en Informática"
+    en: "Computer Science and Engineering"
+    fr: "Ingénierie Informatique"
+  links:
+    - kind: thesis
+      url: "/files/theses/tomas-mussi-reyero-2019-grado-thesis.pdf"
+    - kind: slides
+      url: "/files/theses/tomas-mussi-reyero-2019-grado-slides.pdf"
+
+- title: "Monitoring System for the Internet in Latin-America"
+  author: "Malte Hansen"
+  level: grado
+  year: 2019
+  degree:
+    es: "Ingeniería en Informática"
+    en: "Computer Science and Engineering"
+    fr: "Ingénierie Informatique"
+  links:
+    - kind: thesis
+      url: "/files/theses/malte-hansen-2019-grado-thesis.pdf"
+    - kind: slides
+      url: "/files/theses/malte-hansen-2019-grado-slides.pdf"
+
+- title: "Fragmentation and Merge of ad-hoc networks with ANTop protocol over IPv6"
+  author: "Pablo Damián Torrado"
+  level: grado
+  year: 2018
+  degree:
+    es: "Ingeniería Electrónica"
+    en: "Electronics Engineering"
+    fr: "Ingénierie Électronique"
+  links:
+    - kind: thesis
+      url: "/files/theses/pablo-torrado-2018-grado-thesis.pdf"
+    - kind: slides
+      url: "/files/theses/pablo-torrado-2018-grado-slides.pdf"
+
+- title: "Internet tomography: gathering data to study dynamic parameters of the network"
+  author: "Mauricio Anderson Ricci"
+  level: grado
+  year: 2016
+  degree:
+    es: "Ingeniería Electrónica"
+    en: "Electronics Engineering"
+    fr: "Ingénierie Électronique"
+  links:
+    - kind: thesis
+      url: "/files/theses/mauricio-anderson-2016-grado-thesis.pdf"
+    - kind: slides
+      url: "/files/theses/mauricio-anderson-2016-grado-slides.pdf"
+
+- title: "Spread of information in Complex Social Models"
+  author: "Matías Panario"
+  level: grado
+  year: 2016
+  degree:
+    es: "Ingeniería Electrónica"
+    en: "Electronics Engineering"
+    fr: "Ingénierie Électronique"
+  links:
+    - kind: thesis
+      url: "/files/theses/matias-panario-2016-grado-thesis.pdf"
+
+- title: "Network Tomography: Measurements of parameters of an Internet Exchange Point"
+  author: "Esteban Carisimo"
+  level: grado
+  year: 2014
+  degree:
+    es: "Ingeniería Electrónica"
+    en: "Electronics Engineering"
+    fr: "Ingénierie Électronique"
+  links:
+    - kind: thesis
+      url: "/files/theses/esteban-carisimo-2014-grado-thesis.pdf"
+
+- title: "Study and analysis of ANTop working over IPv6"
+  author: "Matías Campolo"
+  level: grado
+  year: 2012
+  degree:
+    es: "Ingeniería Electrónica"
+    en: "Electronics Engineering"
+    fr: "Ingénierie Électronique"
+  links:
+    - kind: thesis
+      url: "/files/theses/matias-campolo-2012-grado-thesis.pdf"
+
+- title: "Internet tomography: virtual links resolution in probes"
+  author: "Esteban Poggio"
+  level: grado
+  year: 2012
+  degree:
+    es: "Ingeniería Electrónica"
+    en: "Electronics Engineering"
+    fr: "Ingénierie Électronique"
+  links:
+    - kind: thesis
+      url: "/files/theses/esteban-poggio-2012-grado-thesis.pdf"
+
+- title: "Study and analysis mechanisms oriented to strengthen ANTop, using proactive routing"
+  author: "Gastón Tejia"
+  level: grado
+  year: 2010
+  degree:
+    es: "Ingeniería en Informática"
+    en: "Computer Science and Engineering"
+    fr: "Ingénierie Informatique"
+  links:
+    - kind: thesis
+      url: "/files/theses/gaston-tejia-2010-grado-thesis.pdf"
+
+- title: "Adaptive Discovery Mechanism for Wireless Environments"
+  author: "Germán Castignani"
+  level: grado
+  year: 2009
+  degree:
+    es: "Ingeniería en Informática"
+    en: "Computer Science and Engineering"
+    fr: "Ingénierie Informatique"
+  links:
+    - kind: thesis
+      url: "/files/theses/german-castignani-2009-grado-thesis.pdf"
+
+- title: "Complex Networks Visualization"
+  author: "Mariano Beiró"
+  level: grado
+  year: 2008
+  degree:
+    es: "Ingeniería en Informática"
+    en: "Computer Science and Engineering"
+    fr: "Ingénierie Informatique"
+  links:
+    - kind: thesis
+      url: "/files/theses/mariano-beiro-2008-grado-thesis.pdf"
+
+- title: "Development and simulation of routing protocols for ad-hoc networks"
+  author: "Alejandro Marcu"
+  level: grado
+  year: 2007
+  degree:
+    es: "Ingeniería en Informática"
+    en: "Computer Science and Engineering"
+    fr: "Ingénierie Informatique"
+  links:
+    - kind: thesis
+      url: "/files/theses/alejandro-marcu-2007-grado-thesis.pdf"
+
+- title: "Internet tomography"
+  author: "Alejandro Zylberberg"
+  level: grado
+  year: 2007
+  degree:
+    es: "Ingeniería en Informática"
+    en: "Computer Science and Engineering"
+    fr: "Ingénierie Informatique"
+  links:
+    - kind: thesis
+      url: "/files/theses/alejandro-zylberberg-2007-grado-thesis.pdf"
