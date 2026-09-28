@@ -11,4 +11,7 @@ author_profile: true
 [Facultad de Ingeniería](http://www.fi.uba.ar) — UBA
 Av. Paseo Colón 850, 1063 Buenos Aires, Argentina
 
-E-mail: [cnet@fi.uba.ar](mailto:cnet@fi.uba.ar)
+Para consultas sobre el grupo, escribile a su director,
+[Dr. Ing. J. Ignacio Alvarez-Hamelin](https://scholar.google.com/citations?user=Gpvqq48AAAAJ)
+(Departamento de Electrónica, FIUBA), o abrí un *issue* en
+[GitHub](https://github.com/CoNexDat/conexdat.github.io/issues).

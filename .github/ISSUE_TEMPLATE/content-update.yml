@@ -1,0 +1,31 @@
+name: Content update
+description: Add or fix a member, publication, project, news item, or thesis.
+title: "[Content]: "
+labels: ["content"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of content?
+      options:
+        - Member / collaborator
+        - Publication (BibTeX)
+        - Funded project
+        - News item
+        - Thesis
+        - Research area
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Paste the BibTeX, the person's name / role / homepage, the news text, etc. Include the three languages if you can (ES / EN / FR).
+    validations:
+      required: true
+  - type: input
+    id: links
+    attributes:
+      label: Links (optional)
+      placeholder: DOI, homepage, PDF, GitHub repository…

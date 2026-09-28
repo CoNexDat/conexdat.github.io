@@ -23,7 +23,9 @@ author:
   location         : "Buenos Aires, Argentina"
   employer         : "FIUBA · UBA"
   uri              : "https://conexdat.github.io"
-  email            : "cnet@fi.uba.ar"
+  # cnet@fi.uba.ar no longer exists — leave empty until the group picks a
+  # contact address (see /contact/).
+  email            :
   googlescholar    :
   orcid            :
   github           : "conexdat"

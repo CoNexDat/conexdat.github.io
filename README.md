@@ -7,18 +7,24 @@ template, with [jekyll-polyglot](https://github.com/untra/polyglot) for
 ES/EN/FR and [jekyll-scholar](https://github.com/inukshuk/jekyll-scholar)
 for BibTeX-driven publications.
 
-Published at https://conexdat.github.io/. The legacy URL
-`https://cnet.fi.uba.ar/` 302-redirects here; the FIUBA Apache box stays
-online only for serving bulkier datasets.
+Published at https://conexdat.github.io/. The legacy site at
+`https://cnet.fi.uba.ar/` is being retired: unknown paths there land on its
+old home page, so this site must not link into it except for pages that
+still exist (NetSci-X 2023, SnailVis, the PIT/IXP reports, PaD) or through
+Wayback Machine snapshots. Re-check with `grep -rn cnet.fi.uba.ar _data _pages _news`.
 
 ## Local development
 
-Requires Ruby 3.2+ (with Bundler).
+Requires Ruby 3.3 (with Bundler). On macOS with Homebrew:
 
 ```sh
+export PATH="$(brew --prefix ruby@3.3)/bin:$PATH"
 bundle install
 bundle exec jekyll serve --livereload --config _config.yml,_config.dev.yml
 ```
+
+The dev config is mandatory for previews: without it `head.html` links CSS and
+assets to the production URL and local style changes silently do not show.
 
 Open <http://localhost:4000/>, <http://localhost:4000/en/>,
 <http://localhost:4000/fr/>.
@@ -33,18 +39,41 @@ Open <http://localhost:4000/>, <http://localhost:4000/en/>,
 - `_data/navigation.yml` — top nav with localized labels
 - `_bibliography/*.bib` — publications (rendered by jekyll-scholar)
 - `_includes/people-list.html`, `projects-list.html` — shared layouts
+- `_includes/publications-filter.html` + `assets/js/publications.js` — search /
+  filter-by-person bar on `/publications/`
 - `_includes/masthead.html`, `head.html` — overridden for i18n + favicon
 - `images/` — logo, favicon, profile picture
 
 ## Deploy
 
 Pushes to `main` trigger `.github/workflows/deploy.yml`, which builds the site
-under Ruby 3.2 and publishes `_site/` to the `gh-pages` branch via
+under Ruby 3.3 and publishes `_site/` to the `gh-pages` branch via
 [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages).
 GitHub Pages is configured to serve from `gh-pages`.
 
 The `github-pages` gem is **not** used because GitHub's auto-build sandbox
 does not whitelist `jekyll-polyglot` or `jekyll-scholar`.
+
+## Contributing and governance
+
+- `main` is protected by a repository ruleset: changes land through pull
+  requests, the **Build site** check (`.github/workflows/build.yml`) must pass,
+  and force-pushes / deletion are blocked. Repository admins can bypass in an
+  emergency.
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for what-goes-where, the local
+  preview recipe and the PR checklist; [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+  and [SECURITY.md](SECURITY.md) for conduct and vulnerability reporting.
+- Dependabot proposes monthly updates for the Ruby gems and the Actions.
+
+### Language switcher gotcha
+
+jekyll-polyglot rewrites every `href="/…"` in a non-default-language page into
+the current language root, which breaks a hand-written ES | EN | FR switcher.
+The masthead therefore writes the links as `ferh="/en/…"`; polyglot turns
+`ferh` back into `href` without relativizing it. Do not "fix" the attribute
+name, and do not put `//` line comments inside inline `<script>` blocks: the
+production HTML compressor collapses them onto one line and comments out the
+whole script (that is what silently disabled the previous JS-based switcher).
 
 ## Migrating new content
 

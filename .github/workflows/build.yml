@@ -1,0 +1,43 @@
+name: Build site
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build site (Jekyll + polyglot + scholar)
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace
+
+      - name: Sanity-check output
+        run: |
+          set -e
+          test -f _site/index.html
+          test -f _site/en/index.html
+          test -f _site/fr/index.html
+          # The language switcher must emit real hrefs (regression guard for the
+          # polyglot/compress bug that silently disabled ES|EN|FR).
+          grep -q 'href="/en/" title="English"' _site/index.html
+          grep -q 'href="/" title="Español"' _site/en/index.html
+          grep -q 'href="/fr/" title="Français"' _site/en/index.html
+          echo "OK: $(find _site -name '*.html' | wc -l) HTML files"
