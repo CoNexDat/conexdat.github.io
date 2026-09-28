@@ -44,7 +44,7 @@ author_profile: true
       <div class="archive__item-body">
         <h2 class="archive__item-title">{{ h.title }}</h2>
         <div class="archive__item-excerpt"><p>{{ h.blurb.es }}</p></div>
-        {% if h.url and h.url != "" %}<p><a class="btn btn--info" href="{{ h.url }}">Ir al sitio &raquo;</a></p>{% endif %}
+        {% if h.url and h.url != "" %}<p><a class="btn btn--info" href="{{ h.url }}">{{ h.cta.es | default: "Ir al sitio" }} &raquo;</a></p>{% endif %}
       </div>
     </div>
   </div>

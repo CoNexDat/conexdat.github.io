@@ -1,0 +1,39 @@
+{%- comment -%}
+  Search / filter bar for the publications list.
+  Required: include.lang (es|en|fr). Behaviour lives in assets/js/publications.js:
+  it filters the <li> entries emitted by jekyll-scholar by author, title, venue
+  or year, and builds one "person" chip per frequent author so visitors can
+  browse the list by person.
+{%- endcomment -%}
+{%- assign l = include.lang | default: site.default_lang -%}
+{%- if l == 'en' -%}
+  {%- assign ph = 'Filter by author, title, venue or year…' -%}
+  {%- assign lbl = 'Filter publications' -%}
+  {%- assign by = 'By person' -%}
+  {%- assign clear = 'Clear' -%}
+  {%- assign of = 'of' -%}
+  {%- assign none = 'No publications match.' -%}
+{%- elsif l == 'fr' -%}
+  {%- assign ph = 'Filtrer par auteur, titre, revue ou année…' -%}
+  {%- assign lbl = 'Filtrer les publications' -%}
+  {%- assign by = 'Par personne' -%}
+  {%- assign clear = 'Effacer' -%}
+  {%- assign of = 'sur' -%}
+  {%- assign none = 'Aucune publication ne correspond.' -%}
+{%- else -%}
+  {%- assign ph = 'Filtrar por autor, título, revista o año…' -%}
+  {%- assign lbl = 'Filtrar publicaciones' -%}
+  {%- assign by = 'Por persona' -%}
+  {%- assign clear = 'Limpiar' -%}
+  {%- assign of = 'de' -%}
+  {%- assign none = 'Ninguna publicación coincide.' -%}
+{%- endif -%}
+<div class="pub-filter" data-of="{{ of }}" data-none="{{ none }}" data-by="{{ by }}">
+  <div class="pub-filter__row">
+    <label class="sr-only" for="pub-search">{{ lbl }}</label>
+    <input id="pub-search" class="pub-filter__input" type="search" placeholder="{{ ph }}" autocomplete="off" spellcheck="false">
+    <button type="button" class="pub-filter__clear" hidden>{{ clear }}</button>
+    <span class="pub-filter__count" aria-live="polite"></span>
+  </div>
+  <div class="pub-filter__chips" role="group" aria-label="{{ by }}"></div>
+</div>

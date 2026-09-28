@@ -1,6 +1,8 @@
 # =============================================================================
 # CoNexDat — group members.
 # Each entry: name, role (es/en/fr), affiliation (es/en/fr), homepage (optional),
+# Homepages were re-verified on 2026-09-28; prefer institutional pages, fall back
+# to Google Scholar when a person has no stable personal page.
 # category: current | external | former-inhouse | past-collaborator | alumni
 # tier (alumni only): faculty | phd | masters | undergraduate | intern
 # =============================================================================
@@ -16,7 +18,7 @@
     es: "Profesor Titular UBA · Investigador Independiente CONICET"
     en: "Full Professor UBA · Independent Researcher CONICET"
     fr: "Professeur Titulaire UBA · Chercheur Indépendant CONICET"
-  homepage: "http://cnet.fi.uba.ar/ignacio.alvarez-hamelin/index_es.html"
+  homepage: "https://scholar.google.com/citations?user=Gpvqq48AAAAJ"
 
 # ---- Active external collaborators ------------------------------------------
 - name: "Dr. Sebastián Grynberg"
@@ -40,7 +42,7 @@
     es: "Profesor y Co-Director de la Carrera de IA, Universidad de San Andrés"
     en: "Professor and Co-Director of the AI Program, Universidad de San Andrés"
     fr: "Professeur et Co-Directeur du Programme d'IA, Universidad de San Andrés"
-  homepage: "http://cnet.fi.uba.ar/mariano.beiro/"
+  homepage: "https://marbeiro.github.io/"
 
 - name: "Dr. Ing. Esteban Carisimo"
   category: former-inhouse
@@ -48,7 +50,7 @@
     es: "Cloudflare"
     en: "Cloudflare"
     fr: "Cloudflare"
-  homepage: "http://cnet.fi.uba.ar/esteban_carisimo/"
+  homepage: "https://estcarisimo.github.io/"
 
 # ---- Past collaborators -----------------------------------------------------
 - name: "Dr. Alessandro Vespignani"
@@ -57,7 +59,7 @@
     es: "Profesor Indiana University"
     en: "Professor, Indiana University"
     fr: "Professeur, Indiana University"
-  homepage: "http://www.northeastern.edu/physics/people/faculty/alessandro-vespignani/"
+  homepage: "https://www.networkscienceinstitute.org/people/alessandro-vespignani"
 
 - name: "Dr. Alain Barrat"
   category: past-collaborator
@@ -65,7 +67,7 @@
     es: "Investigador CNRS Université Paris-Sud"
     en: "Researcher, CNRS Université Paris-Sud"
     fr: "Chercheur CNRS Université Paris-Sud"
-  homepage: "http://www.cpt.univ-mrs.fr/~barrat/"
+  homepage: "https://www.cpt.univ-mrs.fr/~barrat/"
 
 - name: "Dr. Luca Dall'Asta"
   category: past-collaborator
@@ -73,7 +75,7 @@
     es: "Investigador Post-Doc International Centre for Theoretical Physics"
     en: "Post-Doc Researcher, International Centre for Theoretical Physics"
     fr: "Chercheur Post-Doc, International Centre for Theoretical Physics"
-  homepage: "http://areeweb.polito.it/ricerca/cmp/people/luca.dall.asta"
+  homepage: "https://www.polito.it/en/staff?p=luca.dallasta"
 
 - name: "Victor Alexis Bettachini"
   category: past-collaborator
@@ -88,7 +90,6 @@
     es: "Doctor en Ingeniería Informática ITBA"
     en: "PhD in Computer Engineering, ITBA"
     fr: "Docteur en Génie Informatique, ITBA"
-  homepage: "https://sites.google.com/site/ortegaalfredo/"
 
 - name: "Aline Carneiro Viana"
   category: past-collaborator
@@ -96,7 +97,6 @@
     es: "Investigador INRIA"
     en: "INRIA Researcher"
     fr: "Chercheuse INRIA"
-  homepage: "https://sites.google.com/site/alinecviana/"
 
 - name: "Marcelo Dias de Amorim"
   category: past-collaborator
@@ -104,7 +104,7 @@
     es: "Investigador CNRS, Université Pierre et Marie Curie"
     en: "CNRS Researcher, Université Pierre et Marie Curie"
     fr: "Chercheur CNRS, Université Pierre et Marie Curie"
-  homepage: "http://www-npa.lip6.fr/~amorim/"
+  homepage: "https://www-npa.lip6.fr/~amorim/"
 
 - name: "Pablo Fierens"
   category: past-collaborator
@@ -134,7 +134,7 @@
     es: "Investigador CNRS, LIAFA"
     en: "CNRS Researcher, LIAFA"
     fr: "Chercheur CNRS, LIAFA"
-  homepage: "http://www.liafa.jussieu.fr/~pierref/"
+  homepage: "https://www.irif.fr/users/pierref/index"
 
 - name: "Dr. Andrea Puglisi"
   category: past-collaborator
@@ -142,7 +142,7 @@
     es: "Investigador, Università di Roma 'La Sapienza'"
     en: "Researcher, Università di Roma 'La Sapienza'"
     fr: "Chercheur, Università di Roma 'La Sapienza'"
-  homepage: "http://denali.phys.uniroma1.it/twiki/bin/view/TNTgroup/AndreaPuglisi"
+  homepage: "https://www.isc.cnr.it/staff-members/andrea-puglisi/"
 
 - name: "Artur Ziviani"
   category: past-collaborator
@@ -150,7 +150,7 @@
     es: "Investigador, National Laboratory for Scientific Computing"
     en: "Researcher, National Laboratory for Scientific Computing"
     fr: "Chercheur, National Laboratory for Scientific Computing"
-  homepage: "http://www.lncc.br/~ziviani/Artur_Ziviani_Website/Home.html"
+  homepage: "https://sites.google.com/view/artur-ziviani-website/home"
 
 - name: "Alexei Vazquez"
   category: past-collaborator
@@ -158,7 +158,7 @@
     es: "Investigador, Institute of New Jersey"
     en: "Researcher, Institute of New Jersey"
     fr: "Chercheur, Institute of New Jersey"
-  homepage: "http://cinjweb.cinj.rutgers.edu/~vazqueal/"
+  homepage: "https://scholar.google.com/citations?user=PnxM2SQAAAAJ"
 
 - name: "Dr. Nicolas Schabanel"
   category: past-collaborator
@@ -166,7 +166,7 @@
     es: "Investigador CNRS, Centro de Modelamiento Matemático"
     en: "CNRS Researcher, Center for Mathematical Modeling"
     fr: "Chercheur CNRS, Centre de Modélisation Mathématique"
-  homepage: "http://www.liafa.jussieu.fr/~nschaban/"
+  homepage: "https://perso.ens-lyon.fr/nicolas.schabanel/"
 
 # ---- Alumni / former members ------------------------------------------------
 
@@ -269,7 +269,7 @@
     es: "Tesista de Grado de Ingeniería Informática"
     en: "Computer Engineering Undergraduate Thesis"
     fr: "Mémoire d'Ingénieur en Informatique"
-  homepage: "http://wwwen.uni.lu/snt/people/german_castignani/"
+  homepage: "https://scholar.google.com/citations?user=iq_ttaUAAAAJ"
 
 - name: "Ing. Alejandro José Marcu"
   category: alumni

@@ -113,7 +113,8 @@
         en: "Tracking the 2019 Argentinian presidential elections."
         fr: "Suivi des élections présidentielles argentines de 2019."
     - title: "OpLaDyn"
-      url: "https://cnet.fi.uba.ar/OpLaDyn/"
+      # Official project site (project.u-cergy.fr/~opladyn) is offline; Wayback copy.
+      url: "https://web.archive.org/web/20250523151259/http://project.u-cergy.fr/~opladyn/"
       blurb:
         es: "Dinámica del paisaje de opinión durante períodos electorales."
         en: "Opinion-landscape dynamics during electoral periods."
@@ -186,7 +187,7 @@
             es: "PIT Paraguay"
             en: "PIT Paraguay"
             fr: "PIT Paraguay"
-          url: "https://cnet.fi.uba.ar/PIT/PIT_Paraguay/#"
+          url: "https://cnet.fi.uba.ar/PIT/PIT_Paraguay/"
         - label:
             es: "PIT Bolivia (Agosto 2014)"
             en: "PIT Bolivia (August 2014)"
@@ -199,7 +200,8 @@
           url: "https://www.internetsociety.org/"
   projects:
     - title: "CDNs en el núcleo de Internet (TMA 2018)"
-      url: "https://cnet.fi.uba.ar/TMA2018/"
+      # cnet.fi.uba.ar/TMA2018/ now meta-redirects to netcores.
+      url: "https://netcores.fi.uba.ar/"
       blurb:
         es: "Cómo los proveedores de contenido pasaron a estar en el centro de Internet."
         en: "How content providers became central to the AS ecosystem after the rise of private CDNs."
@@ -263,7 +265,7 @@
         fr: "Influence stochastique du trafic concurrent, même en présence d'IXP et de CDN."
   projects:
     - title: "TiX — Traffic information eXchange"
-      url: "https://cnet.fi.uba.ar/TiX/"
+      url: "https://github.com/TiX-measurements"
       blurb:
         es: "Herramienta para medir la calidad del acceso domiciliario a Internet."
         en: "Tool for measuring the quality of residential Internet access."
