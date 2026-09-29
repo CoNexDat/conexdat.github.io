@@ -1002,13 +1002,15 @@ html[data-theme="dark"] .tool-card__icon { color: var(--cnet-celeste); }
 
 .repo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  // unquote(): libsass would otherwise try to evaluate CSS min() itself.
+  grid-template-columns: repeat(auto-fill, minmax(unquote("min(20rem, 100%)"), 1fr));
   gap: 0.9rem;
   margin: 1rem 0;
 }
 
 .repo-card {
   display: block;
+  align-self: start;  // cards differ in height; keep hover/focus box on the card
   text-decoration: none !important;
   border-radius: 6px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
