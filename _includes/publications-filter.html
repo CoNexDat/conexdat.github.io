@@ -45,7 +45,7 @@
     <span class="pub-filter__label">{{ topics_lbl }}</span>
     <div class="pub-filter__chips pub-filter__topics" role="group" aria-label="{{ topics_lbl }}">
       {%- for topic in site.data.publication_topics -%}
-        <a class="pub-topic" href="#topic={{ topic.id }}" data-topic="{{ topic.id }}" role="button" aria-pressed="false">{{ topic.label[l] | default: topic.label.en }}</a>
+        <button type="button" class="pub-topic" data-topic="{{ topic.id }}" aria-pressed="false">{{ topic.label[l] | default: topic.label.en }}</button>
       {%- endfor -%}
     </div>
   </div>

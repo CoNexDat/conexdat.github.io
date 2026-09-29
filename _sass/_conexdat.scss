@@ -614,7 +614,9 @@ html[data-theme="dark"] {
   border-radius: 4px;
   background: var(--cnet-surface);
   color: inherit !important;
+  font-family: inherit;
   text-decoration: none !important;
+  cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease;
 
   &:hover { border-color: var(--cnet-celeste); }

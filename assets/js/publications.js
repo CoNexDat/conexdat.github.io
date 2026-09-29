@@ -146,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (h && !/(?:^|&)(?:topic|q)=/.test(h)) return;
     var m;
     state.topic = (m = /(?:^|&)topic=([^&]+)/.exec(h)) ? dec(m[1]) : '';
+    // Ignore topics that no longer exist (stale or mistyped links).
+    if (state.topic && !bar.querySelector('.pub-topic[data-topic="' + state.topic.replace(/["\\]/g, '') + '"]')) state.topic = '';
     state.q = (m = /(?:^|&)q=([^&]+)/.exec(h)) ? dec(m[1]) : '';
     input.value = state.q;
     apply();
