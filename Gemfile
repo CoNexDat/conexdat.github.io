@@ -9,7 +9,7 @@ gem 'jekyll', '~> 4.3'
 # Pin jekyll-sass-converter to 2.x — academicpages' Sass partials rely on
 # the older libsass/sassc behavior, and dart-sass (jekyll-sass-converter
 # 3.x) raises "Can't find stylesheet to import" on the same files.
-gem 'jekyll-sass-converter', '~> 2.0'
+gem 'jekyll-sass-converter', '~> 3.1'
 
 group :jekyll_plugins do
   gem 'jekyll-feed'
