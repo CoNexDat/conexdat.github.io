@@ -65,7 +65,15 @@ jobs:
               echo
               echo "Run: $RUN_URL"
               echo
-              cat lychee-report.md
+              # GitHub caps issue bodies at 65,536 characters.
+              if [ "$(wc -c < lychee-report.md)" -gt 60000 ]; then
+                head -c 60000 lychee-report.md
+                echo
+                echo
+                echo "_Report truncated; the full list is in the run's job summary._"
+              else
+                cat lychee-report.md
+              fi
             } > issue-body.md
             if [ -n "$existing" ]; then
               gh issue edit "$existing" --body-file issue-body.md
