@@ -1,0 +1,54 @@
+# =============================================================================
+# CoNexDat — software page (/software/), trilingual.
+#  web_tools: services the group runs; rendered as cards with a "Visit" button.
+#  repos:     featured GitHub repositories (owner/name), rendered as pin cards
+#             from github-stats-extended, the service estcarisimo.github.io uses.
+#             Keep the list short; the orgs below link to everything else.
+#  orgs:      GitHub organizations with the rest of the code.
+# English uses American English.
+# =============================================================================
+
+web_tools:
+  - name: "LaNet-vi"
+    url: "https://lanet-vi.fi.uba.ar/"
+    icon: "fas fa-circle-nodes"
+    blurb:
+      es: "Visualización de redes grandes mediante descomposición en k-núcleos, k-densos y d-núcleos."
+      en: "Large-network visualization by k-core, k-dense and d-core decomposition."
+      fr: "Visualisation de grands réseaux par décomposition en k-cœurs, k-denses et d-cœurs."
+  - name: "netcores"
+    url: "https://netcores.fi.uba.ar/"
+    icon: "fas fa-diagram-project"
+    blurb:
+      es: "Análisis interactivo del núcleo de Internet: cómo los proveedores de contenido llegaron a su centro."
+      en: "Interactive analysis of the Internet core: how content providers moved to its center."
+      fr: "Analyse interactive du cœur d'Internet : comment les fournisseurs de contenu en ont gagné le centre."
+  - name: "I'm Here!"
+    url: "https://lanet-vi.fi.uba.ar/i-am-here"
+    icon: "fas fa-location-dot"
+    blurb:
+      es: "Un mapa de la topología de Internet que muestra dónde estás vos."
+      en: "A map of the Internet topology that shows where you are."
+      fr: "Une carte de la topologie d'Internet qui montre où vous êtes."
+
+repos:
+  - CoNexDat/LaNet-vi
+  - CoNexDat/complexnets
+  - CoNexDat/SIC
+  - CoNexDat/ANTop
+  - TiX-measurements/tix-deploy
+  - TiX-measurements/tix-time-server
+
+orgs:
+  - name: "CoNexDat"
+    url: "https://github.com/CoNexDat"
+    label:
+      es: "Todos los repositorios de CoNexDat"
+      en: "All CoNexDat repositories"
+      fr: "Tous les dépôts CoNexDat"
+  - name: "TiX-measurements"
+    url: "https://github.com/TiX-measurements"
+    label:
+      es: "TiX (Traffic information eXchange)"
+      en: "TiX (Traffic information eXchange)"
+      fr: "TiX (Traffic information eXchange)"

@@ -40,6 +40,7 @@ Open <http://localhost:4000/>, <http://localhost:4000/en/>,
 - `_bibliography/conexdat.bib` — publications (rendered by jekyll-scholar),
   each tagged with `topics = {…}`
 - `_data/publication_topics.yml` — trilingual publication topics (labels)
+- `_data/software.yml`, `_data/ietf.yml` — the Software and IETF pages
 - `_includes/people-list.html`, `projects-list.html` — shared layouts
 - `_includes/publications-filter.html` + `assets/js/publications.js` — search,
   topic and person filters on `/publications/`

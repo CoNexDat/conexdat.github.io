@@ -31,6 +31,8 @@ public face of the group, so small, well-scoped changes are preferred.
 | Add a news item                    | `_news/YYYY-MM-DD-slug.md` (+ `.en.md`, `.fr.md`) |
 | Add a publication                  | `_bibliography/conexdat.bib` (+ `topics`) |
 | Add / rename a publication topic   | `_data/publication_topics.yml`         |
+| Change the software cards or repos | `_data/software.yml`                   |
+| Add an RFC, draft or IETF activity | `_data/ietf.yml`                       |
 | Add / update a funded project      | `_data/projects.yml`                   |
 | Change a home-page project card    | `_data/highlights.yml`                 |
 | Change a research area             | `_data/research_areas.yml`             |

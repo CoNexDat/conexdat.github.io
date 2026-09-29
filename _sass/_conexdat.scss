@@ -87,6 +87,14 @@ html[data-theme="dark"] {
   background-color: transparent !important;
   color: #fff !important;
 }
+// The theme paints the hamburger bars with --global-masthead-link-color, which
+// is navy in light mode: invisible on the navy masthead, so light-mode visitors
+// could not see the button that reveals the collapsed menu items.
+.greedy-nav button:not(.close) .navicon,
+.greedy-nav button .navicon::before,
+.greedy-nav button .navicon::after {
+  background: #fff;
+}
 .masthead__menu-item {
   background-color: transparent !important;
   a, & > a {
@@ -519,11 +527,41 @@ html[data-theme="dark"] {
   }
 }
 
-// ---- Publications (al-folio-style entry cards via jekyll-scholar) ----------
-// Markup is emitted by _layouts/bib_entry.html. Each entry is a <div class="row">
-// with .title, .author (optionally containing <em> for highlighted authors),
-// .periodical, .links (button row), and optional .abstract.hidden / .bibtex.hidden
-// blocks toggled by assets/js/publications.js.
+// Small outlined buttons used under publications and IETF documents.
+@mixin cnet-small-buttons {
+  // academicpages' base .btn ships with `color: #fff !important` and
+  // `border: 0 !important` — we have to match that force or buttons render
+  // as white-on-white.
+  .btn,
+  .btn-sm {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0.2rem 0.75rem !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    border: 1.5px solid var(--cnet-navy) !important;
+    border-radius: 4px !important;
+    background: #fff !important;
+    background-color: #fff !important;
+    color: var(--cnet-navy) !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(0, 57, 117, 0.06);
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &:visited { color: var(--cnet-navy) !important; }
+    &:hover, &:focus, &:active {
+      background: var(--cnet-navy) !important;
+      background-color: var(--cnet-navy) !important;
+      color: #fff !important;
+      border-color: var(--cnet-navy) !important;
+      text-decoration: none !important;
+      box-shadow: 0 2px 6px rgba(0, 57, 117, 0.25);
+    }
+  }
+}
+
 // ---- Publications filter bar (see _includes/publications-filter.html) ------
 .pub-filter {
   margin: 1rem 0 1.25rem;
@@ -674,6 +712,11 @@ html[data-theme="dark"] {
 .publications li.is-hidden,
 .publications > .row.is-hidden { display: none; }
 
+// ---- Publications (al-folio-style entry cards via jekyll-scholar) ----------
+// Markup is emitted by _layouts/bib_entry.html. Each entry is a <div class="row">
+// with .title, .author (optionally containing <em> for highlighted authors),
+// .periodical, .links (button row), and optional .abstract.hidden / .bibtex.hidden
+// blocks toggled by assets/js/publications.js.
 .publications {
   margin: 1rem 0 2rem;
 
@@ -750,37 +793,7 @@ html[data-theme="dark"] {
     gap: 0.55rem;
     margin-top: 0.55rem;
 
-    // academicpages' base .btn ships with `color: #fff !important` and
-    // `border: 0 !important` — we have to match that force or buttons render
-    // as white-on-white.
-    .btn,
-    .btn-sm {
-      display: inline-block;
-      margin-bottom: 0;
-      padding: 0.2rem 0.75rem !important;
-      font-size: 0.78rem !important;
-      font-weight: 600 !important;
-      line-height: 1.35 !important;
-      border: 1.5px solid var(--cnet-navy) !important;
-      border-radius: 4px !important;
-      background: #fff !important;
-      background-color: #fff !important;
-      color: var(--cnet-navy) !important;
-      text-decoration: none !important;
-      cursor: pointer;
-      box-shadow: 0 1px 0 rgba(0, 57, 117, 0.06);
-      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
-
-      &:visited { color: var(--cnet-navy) !important; }
-      &:hover, &:focus, &:active {
-        background: var(--cnet-navy) !important;
-        background-color: var(--cnet-navy) !important;
-        color: #fff !important;
-        border-color: var(--cnet-navy) !important;
-        text-decoration: none !important;
-        box-shadow: 0 2px 6px rgba(0, 57, 117, 0.25);
-      }
-    }
+    @include cnet-small-buttons;
   }
 
   .abstract.hidden,
@@ -819,7 +832,8 @@ html[data-theme="dark"] {
     text-decoration-color: var(--cnet-celeste);
   }
   .publications .periodical { color: var(--cnet-celeste); }
-  .publications .links .btn {
+  .publications .links .btn,
+  .ietf-doc .links .btn {
     background: var(--cnet-navy-deep) !important;
     background-color: var(--cnet-navy-deep) !important;
     border-color: var(--cnet-celeste) !important;
@@ -940,4 +954,149 @@ html[data-theme="dark"] {
     margin-top: 0.4rem;
     .btn { margin-right: 0.35rem; margin-bottom: 0; }
   }
+}
+
+// ---- Software page: web-tool cards and repository pin cards -----------------
+// (see _includes/software-cards.html and _data/software.yml)
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--cnet-border);
+  border-radius: 6px;
+  background: var(--cnet-surface);
+
+  &__icon {
+    font-size: 1.6em;
+    color: var(--cnet-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  &__name {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  &__blurb {
+    flex: 1;
+    margin: 0 0 0.8rem;
+    font-size: 0.85em;
+  }
+
+  &__link {
+    align-self: flex-start;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+}
+
+html[data-theme="dark"] .tool-card__icon { color: var(--cnet-celeste); }
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0;
+}
+
+.repo-card {
+  display: block;
+  text-decoration: none !important;
+  border-radius: 6px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 57, 117, 0.18);
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // Only the image for the current theme is shown.
+  &__img--dark { display: none; }
+
+  &__fallback { display: none; }
+
+  // The card service is unreachable: show a plain link instead.
+  &.is-fallback {
+    align-self: start;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--cnet-border);
+    background: var(--cnet-surface);
+
+    .repo-card__img { display: none !important; }
+    .repo-card__fallback { display: inline; font-weight: 600; }
+  }
+}
+
+html[data-theme="dark"] .repo-card {
+  .repo-card__img--light { display: none; }
+  .repo-card__img--dark { display: block; }
+}
+
+.repo-orgs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+
+  .btn { margin: 0; }
+}
+
+// ---- IETF page (see _includes/ietf-docs.html and _data/ietf.yml) ------------
+.ietf-docs {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.ietf-doc {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--cnet-border);
+  border-radius: 6px;
+  background: var(--cnet-surface);
+
+  &__id {
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+
+  &__title { font-weight: 700; margin: 0.2rem 0; }
+  &__authors { font-size: 0.85em; }
+  &__authors em { font-style: normal; text-decoration: underline; }
+  &__status { font-size: 0.85em; font-style: italic; margin-top: 0.2rem; }
+  &__blurb { font-size: 0.9em; margin: 0.5rem 0; }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 0.55rem;
+
+    @include cnet-small-buttons;
+  }
+}
+
+.ietf-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .btn { margin: 0; }
 }

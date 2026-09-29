@@ -5,17 +5,16 @@ title: "Software publicado"
 author_profile: true
 ---
 
-Herramientas y software desarrollados por el grupo:
+Herramientas y software desarrollados por el grupo.
 
-- **[LaNet-vi](http://lanet-vi.fi.uba.ar/)** — visualización de redes grandes
-  mediante descomposición en *k-núcleos*
-  ([código en GitHub](https://github.com/CoNexDat/LaNet-vi) ·
-  [documentación](https://conexdat.github.io/LaNet-vi/)).
-- **[I'm Here!](http://lanet-vi.fi.uba.ar/i-am-here)** — visualización
-  interactiva de la topología de Internet, indicando dónde se encuentra el
-  usuario.
-- **[TiX (Traffic information eXchange)](https://github.com/TiX-measurements)** —
-  herramienta para medir la calidad del acceso a Internet desde el hogar
-  ([código en GitHub](https://github.com/TiX-measurements)).
-- **ANTop** — protocolo de ruteo para redes ad-hoc, simulado en
-  [QUENAS](http://sourceforge.net/projects/quenas).
+## Herramientas en línea
+
+{% include software-cards.html part="tools" lang="es" %}
+
+## Repositorios destacados
+
+Una selección de nuestros repositorios. El resto del código está en las organizaciones de GitHub del grupo.
+
+{% include software-cards.html part="repos" lang="es" %}
+
+**TiX** (Traffic information eXchange) mide la calidad del acceso domiciliario a Internet; su código está en la organización [TiX-measurements](https://github.com/TiX-measurements). La documentación de LaNet-vi está en [conexdat.github.io/LaNet-vi](https://conexdat.github.io/LaNet-vi/). ANTop, el protocolo de ruteo para redes ad hoc, se simuló en [QUENAS](https://sourceforge.net/projects/quenas/).

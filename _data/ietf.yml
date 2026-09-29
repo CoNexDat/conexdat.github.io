@@ -1,0 +1,55 @@
+# =============================================================================
+# CoNexDat — IETF page (/ietf/), trilingual. Facts verified on 2026-09-28
+# against the RFC Editor, IETF Datatracker (person 123380) and the JAIIO sites.
+# English uses American English.
+# =============================================================================
+
+datatracker_profile: "https://datatracker.ietf.org/person/Jos%C3%A9%20Ignacio%20Alvarez-Hamelin"
+
+rfcs:
+  - id: "RFC 9198"
+    title: "Advanced Unidirectional Route Assessment (AURA)"
+    authors: "J. Alvarez-Hamelin, A. Morton, J. Fabini, C. Pignataro, R. Geib"
+    date: { es: "mayo de 2022", en: "May 2022", fr: "mai 2022" }
+    status:
+      es: "Estándar propuesto, grupo de trabajo IPPM (IP Performance Measurement). Actualiza la RFC 2330."
+      en: "Proposed Standard, IPPM (IP Performance Measurement) working group. Updates RFC 2330."
+      fr: "Norme proposée, groupe de travail IPPM (IP Performance Measurement). Met à jour le RFC 2330."
+    blurb:
+      es: "Define una métrica y una metodología para evaluar la ruta unidireccional entre un origen y un destino, incluidas las subrutas paralelas que introducen las tecnologías multicamino."
+      en: "Defines a metric and a measurement methodology to assess the unidirectional route between a source and a destination, including the parallel subpaths introduced by multipath technologies."
+      fr: "Définit une métrique et une méthodologie pour évaluer la route unidirectionnelle entre une source et une destination, y compris les sous-chemins parallèles introduits par les technologies multichemins."
+    links:
+      - { label: "RFC Editor", url: "https://www.rfc-editor.org/rfc/rfc9198.html" }
+      - { label: "Datatracker", url: "https://datatracker.ietf.org/doc/rfc9198/" }
+      - { label: "DOI", url: "https://doi.org/10.17487/RFC9198" }
+
+drafts:
+  - id: "draft-alavarez-hamelin-tictoc-sic"
+    title: "Synchronizing Internet Clock frequency protocol (sic)"
+    status:
+      es: "Internet-Draft individual; última versión -08 (noviembre de 2021), vencido en mayo de 2022."
+      en: "Individual Internet-Draft; latest revision -08 (November 2021), expired in May 2022."
+      fr: "Internet-Draft individuel ; dernière révision -08 (novembre 2021), expiré en mai 2022."
+    blurb:
+      es: "Método seguro para sincronizar relojes en Internet con estabilidad de frecuencia y robustez frente a ataques de intermediario (*man-in-the-middle*), pensado para la calidad de las mediciones de desempeño."
+      en: "A secure method to synchronize clocks on the Internet with frequency stability and robustness to man-in-the-middle attacks, aimed at the quality of performance measurements."
+      fr: "Une méthode sécurisée pour synchroniser les horloges sur Internet, avec stabilité en fréquence et robustesse aux attaques de l'homme du milieu, au service de la qualité des mesures de performance."
+    links:
+      - { label: "Datatracker", url: "https://datatracker.ietf.org/doc/draft-alavarez-hamelin-tictoc-sic/" }
+      - { label: "GitHub", url: "https://github.com/CoNexDat/SIC" }
+  - id: "draft-ietf-ippm-route"
+    title: "Advanced Unidirectional Route Assessment (AURA)"
+    status:
+      es: "Documento del grupo IPPM (versiones -00 a -10), publicado como RFC 9198. Empezó como el draft individual draft-amf-ippm-route."
+      en: "IPPM working-group draft (revisions -00 to -10), published as RFC 9198. It started as the individual draft draft-amf-ippm-route."
+      fr: "Document du groupe IPPM (révisions -00 à -10), publié comme RFC 9198. Il a commencé comme draft individuel draft-amf-ippm-route."
+    links:
+      - { label: "Datatracker", url: "https://datatracker.ietf.org/doc/draft-ietf-ippm-route/" }
+      - { label: "draft-amf-ippm-route", url: "https://datatracker.ietf.org/doc/draft-amf-ippm-route/" }
+
+ietf_day:
+  links:
+    - { label: "JAIIO 2026", url: "https://55jaiio.sadio.org.ar/simposios" }
+    - { label: { es: "Actas 2022", en: "2022 proceedings", fr: "Actes 2022" }, url: "https://revistas.unlp.edu.ar/JAIIO/issue/view/1136" }
+    - { label: "JAIIO 2020", url: "https://49jaiio.sadio.org.ar/simposios/IETFDay.html" }
