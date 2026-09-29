@@ -4,7 +4,6 @@ _site/
 .sass-cache/
 .bundle/
 /vendor/
-Gemfile.lock
 .DS_Store
 *~
 node_modules/
@@ -12,3 +11,4 @@ node_modules/
 
 # Claude Code subagent worktrees
 .claude/worktrees/
+.lycheecache

@@ -5,8 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: write
+permissions: {}
 
 concurrency:
   group: pages
@@ -14,12 +13,17 @@ concurrency:
 
 jobs:
   build-deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # push the built site to the gh-pages branch
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8  # v1.327.0
         with:
           ruby-version: "3.3"
           bundler-cache: true
@@ -30,7 +34,7 @@ jobs:
         run: bundle exec jekyll build --trace
 
       - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453  # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages

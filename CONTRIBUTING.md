@@ -82,6 +82,13 @@ Then open <http://localhost:4000/>, `/en/` and `/fr/`. The dev config is
 required: without it the pages link CSS and assets to the production URL and
 local style changes silently do not show.
 
+Install the commit hooks once per clone (they fix whitespace, validate YAML and
+JSON, and lint the workflows):
+
+```sh
+uvx pre-commit install
+```
+
 The warnings `Error reading file _layouts/single` are a known, harmless
 jekyll-polyglot quirk.
 

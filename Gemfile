@@ -22,3 +22,8 @@ end
 gem 'webrick', '~> 1.8'
 gem 'csv'
 gem 'base64'
+
+# Security audit of Gemfile.lock (run by .github/workflows/security.yml).
+group :audit do
+  gem 'bundler-audit', require: false
+end

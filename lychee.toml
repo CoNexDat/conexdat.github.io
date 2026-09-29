@@ -1,0 +1,22 @@
+# Link checker configuration (https://lychee.cli.rs), used by:
+#   - .github/workflows/build.yml       offline check of internal links on every PR
+#   - .github/workflows/link-check.yml  weekly online check of every link
+# Run locally after a production build:
+#   lychee --root-dir "$PWD/_site" '_site/**/*.html'
+
+# Many publisher and institutional sites block bots with 403, and Google Scholar
+# rate-limits with 429. Those pages work in a browser, so they count as alive.
+accept = ["200..=299", "403", "429"]
+
+max_retries = 3
+retry_wait_time = 5
+timeout = 30
+max_concurrency = 12
+index_files = ["index.html"]
+user_agent = "Mozilla/5.0 (compatible; CoNexDat link check; +https://github.com/CoNexDat/conexdat.github.io)"
+no_progress = true
+
+exclude = [
+  # Share and profile URL templates that the theme emits without a target.
+  '^https?://(www\.)?(linkedin\.com|twitter\.com|x\.com|facebook\.com)/',
+]

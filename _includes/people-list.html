@@ -2,7 +2,10 @@
   Members of a given category, rendered as a card grid.
   Required: include.category (current|external|alumni), include.lang (es|en|fr).
   Each card looks for /images/people/<slug>.jpg, where <slug> is either
-  member.slug (front-matter) or the kebab-cased name. Fallback: profile.png.
+  member.slug (front-matter) or the kebab-cased name. The check happens at build
+  time (site.data.people_photos, filled by _plugins/people_photos.rb), so a
+  missing photo renders the profile.png
+  placeholder directly instead of making the browser request a missing file.
 {%- endcomment -%}
 {%- assign members = site.data.members | where: "category", include.category -%}
 {%- if include.tier -%}{%- assign members = members | where: "tier", include.tier -%}{%- endif -%}
@@ -11,12 +14,14 @@
 <div class="people-grid">
 {%- for m in members -%}
   {%- assign slug = m.slug | default: m.name | downcase | replace: '.', '' | replace: ',', '' | replace: "'", '' | replace: '"', '' | replace: 'á', 'a' | replace: 'é', 'e' | replace: 'í', 'i' | replace: 'ó', 'o' | replace: 'ú', 'u' | replace: 'ñ', 'n' | replace: 'ü', 'u' | strip | replace: '  ', ' ' | replace: ' ', '-' -%}
+  {%- assign photo_path = '/images/people/' | append: slug | append: '.jpg' -%}
   <div class="person-card">
     <div class="person-card__avatar">
-      <img src="{{ '/images/people/' | append: slug | append: '.jpg' | relative_url }}"
-           alt="{{ m.name }}"
-           onerror="this.onerror=null;this.src='{{ '/images/profile.png' | relative_url }}';this.classList.add('person-card__avatar--placeholder');"
-           loading="lazy">
+      {%- if site.data.people_photos contains slug -%}
+      <img src="{{ photo_path | relative_url }}" alt="{{ m.name }}" loading="lazy">
+      {%- else -%}
+      <img src="{{ '/images/profile.png' | relative_url }}" alt="" class="person-card__avatar--placeholder" loading="lazy">
+      {%- endif -%}
     </div>
     <div class="person-card__body">
       <div class="person-card__name">{{ m.name }}</div>

@@ -1,18 +1,29 @@
 version: 2
 updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7  # let new releases settle before proposing them
+    labels: ["dependencies", "github_actions"]
+    groups:
+      actions:
+        patterns: ["*"]
+
   - package-ecosystem: bundler
     directory: "/"
     schedule:
-      interval: monthly
+      interval: weekly
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    labels: ["dependencies", "ruby"]
     ignore:
       # Pinned to 2.x on purpose: the academicpages partials do not compile under
       # dart-sass (jekyll-sass-converter 3.x). See the Gemfile and AGENTS.md.
       - dependency-name: jekyll-sass-converter
         update-types: ["version-update:semver-major"]
     groups:
-      jekyll:
-        patterns: ["*"]
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: monthly
+      ruby-minor-and-patch:
+        update-types: ["minor", "patch"]
