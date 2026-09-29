@@ -8,8 +8,16 @@
   Author highlighting: any author whose last name (downcased, accents stripped,
   spaces removed) matches a value in `site.cnet.highlighted_authors` gets
   wrapped in <em>...</em>.
+
+  Topics: `topics = {id1, id2}` in the BibTeX entry, ids from
+  _data/publication_topics.yml. Each renders as a chip linking to
+  /publications/#topic=<id> (polyglot adds the /en/ or /fr/ prefix); on the
+  publications page itself assets/js/publications.js intercepts the click and
+  filters in place. The row carries data-topics for the filter.
 {%- endcomment -%}
-<div class="row">
+{%- assign cnet_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
+{%- assign entry_topics = entry.topics | default: '' | split: ',' -%}
+<div class="row"{% if entry.topics %} data-topics="{{ entry.topics | replace: ',', ' ' | strip }}"{% endif %}>
   <div id="{{ entry.key }}" class="col-sm-12">
     <div class="title">{{ entry.title }}</div>
     <div class="author">
@@ -114,6 +122,19 @@
         <a class="bibtex btn btn-sm" role="button">Bib</a>
       {%- endif -%}
     </div>
+
+    {%- if entry.topics -%}
+      <div class="pub-topics">
+        {%- for t in entry_topics -%}
+          {%- assign tid = t | strip -%}
+          {%- for topic in site.data.publication_topics -%}
+            {%- if topic.id == tid -%}
+              <a class="pub-topic" href="/publications/#topic={{ tid }}" data-topic="{{ tid }}">{{ topic.label[cnet_lang] | default: topic.label.en }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
 
     {%- if entry.abstract -%}
       <div class="abstract hidden"><p>{{ entry.abstract }}</p></div>

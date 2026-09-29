@@ -7,11 +7,14 @@ author_profile: true
 
 **CoNexDat — Groupe de Réseaux Complexes et Communication de Données**
 
-[Departamento de Electrónica](http://electronica.fi.uba.ar)
-[Facultad de Ingeniería](http://www.fi.uba.ar) — UBA
+[Departamento de Electrónica](https://www.fi.uba.ar/institucional/departamentos/electronica)
+[Facultad de Ingeniería](https://www.fi.uba.ar) — UBA
 Av. Paseo Colón 850, 1063 Buenos Aires, Argentine
 
-Pour toute question sur le groupe, écrivez à son directeur,
-[Dr J. Ignacio Alvarez-Hamelin](https://scholar.google.com/citations?user=Gpvqq48AAAAJ)
-(Département d'Électronique, FIUBA), ou ouvrez un *issue* sur
-[GitHub](https://github.com/CoNexDat/conexdat.github.io/issues).
+Pour toute question sur le groupe, contactez son directeur,
+le Dr J. Ignacio Alvarez-Hamelin (Département d'Électronique, FIUBA).
+
+Les logiciels et les données du groupe sont sur GitHub :
+[github.com/CoNexDat](https://github.com/CoNexDat). Pour signaler un problème sur
+ce site, ouvrez un *issue* dans
+[son dépôt](https://github.com/CoNexDat/conexdat.github.io/issues).

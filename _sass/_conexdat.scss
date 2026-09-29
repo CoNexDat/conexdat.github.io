@@ -33,7 +33,7 @@
   --global-thead-color               : var(--cnet-surface);
 }
 
-// Dark mode: replace academicpages' default grey (#474747) with CONICET navy.
+// Dark mode: replace academicpages' default gray (#474747) with CONICET navy.
 html[data-theme="dark"] {
   --cnet-bg:          #002b5c;       // deep navy as page background
   --cnet-surface:     #003975;       // navy for surfaces (cards, footer)
@@ -570,14 +570,81 @@ html[data-theme="dark"] {
     white-space: nowrap;
   }
 
+  &__group {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+
+    &:has(.pub-filter__chips:empty) { display: none; }
+  }
+
+  &__label {
+    flex: 0 0 5.5rem;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
   &__chips {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
-    margin-top: 0.6rem;
 
     &:empty { display: none; }
   }
+
+  @media (max-width: 600px) {
+    &__group { flex-direction: column; gap: 0.3rem; }
+    &__label { flex-basis: auto; }
+  }
+}
+
+// Topic chips: in the filter bar and under each entry. Square-ish corners so
+// they read differently from the rounded people chips.
+.pub-topic {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75em;
+  line-height: 1.4;
+  white-space: nowrap;
+  border: 1px solid var(--cnet-border);
+  border-radius: 4px;
+  background: var(--cnet-surface);
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  &:hover { border-color: var(--cnet-celeste); }
+
+  &.is-active {
+    background: var(--cnet-navy);
+    border-color: var(--cnet-navy);
+    color: #fff !important;
+  }
+}
+
+// Dark mode: the surface is already navy, so the selected chip flips to
+// celeste with deep-navy text (white on celeste is too low-contrast).
+html[data-theme="dark"] {
+  .pub-chip.is-active,
+  .pub-topic.is-active {
+    background: var(--cnet-celeste);
+    border-color: var(--cnet-celeste);
+    color: var(--cnet-navy-deep) !important;
+  }
+}
+
+.publications .pub-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+
+  .pub-topic { font-size: 0.7em; opacity: 0.85; }
+  .pub-topic.is-active { opacity: 1; }
 }
 
 .pub-chip {
@@ -596,8 +663,8 @@ html[data-theme="dark"] {
   &--group { font-weight: 600; }
 
   &.is-active {
-    background: var(--cnet-celeste);
-    border-color: var(--cnet-celeste);
+    background: var(--cnet-navy);
+    border-color: var(--cnet-navy);
     color: #fff;
   }
 }

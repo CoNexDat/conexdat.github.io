@@ -43,7 +43,7 @@ FIELD_RE = re.compile(
 )
 
 
-def normalise(value: str) -> str:
+def normalize(value: str) -> str:
     v = value.strip()
     return REPLACEMENTS.get(v, v)
 
@@ -54,9 +54,9 @@ def main():
 
     def repl(m):
         prefix, opens, value, closes, suffix = m.group(1), m.group(2), m.group(3), m.group(4), m.group(5)
-        new_value = normalise(value)
+        new_value = normalize(value)
         # Preserve the brace nesting (single vs double braces) — bibtex uses
-        # double braces for capitalisation preservation, don't disturb it.
+        # double braces for capitalization preservation, don't disturb it.
         if new_value != value.strip() or value != value.strip():
             changes.append((value.strip(), new_value))
         return f"{prefix}{opens}{new_value}{closes}{suffix}"
@@ -72,7 +72,7 @@ def main():
             else:
                 print(f"  · trimmed whitespace: {old!r}")
     else:
-        print("No changes (already normalised).")
+        print("No changes (already normalized).")
 
 
 if __name__ == "__main__":

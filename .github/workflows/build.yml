@@ -40,4 +40,16 @@ jobs:
           grep -q 'href="/en/" title="English"' _site/index.html
           grep -q 'href="/" title="Español"' _site/en/index.html
           grep -q 'href="/fr/" title="Français"' _site/en/index.html
+          # Publication topics: chips in the bar, and space-separated ids on
+          # entries (the filter splits on whitespace).
+          grep -q 'data-topic="latam"' _site/publications/index.html
+          grep -Eq 'data-topics="[a-z-]+ +[a-z-]+' _site/en/publications/index.html
+          # Group decision: no e-mail addresses anywhere on the site.
+          if grep -rl 'mailto:' _site --include='*.html'; then
+            echo "::error::mailto: link found (the site publishes no e-mail addresses)"; exit 1
+          fi
+          # Repository docs must not be published with the site.
+          for f in AGENTS.md CLAUDE.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md; do
+            test ! -e "_site/$f"
+          done
           echo "OK: $(find _site -name '*.html' | wc -l) HTML files"
