@@ -68,7 +68,14 @@ does not whitelist `jekyll-polyglot` or `jekyll-scholar`.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for what-goes-where, the local
   preview recipe and the PR checklist; [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
   and [SECURITY.md](SECURITY.md) for conduct and vulnerability reporting.
-- Dependabot proposes monthly updates for the Ruby gems and the Actions.
+- Dependabot proposes weekly, grouped updates for the Ruby gems and the Actions
+  (with a 7-day cooldown). Actions are pinned to commit SHAs.
+- `security.yml` audits `Gemfile.lock` with bundler-audit and the workflows with
+  zizmor, on changes and weekly. CodeQL, secret scanning and push protection are
+  enabled in the repository settings.
+- `link-check.yml` checks every link weekly and keeps a single "broken-link" issue
+  open until they pass; the PR build checks internal links on every change.
+- Every PR gets an independent review that follows `.github/REVIEW.md`.
 
 ### Language switcher gotcha
 

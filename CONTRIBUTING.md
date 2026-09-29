@@ -78,7 +78,14 @@ bundle install
 bundle exec jekyll serve --livereload --config _config.yml,_config.dev.yml
 ```
 
-Then open <http://localhost:4000/>, `/en/` and `/fr/`. The dev config is
+Then open <http://localhost:4000/>, `/en/` and `/fr/`.
+
+Install the commit hooks once per clone (they fix whitespace, validate YAML and
+JSON, and lint the workflows):
+
+```sh
+uvx pre-commit install
+``` The dev config is
 required: without it the pages link CSS and assets to the production URL and
 local style changes silently do not show.
 

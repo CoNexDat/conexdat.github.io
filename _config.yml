@@ -77,6 +77,8 @@ exclude:
   - CODE_OF_CONDUCT.md
   - CONTRIBUTING.md
   - SECURITY.md
+  - lychee.toml
+  - .lycheecache
   - _scripts
   - tmp
   - vendor

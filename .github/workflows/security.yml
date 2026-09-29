@@ -36,11 +36,10 @@ jobs:
         uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8  # v1.327.0
         with:
           ruby-version: "3.3"
+          bundler-cache: true  # bundler-audit is locked in Gemfile.lock (group :audit)
 
       - name: Audit locked gems
-        run: |
-          gem install --no-document bundler-audit
-          bundle-audit check --update
+        run: bundle exec bundle-audit check --update
 
   workflows:
     name: zizmor

@@ -33,7 +33,13 @@ _includes/                  masthead (language switcher), people/projects/theses
                             publications-filter.html, research-area.html
 assets/js/publications.js   search / topic / person filter on /publications/
 _sass/_conexdat.scss        all site-specific styles (colors, cards, chips, dark mode)
-.github/workflows/          build.yml (PR check "Build site"), deploy.yml (push to main)
+_plugins/people_photos.rb   lists images/people/*.jpg as site.data.people_photos
+images/                     logo, favicons (generated from the logo), manifest.json, people/
+lychee.toml                 link-checker settings (PR internal check + weekly online check)
+.github/workflows/          build.yml (PR check "Build site": build, sanity checks, internal
+                            links), deploy.yml (push to main), security.yml (bundler-audit,
+                            zizmor), link-check.yml (weekly; opens a "broken-link" issue)
+.github/REVIEW.md           brief for the independent reviewer of every PR
 ```
 
 ## Commands
@@ -43,7 +49,14 @@ export PATH="/usr/local/opt/ruby@3.3/bin:$PATH"   # macOS/Homebrew; Ruby 3.3 onl
 bundle install
 bundle exec jekyll serve --livereload --config _config.yml,_config.dev.yml   # preview
 JEKYLL_ENV=production bundle exec jekyll build                              # what CI runs
+uvx pre-commit install                     # once per clone; hooks run on every commit
+uvx pre-commit run --all-files             # whitespace, YAML/JSON, zizmor on workflows
+bundle exec bundle-audit check --update    # known vulnerabilities in Gemfile.lock
+lychee --config lychee.toml --root-dir "$PWD/_site" '_site/**/*.html'   # every link
 ```
+
+`Gemfile.lock` is committed and CI installs exactly what it pins. Update gems with
+`bundle update --conservative <gem>` (or let Dependabot do it); never hand-edit the lock.
 
 Ruby 3.3 is required: the system Ruby is too old for Bundler 4, and Ruby 4 cannot
 compile the `sassc` native gem. A full build takes about 30 seconds. The repeated
@@ -100,6 +113,12 @@ hard-codes that origin for CSS and assets.
   `exclude_from_localization` in `_config.yml`. The weekly link check catches misses.
 - `assets/js/main.min.js` is a prebuilt file; `assets/js/_main.js` and `plugins/` are
   excluded from the build, so editing them changes nothing.
+- **Workflows** pin every action to a full commit SHA with the version in a comment,
+  check out with `persist-credentials: false`, and grant permissions per job. Dependabot
+  keeps the pins current; zizmor (in `security.yml` and pre-commit) enforces the rest.
+- **Icons** are generated from `images/logo_conexdat.png` (network drawing only, strokes
+  thickened for 16/32 px) with ImageMagick; regenerate all of them together if the logo
+  changes. `images/` is excluded from localization, so icon links never get `/en/`.
 - `jekyll-sass-converter` is pinned to 2.x on purpose: the academicpages partials do not
   compile under dart-sass (3.x). Dependabot is told to ignore that major version.
 - Jekyll-scholar exposes custom BibTeX fields (`topics`, `pdf`, `code`, ...) to
@@ -119,6 +138,7 @@ an emergency, and say so in the PR description.
    in light and dark mode, and at phone width.
 3. Wait for `Build site`. If it is red, read the log (`gh run view <id> --log-failed`),
    fix, push, and wait again. Never weaken the check to get green.
-4. Get a review before merging (see CLAUDE.md for how Claude Code sessions do this).
+4. Get an independent review before merging. The reviewer follows `.github/REVIEW.md`
+   and its verdict is posted on the PR; see CLAUDE.md for how Claude Code sessions run it.
 5. Merge with `gh pr merge <n> --squash --delete-branch`. Merging deploys to production
    within a few minutes; confirm the live page afterwards.
