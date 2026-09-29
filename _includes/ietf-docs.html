@@ -1,0 +1,22 @@
+{%- comment -%}
+  IETF documents from _data/ietf.yml, as cards.
+  Required: include.lang (es|en|fr), include.kind (rfcs|drafts).
+{%- endcomment -%}
+{%- assign l = include.lang | default: site.default_lang -%}
+{%- assign docs = site.data.ietf[include.kind] -%}
+<div class="ietf-docs">
+  {%- for d in docs -%}
+  <div class="ietf-doc">
+    <div class="ietf-doc__id">{{ d.id }}{% if d.date %} · {{ d.date[l] | default: d.date.en }}{% endif %}</div>
+    <div class="ietf-doc__title">{{ d.title }}</div>
+    {%- if d.authors -%}<div class="ietf-doc__authors">{{ d.authors | replace: 'J. Alvarez-Hamelin', '<em>J. Alvarez-Hamelin</em>' }}</div>{%- endif -%}
+    <div class="ietf-doc__status">{{ d.status[l] | default: d.status.en }}</div>
+    {%- if d.blurb -%}<p class="ietf-doc__blurb">{{ d.blurb[l] | default: d.blurb.en }}</p>{%- endif -%}
+    <div class="links">
+      {%- for k in d.links -%}
+      <a class="btn btn-sm" href="{{ k.url }}" rel="noopener">{{ k.label }}</a>
+      {%- endfor -%}
+    </div>
+  </div>
+  {%- endfor -%}
+</div>

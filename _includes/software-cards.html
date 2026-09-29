@@ -1,0 +1,47 @@
+{%- comment -%}
+  Software page blocks, from _data/software.yml.
+  Required: include.lang (es|en|fr) and include.part (tools|repos).
+  Repository cards are SVG pin cards served by github-stats-extended (the same
+  service as estcarisimo.github.io), in site colors for the light and dark
+  themes; only the one matching the current theme is shown. If the service is
+  down, the card falls back to a plain link.
+{%- endcomment -%}
+{%- assign l = include.lang | default: site.default_lang -%}
+{%- if l == 'en' -%}{%- assign visit = 'Visit' -%}
+{%- elsif l == 'fr' -%}{%- assign visit = 'Visiter' -%}
+{%- else -%}{%- assign visit = 'Visitar' -%}{%- endif -%}
+{%- assign sw = site.data.software -%}
+
+{%- if include.part == 'tools' -%}
+<div class="tool-grid">
+  {%- for t in sw.web_tools -%}
+  <div class="tool-card">
+    <i class="{{ t.icon }} tool-card__icon" aria-hidden="true"></i>
+    <div class="tool-card__name">{{ t.name }}</div>
+    <p class="tool-card__blurb">{{ t.blurb[l] | default: t.blurb.en }}</p>
+    <a class="tool-card__link" href="{{ t.url }}" rel="noopener">{{ visit }} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> {{ t.name }}</span></a>
+  </div>
+  {%- endfor -%}
+</div>
+
+{%- elsif include.part == 'repos' -%}
+{%- assign api = 'https://github-stats-extended.vercel.app/api/pin/?show_owner=true&amp;disable_animations=true&amp;hide_border=false&amp;locale=' | append: l -%}
+{%- assign light = '&amp;bg_color=F4F6FA&amp;title_color=005CB9&amp;text_color=1A2A3D&amp;icon_color=003975&amp;border_color=D6E0EC' -%}
+{%- assign dark = '&amp;bg_color=003975&amp;title_color=74ACDF&amp;text_color=FFFFFF&amp;icon_color=74ACDF&amp;border_color=1F4F86' -%}
+<div class="repo-grid">
+  {%- for r in sw.repos -%}
+  {%- assign parts = r | split: '/' -%}
+  {%- assign q = '&amp;username=' | append: parts[0] | append: '&amp;repo=' | append: parts[1] -%}
+  <a class="repo-card" href="https://github.com/{{ r }}" rel="noopener">
+    <img class="repo-card__img repo-card__img--light" src="{{ api }}{{ q }}{{ light }}" alt="{{ r }}" width="400" height="120" loading="lazy" onerror="this.closest('.repo-card').classList.add('is-fallback')">
+    <img class="repo-card__img repo-card__img--dark" src="{{ api }}{{ q }}{{ dark }}" alt="{{ r }}" width="400" height="120" loading="lazy" onerror="this.closest('.repo-card').classList.add('is-fallback')">
+    <span class="repo-card__fallback"><i class="fab fa-github" aria-hidden="true"></i> {{ r }}</span>
+  </a>
+  {%- endfor -%}
+</div>
+<p class="repo-orgs">
+  {%- for o in sw.orgs -%}
+  <a class="btn btn--info" href="{{ o.url }}" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> {{ o.label[l] | default: o.label.en }}</a>
+  {%- endfor -%}
+</p>
+{%- endif -%}

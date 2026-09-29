@@ -5,7 +5,8 @@
     - free text over author / title / venue / year;
     - one topic, from the chips rendered here out of _data/publication_topics.yml
       (entries carry the matching ids in data-topics, see _layouts/bib_entry.html);
-    - one person, from chips the script builds out of the most frequent authors.
+    - one member, from chips the script builds out of the most frequent authors
+      (labeled "Miembros" / "Members" / "Membres", as the group asked).
   Deep links: /publications/#topic=latam, #q=Carisimo, or both joined with "&".
 {%- endcomment -%}
 {%- assign l = include.lang | default: site.default_lang -%}
@@ -13,7 +14,7 @@
   {%- assign ph = 'Search by author, title, venue or year…' -%}
   {%- assign lbl = 'Search publications' -%}
   {%- assign topics_lbl = 'Topics' -%}
-  {%- assign by = 'People' -%}
+  {%- assign by = 'Members' -%}
   {%- assign clear = 'Clear' -%}
   {%- assign of = 'of' -%}
   {%- assign none = 'No publications match.' -%}
@@ -21,7 +22,7 @@
   {%- assign ph = 'Rechercher par auteur, titre, revue ou année…' -%}
   {%- assign lbl = 'Rechercher des publications' -%}
   {%- assign topics_lbl = 'Thèmes' -%}
-  {%- assign by = 'Personnes' -%}
+  {%- assign by = 'Membres' -%}
   {%- assign clear = 'Effacer' -%}
   {%- assign of = 'sur' -%}
   {%- assign none = 'Aucune publication ne correspond.' -%}
@@ -29,7 +30,7 @@
   {%- assign ph = 'Buscar por autor, título, revista o año…' -%}
   {%- assign lbl = 'Buscar publicaciones' -%}
   {%- assign topics_lbl = 'Temas' -%}
-  {%- assign by = 'Personas' -%}
+  {%- assign by = 'Miembros' -%}
   {%- assign clear = 'Limpiar' -%}
   {%- assign of = 'de' -%}
   {%- assign none = 'Ninguna publicación coincide.' -%}

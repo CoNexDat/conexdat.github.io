@@ -170,9 +170,9 @@
         en: "Standards (IETF)"
         fr: "Normes (IETF)"
       blurb:
-        es: "Contribuciones al IETF — *RFC 9198 (AURA)* para estandarizar mediciones unidireccionales — y propuestas de **ruteo EGP** sub-lineal."
-        en: "IETF contributions — *RFC 9198 (AURA)* on standardizing unidirectional measurements — and proposals for **sub-linear EGP routing**."
-        fr: "Contributions à l'IETF — *RFC 9198 (AURA)* sur la mesure unidirectionnelle — et propositions de **routage EGP** sous-linéaire."
+        es: "Contribuciones al IETF — *RFC 9198 (AURA)* para estandarizar mediciones unidireccionales — y propuestas de **ruteo EGP** sub-lineal. [Más sobre el IETF](/ietf/)."
+        en: "IETF contributions — *RFC 9198 (AURA)* on standardizing unidirectional measurements — and proposals for **sub-linear EGP routing**. [More on the IETF](/ietf/)."
+        fr: "Contributions à l'IETF — *RFC 9198 (AURA)* sur la mesure unidirectionnelle — et propositions de **routage EGP** sous-linéaire. [En savoir plus sur l'IETF](/ietf/)."
   collaborations:
     - name:
         es: "Primeros IXPs de Bolivia y Paraguay — Internet Society"
@@ -215,9 +215,9 @@
     - title: "RFC 9198 — AURA"
       url: "https://www.rfc-editor.org/rfc/rfc9198"
       blurb:
-        es: "Advanced Unidirectional Route Assessment — RFC informativo del IETF."
-        en: "Advanced Unidirectional Route Assessment — informational IETF RFC."
-        fr: "Advanced Unidirectional Route Assessment — RFC informatif de l'IETF."
+        es: "Advanced Unidirectional Route Assessment — estándar propuesto del IETF (grupo IPPM, 2022)."
+        en: "Advanced Unidirectional Route Assessment — IETF Proposed Standard (IPPM working group, 2022)."
+        fr: "Advanced Unidirectional Route Assessment — norme proposée de l'IETF (groupe IPPM, 2022)."
   papers:
     - CDFDPAH20      # First Look at Latin American IXPs (CCR 2020)
     - CSAHD19        # CDNs in IPv4/IPv6 Internet cores
