@@ -45,7 +45,7 @@ drafts:
       en: "IPPM working-group draft (revisions -00 to -10), published as RFC 9198. It started as the individual draft draft-amf-ippm-route."
       fr: "Document du groupe IPPM (révisions -00 à -10), publié comme RFC 9198. Il a commencé comme draft individuel draft-amf-ippm-route."
     links:
-      - { label: "Datatracker", url: "https://datatracker.ietf.org/doc/draft-ietf-ippm-route/" }
+      - { label: "Datatracker", url: "https://datatracker.ietf.org/doc/draft-ietf-ippm-route/history/" }
       - { label: "draft-amf-ippm-route", url: "https://datatracker.ietf.org/doc/draft-amf-ippm-route/" }
 
 ietf_day:
