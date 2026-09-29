@@ -1,5 +1,7 @@
 name: Build site
 
+# Required check on every pull request (ruleset "Protect main"): build the site
+# exactly as deploy.yml does, then check the output.
 on:
   pull_request:
   workflow_dispatch:
@@ -16,26 +18,36 @@ jobs:
     name: Build site
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
-          ruby-version: "3.3"
-          bundler-cache: true
+          persist-credentials: false
 
       - name: Check publication topic ids
         run: |
           # Every id in a `topics = {...}` field must exist in
           # _data/publication_topics.yml; an unknown id renders no chip silently.
+          fields=$(grep -ciE '^[[:space:]]*topics[[:space:]]*=' _bibliography/conexdat.bib || true)
+          if [ "$fields" -eq 0 ]; then
+            echo "::error::No topics fields found in _bibliography/conexdat.bib"; exit 1
+          fi
           known=$(sed -n 's/^- id: *//p' _data/publication_topics.yml | sort -u)
-          used=$(grep -oE '^[[:space:]]*topics[[:space:]]*=[[:space:]]*\{[^}]*\}' _bibliography/conexdat.bib \
+          used=$(grep -oiE '^[[:space:]]*topics[[:space:]]*=[[:space:]]*\{[^}]*\}' _bibliography/conexdat.bib \
                  | sed -E 's/.*\{(.*)\}/\1/' | tr ',' '\n' | tr -d ' ' | sed '/^$/d' | sort -u)
+          matched=$(grep -ciE '^[[:space:]]*topics[[:space:]]*=[[:space:]]*\{[^}]*\}' _bibliography/conexdat.bib || true)
+          if [ "$matched" -ne "$fields" ]; then
+            echo "::error::$((fields - matched)) topics field(s) are not on one line as topics = {id1, id2}"; exit 1
+          fi
           unknown=$(comm -13 <(echo "$known") <(echo "$used"))
           if [ -n "$unknown" ]; then
             echo "::error::Unknown publication topic id(s): $unknown"; exit 1
           fi
-          echo "OK: $(echo "$used" | wc -l) topic ids used, all known"
+          echo "OK: $fields entries tagged, $(echo "$used" | wc -l) topic ids used, all known"
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8  # v1.327.0
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
 
       - name: Build site (Jekyll + polyglot + scholar)
         env:
@@ -57,12 +69,29 @@ jobs:
           # entries (the filter splits on whitespace).
           grep -q 'data-topic="latam"' _site/publications/index.html
           grep -Eq 'data-topics="[a-z-]+ +[a-z-]+' _site/en/publications/index.html
-          # Group decision: no e-mail addresses anywhere on the site.
+          # Group decision: no e-mail addresses in any HTML page.
           if grep -rl 'mailto:' _site --include='*.html'; then
             echo "::error::mailto: link found (the site publishes no e-mail addresses)"; exit 1
           fi
           # Repository docs must not be published with the site.
-          for f in AGENTS.md CLAUDE.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md; do
+          for f in AGENTS.md CLAUDE.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md lychee.toml; do
             test ! -e "_site/$f"
           done
           echo "OK: $(find _site -name '*.html' | wc -l) HTML files"
+
+      # Every internal link and asset must resolve inside the build. Absolute
+      # links to this site are mapped to the local files; external links are
+      # checked weekly by link-check.yml instead, so a PR never fails because
+      # some other server is down.
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8  # v2.9.0
+        with:
+          args: >-
+            --config lychee.toml --offline
+            --root-dir ${{ github.workspace }}/_site
+            --remap 'https://conexdat\.github\.io/(.*) file://${{ github.workspace }}/_site/$1'
+            --remap 'https://conexdat\.github\.io$ file://${{ github.workspace }}/_site/'
+            --exclude '/_site/LaNet-vi/'
+            '_site/**/*.html'
+          fail: true
+          jobSummary: true

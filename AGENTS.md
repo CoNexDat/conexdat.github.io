@@ -94,6 +94,10 @@ hard-codes that origin for CSS and assets.
 - **No `//` comments inside inline `<script>` blocks.** Production builds compress HTML
   onto one line, so a `//` comment swallows the rest of the script. That silently broke
   the previous language switcher. Use `/* … */` or move the code to `assets/js/`.
+- **Other CoNexDat project sites share this domain** (for example
+  `https://conexdat.github.io/LaNet-vi/`). Polyglot treats links to them as internal and
+  adds `/en/` or `/fr/`, which 404s. Every such path must be listed in
+  `exclude_from_localization` in `_config.yml`. The weekly link check catches misses.
 - `assets/js/main.min.js` is a prebuilt file; `assets/js/_main.js` and `plugins/` are
   excluded from the build, so editing them changes nothing.
 - `jekyll-sass-converter` is pinned to 2.x on purpose: the academicpages partials do not

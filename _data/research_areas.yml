@@ -107,7 +107,7 @@
         fr: "Prédiction de la démographie, des fondements moraux et des attitudes (vaccination, etc.) à partir du comportement en ligne."
   projects:
     - title: "Twitter — Elecciones 2019"
-      url: "http://elecciones2019.fi.uba.ar"
+      url: "https://web.archive.org/web/20190912124205/http://elecciones2019.fi.uba.ar/"
       blurb:
         es: "Seguimiento de las elecciones presidenciales argentinas de 2019."
         en: "Tracking the 2019 Argentinian presidential elections."
@@ -207,7 +207,7 @@
         en: "How content providers became central to the AS ecosystem after the rise of private CDNs."
         fr: "Comment les fournisseurs de contenu sont devenus centraux dans l'écosystème des AS après l'essor des CDN privés."
     - title: "I'm Here!"
-      url: "http://lanet-vi.fi.uba.ar/i_am_here"
+      url: "https://lanet-vi.fi.uba.ar/i-am-here"
       blurb:
         es: "Visualizá un mapa de la topología de Internet indicando dónde estás."
         en: "Visualize a map of the Internet topology, showing where you are."
@@ -271,7 +271,7 @@
         en: "Tool for measuring the quality of residential Internet access."
         fr: "Outil pour mesurer la qualité de l'accès résidentiel à Internet."
     - title: "UBACyT — Mediciones QoS y ruteo"
-      url: "http://www.uba.ar/secyt/"
+      url: "/projects/"
       blurb:
         es: "Mediciones de QoS domiciliaria, análisis tomográfico y propuestas de algoritmos de ruteo."
         en: "Residential QoS measurement, tomographic analysis, and routing-algorithm proposals."

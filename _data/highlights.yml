@@ -9,7 +9,8 @@
     es: "Seguimiento de las Elecciones presidenciales de 2019."
     en: "Tracking the 2019 Argentinian presidential elections."
     fr: "Suivi des élections présidentielles argentines de 2019."
-  url: "http://elecciones2019.fi.uba.ar"
+  # The live site is gone (default nginx page); 2019 Wayback snapshot.
+  url: "https://web.archive.org/web/20190912124205/http://elecciones2019.fi.uba.ar/"
 
 - title: "CDNs"
   blurb:

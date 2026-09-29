@@ -149,7 +149,11 @@ whitelist:
 # ---- Multilingual (jekyll-polyglot) -----------------------------------------
 languages:               ["es", "en", "fr"]
 default_lang:            "es"
-exclude_from_localization: ["assets", "files", "404.html"]
+# Not copied per language, and links into them are never given an /en/ or /fr/
+# prefix (images/ was missing, so icon links 404ed on EN and FR pages).
+# LaNet-vi is another repository's project site on this same domain
+# (https://conexdat.github.io/LaNet-vi/); list every such project here too.
+exclude_from_localization: ["assets", "files", "images", "404.html", "LaNet-vi"]
 parallel_localization:   false
 
 # ---- Bibliography (jekyll-scholar) ------------------------------------------
