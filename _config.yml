@@ -179,6 +179,11 @@ cnet:
     - alvarez-hamelin
     - beiro
     - carisimo
+  # Per-language sidebar tagline (author-profile.html falls back to author.bio)
+  bio:
+    es: "Grupo de Redes Complejas y Comunicación de Datos"
+    en: "Complex Networks and Data Communication Group"
+    fr: "Groupe Réseaux Complexes et Communication de Données"
   # Per-language meta description (seo.html falls back to top-level `description`)
   description:
     es: *description

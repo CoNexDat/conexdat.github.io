@@ -121,6 +121,10 @@ hard-codes that origin for CSS and assets.
 - **Icons** are generated from `images/logo_conexdat.png` (network drawing only, strokes
   thickened for 16/32 px) with ImageMagick; regenerate all of them together if the logo
   changes. `images/` is excluded from localization, so icon links never get `/en/`.
+- **Repository cards** on /software/ are SVGs from `github-stats-extended.vercel.app`, a
+  third-party service: every visitor's IP reaches it, and an error it serves as HTTP 200
+  (for example a rate-limit card) shows up as the card instead of the plain-link fallback.
+  Keep the list short, and replace the service if it becomes unreliable.
 - `jekyll-sass-converter` is pinned to 2.x on purpose: the academicpages partials do not
   compile under dart-sass (3.x). Dependabot is told to ignore that major version.
 - Jekyll-scholar exposes custom BibTeX fields (`topics`, `pdf`, `code`, ...) to

@@ -17,7 +17,7 @@ Le groupe contribue à l'**IETF** (Internet Engineering Task Force), l'organisme
 
 ## IETF Day aux JAIIO
 
-Ignacio Alvarez-Hamelin est l'un des *chairs* de l'**IETF Day**, l'atelier du groupe de travail d'ingénierie d'Internet / Argentine que la FIUBA et la SADIO organisent au sein des Journées argentines d'informatique (JAIIO) depuis 2020, avec Gustavo Mercado (UTN FRM) et Marcela Orbiscay (IANIGLA–CONICET). L'atelier rapproche les chercheurs argentins et latino-américains de l'élaboration des normes d'Internet, et Alvarez-Hamelin a codirigé ses actes de 2022.
+L'**IETF Day** est l'atelier du groupe de travail argentin de l'Internet Engineering Task Force au sein des Journées argentines d'informatique (JAIIO), organisé par la FIUBA, la SADIO et ce groupe de travail, avec des éditions depuis 2020. Il rapproche les chercheurs argentins et latino-américains de l'élaboration des normes d'Internet. Ignacio Alvarez-Hamelin est l'un des coprésidents de l'édition 2026, avec Gustavo Mercado (UTN FRM) et Marcela Orbiscay (IANIGLA–CONICET), et a coédité les actes de l'édition 2022.
 
 <p class="ietf-links">{%- for k in site.data.ietf.ietf_day.links -%}<a class="btn btn--info" href="{{ k.url }}" rel="noopener">{% if k.label.fr %}{{ k.label.fr }}{% else %}{{ k.label }}{% endif %}</a>{%- endfor -%}</p>
 

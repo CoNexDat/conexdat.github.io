@@ -17,4 +17,4 @@ Une sélection de nos dépôts. Le reste du code se trouve dans les organisation
 
 {% include software-cards.html part="repos" lang="fr" %}
 
-La documentation de LaNet-vi est sur [conexdat.github.io/LaNet-vi](https://conexdat.github.io/LaNet-vi/). ANTop, le protocole de routage pour réseaux ad hoc, a été simulé sous [QUENAS](https://sourceforge.net/projects/quenas/).
+**TiX** (Traffic information eXchange) mesure la qualité de l'accès résidentiel à Internet ; son code se trouve dans l'organisation [TiX-measurements](https://github.com/TiX-measurements). La documentation de LaNet-vi est sur [conexdat.github.io/LaNet-vi](https://conexdat.github.io/LaNet-vi/). ANTop, le protocole de routage pour réseaux ad hoc, a été simulé sous [QUENAS](https://sourceforge.net/projects/quenas/).

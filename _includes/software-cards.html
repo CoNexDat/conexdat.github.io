@@ -4,7 +4,9 @@
   Repository cards are SVG pin cards served by github-stats-extended (the same
   service as estcarisimo.github.io), in site colors for the light and dark
   themes; only the one matching the current theme is shown. If the service is
-  down, the card falls back to a plain link.
+  down, the card falls back to a plain link. The service gets every
+  visitor's IP address, and an error it returns as HTTP 200 (e.g. a rate-limit
+  card) will not trigger the fallback; see AGENTS.md.
 {%- endcomment -%}
 {%- assign l = include.lang | default: site.default_lang -%}
 {%- if l == 'en' -%}{%- assign visit = 'Visit' -%}
@@ -33,8 +35,8 @@
   {%- assign parts = r | split: '/' -%}
   {%- assign q = '&amp;username=' | append: parts[0] | append: '&amp;repo=' | append: parts[1] -%}
   <a class="repo-card" href="https://github.com/{{ r }}" rel="noopener">
-    <img class="repo-card__img repo-card__img--light" src="{{ api }}{{ q }}{{ light }}" alt="{{ r }}" width="400" height="120" loading="lazy" onerror="this.closest('.repo-card').classList.add('is-fallback')">
-    <img class="repo-card__img repo-card__img--dark" src="{{ api }}{{ q }}{{ dark }}" alt="{{ r }}" width="400" height="120" loading="lazy" onerror="this.closest('.repo-card').classList.add('is-fallback')">
+    <img class="repo-card__img repo-card__img--light" src="{{ api }}{{ q }}{{ light }}" alt="{{ r }} (GitHub)" width="400" loading="lazy" onerror="this.closest('.repo-card').classList.add('is-fallback')">
+    <img class="repo-card__img repo-card__img--dark" src="{{ api }}{{ q }}{{ dark }}" alt="{{ r }} (GitHub)" width="400" loading="lazy" onerror="this.closest('.repo-card').classList.add('is-fallback')">
     <span class="repo-card__fallback"><i class="fab fa-github" aria-hidden="true"></i> {{ r }}</span>
   </a>
   {%- endfor -%}

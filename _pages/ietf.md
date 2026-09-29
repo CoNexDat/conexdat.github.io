@@ -17,7 +17,7 @@ El grupo contribuye al **IETF** (Internet Engineering Task Force), el organismo 
 
 ## IETF Day en las JAIIO
 
-Ignacio Alvarez-Hamelin es uno de los *chairs* del **IETF Day**, el Taller del Grupo de Trabajo de Ingeniería de Internet / Argentina que FIUBA y SADIO organizan dentro de las Jornadas Argentinas de Informática (JAIIO) desde 2020, junto con Gustavo Mercado (UTN FRM) y Marcela Orbiscay (IANIGLA–CONICET). El taller acerca a investigadores argentinos y latinoamericanos al desarrollo de los estándares de Internet, y Alvarez-Hamelin coeditó sus actas de 2022.
+El **IETF Day** es el Taller del Grupo de Trabajo de Ingeniería de Internet / Argentina dentro de las Jornadas Argentinas de Informática (JAIIO), que organizan FIUBA, SADIO y ese grupo de trabajo, con ediciones desde 2020. Acerca a investigadores argentinos y latinoamericanos al desarrollo de los estándares de Internet. Ignacio Alvarez-Hamelin es uno de los *chairs* de la edición 2026, junto con Gustavo Mercado (UTN FRM) y Marcela Orbiscay (IANIGLA–CONICET), y coeditó las actas de la edición 2022.
 
 <p class="ietf-links">{%- for k in site.data.ietf.ietf_day.links -%}<a class="btn btn--info" href="{{ k.url }}" rel="noopener">{% if k.label.es %}{{ k.label.es }}{% else %}{{ k.label }}{% endif %}</a>{%- endfor -%}</p>
 

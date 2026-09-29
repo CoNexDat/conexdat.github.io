@@ -527,11 +527,6 @@ html[data-theme="dark"] {
   }
 }
 
-// ---- Publications (al-folio-style entry cards via jekyll-scholar) ----------
-// Markup is emitted by _layouts/bib_entry.html. Each entry is a <div class="row">
-// with .title, .author (optionally containing <em> for highlighted authors),
-// .periodical, .links (button row), and optional .abstract.hidden / .bibtex.hidden
-// blocks toggled by assets/js/publications.js.
 // Small outlined buttons used under publications and IETF documents.
 @mixin cnet-small-buttons {
   // academicpages' base .btn ships with `color: #fff !important` and
@@ -717,6 +712,11 @@ html[data-theme="dark"] {
 .publications li.is-hidden,
 .publications > .row.is-hidden { display: none; }
 
+// ---- Publications (al-folio-style entry cards via jekyll-scholar) ----------
+// Markup is emitted by _layouts/bib_entry.html. Each entry is a <div class="row">
+// with .title, .author (optionally containing <em> for highlighted authors),
+// .periodical, .links (button row), and optional .abstract.hidden / .bibtex.hidden
+// blocks toggled by assets/js/publications.js.
 .publications {
   margin: 1rem 0 2rem;
 
@@ -960,7 +960,7 @@ html[data-theme="dark"] {
 // (see _includes/software-cards.html and _data/software.yml)
 .tool-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
   gap: 0.9rem;
   margin: 1rem 0 1.5rem;
 }
@@ -1032,6 +1032,7 @@ html[data-theme="dark"] .tool-card__icon { color: var(--cnet-celeste); }
 
   // The card service is unreachable: show a plain link instead.
   &.is-fallback {
+    align-self: start;
     padding: 0.9rem 1rem;
     border: 1px solid var(--cnet-border);
     background: var(--cnet-surface);
