@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Homogenise journal / booktitle / series field values in conexdat.bib.
+"""Homogenize journal / booktitle / series field values in conexdat.bib.
 
 Apply a small replacement map (canonical names, expanded abbreviations,
 typo fixes), trim trailing whitespace inside the braces, and report a diff

@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var parts = [];
     if (state.topic) parts.push('topic=' + encodeURIComponent(state.topic));
     if (state.q.trim()) parts.push('q=' + encodeURIComponent(state.q.trim()));
-    try { history.replaceState(null, '', parts.length ? '#' + parts.join('&') : location.pathname); } catch (e) {}
+    try { history.replaceState(null, '', parts.length ? '#' + parts.join('&') : location.pathname + location.search); } catch (e) {}
   }
 
   function apply() {
@@ -69,10 +69,14 @@ document.addEventListener('DOMContentLoaded', function () {
     clearBtn.hidden = !filtering;
     count.textContent = filtering ? (shown ? shown + ' ' + bar.dataset.of + ' ' + total : bar.dataset.none) : '';
     document.querySelectorAll('.pub-topic[data-topic]').forEach(function (c) {
-      c.classList.toggle('is-active', c.dataset.topic === state.topic);
+      var on = c.dataset.topic === state.topic;
+      c.classList.toggle('is-active', on);
+      if (bar.contains(c)) c.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     people.querySelectorAll('.pub-chip').forEach(function (c) {
-      c.classList.toggle('is-active', !!q && norm(c.dataset.q) === q);
+      var on = !!q && norm(c.dataset.q) === q;
+      c.classList.toggle('is-active', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     writeHash();
   }
@@ -90,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // /publications/#topic=<id> so they also work from research-area pages; here
   // we filter in place and scroll back to the bar.
   document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var chip = e.target.closest('.pub-topic[data-topic]');
     if (!chip) return;
     e.preventDefault();
@@ -131,12 +136,17 @@ document.addEventListener('DOMContentLoaded', function () {
       people.appendChild(b);
     });
 
-  // Deep links: #topic=latam, #q=Carisimo, #topic=latam&q=Carisimo
+  // Deep links: #topic=latam, #q=Carisimo, #topic=latam&q=Carisimo. Any other
+  // hash (e.g. an entry anchor such as #AHDBV2005) is left alone.
+  function dec(v) {
+    try { return decodeURIComponent(v); } catch (e) { return v; }
+  }
   function readHash() {
     var h = location.hash.replace(/^#/, '');
+    if (h && !/(?:^|&)(?:topic|q)=/.test(h)) return;
     var m;
-    state.topic = (m = /(?:^|&)topic=([^&]+)/.exec(h)) ? decodeURIComponent(m[1]) : '';
-    state.q = (m = /(?:^|&)q=([^&]+)/.exec(h)) ? decodeURIComponent(m[1]) : '';
+    state.topic = (m = /(?:^|&)topic=([^&]+)/.exec(h)) ? dec(m[1]) : '';
+    state.q = (m = /(?:^|&)q=([^&]+)/.exec(h)) ? dec(m[1]) : '';
     input.value = state.q;
     apply();
   }
