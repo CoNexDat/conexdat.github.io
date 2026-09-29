@@ -9,3 +9,6 @@ Gemfile.lock
 *~
 node_modules/
 
+
+# Claude Code subagent worktrees
+.claude/worktrees/

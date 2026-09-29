@@ -37,10 +37,12 @@ Open <http://localhost:4000/>, <http://localhost:4000/en/>,
 - `_data/projects.yml` — research projects, trilingual
 - `_data/news.yml`, `_data/highlights.yml` — home-page panels
 - `_data/navigation.yml` — top nav with localized labels
-- `_bibliography/*.bib` — publications (rendered by jekyll-scholar)
+- `_bibliography/conexdat.bib` — publications (rendered by jekyll-scholar),
+  each tagged with `topics = {…}`
+- `_data/publication_topics.yml` — trilingual publication topics (labels)
 - `_includes/people-list.html`, `projects-list.html` — shared layouts
-- `_includes/publications-filter.html` + `assets/js/publications.js` — search /
-  filter-by-person bar on `/publications/`
+- `_includes/publications-filter.html` + `assets/js/publications.js` — search,
+  topic and person filters on `/publications/`
 - `_includes/masthead.html`, `head.html` — overridden for i18n + favicon
 - `images/` — logo, favicon, profile picture
 
@@ -60,6 +62,9 @@ does not whitelist `jekyll-polyglot` or `jekyll-scholar`.
   requests, the **Build site** check (`.github/workflows/build.yml`) must pass,
   and force-pushes / deletion are blocked. Repository admins can bypass in an
   emergency.
+- Coding agents (and humans who want the details) read [AGENTS.md](AGENTS.md):
+  American English, the three-language rule, no e-mail addresses, no links into
+  the legacy server.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for what-goes-where, the local
   preview recipe and the PR checklist; [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
   and [SECURITY.md](SECURITY.md) for conduct and vulnerability reporting.

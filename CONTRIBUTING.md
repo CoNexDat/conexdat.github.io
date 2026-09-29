@@ -13,6 +13,14 @@ public face of the group, so small, well-scoped changes are preferred.
   three languages in lock-step: either edit the `es:` / `en:` / `fr:` columns
   of the same YAML entry, or edit the `.md`, `.en.md` and `.fr.md` page
   together.
+- English text uses **American English** (US spelling: `color`, `behavior`,
+  `modeling`, `visualize`, `toward`), and so do code comments and names. Spanish
+  and French stay in correct Spanish and French. Published paper titles are kept
+  as published.
+- The site publishes **no e-mail addresses**. The contact page points to the group
+  director and to the [CoNexDat GitHub organization](https://github.com/CoNexDat).
+- Do not link into the legacy `cnet.fi.uba.ar` server: unknown paths there quietly
+  serve its old home page. See AGENTS.md for the few pages that still exist.
 - Be kind: see [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## What goes where
@@ -21,7 +29,8 @@ public face of the group, so small, well-scoped changes are preferred.
 |------------------------------------|----------------------------------------|
 | Add / update a member              | `_data/members.yml`                    |
 | Add a news item                    | `_news/YYYY-MM-DD-slug.md` (+ `.en.md`, `.fr.md`) |
-| Add a publication                  | `_bibliography/conexdat.bib`           |
+| Add a publication                  | `_bibliography/conexdat.bib` (+ `topics`) |
+| Add / rename a publication topic   | `_data/publication_topics.yml`         |
 | Add / update a funded project      | `_data/projects.yml`                   |
 | Change a home-page project card    | `_data/highlights.yml`                 |
 | Change a research area             | `_data/research_areas.yml`             |
@@ -34,13 +43,23 @@ partials render them. Do not hand-edit anything under `_site/`.
 
 ### Publications
 
-Drop a BibTeX entry into `_bibliography/conexdat.bib`. Useful optional fields
-that the entry template understands: `abstract`, `doi`, `eprint` +
-`archiveprefix = {arXiv}`, `pdf` (file under `assets/pdf/` or a URL), `code`,
-`slides`, `poster`, `website`, `bibtex_show = {true}`.
+Drop a BibTeX entry into `_bibliography/conexdat.bib` and tag it with one or
+more topics, using the ids listed in `_data/publication_topics.yml`:
+
+```bibtex
+  topics = {internet-measurement, latam}
+```
+
+Topics appear as chips above the list and on every entry, and filter the list
+when clicked (deep link: `/publications/#topic=latam`). Add a new topic to the
+YAML file, in all three languages, only when no existing one fits.
+
+Other optional fields that the entry template understands: `abstract`, `doi`,
+`eprint` + `archiveprefix = {arXiv}`, `pdf` (file under `assets/pdf/` or a
+URL), `code`, `slides`, `poster`, `website`, `bibtex_show = {true}`.
 
 Author surnames listed under `cnet.highlighted_authors` in `_config.yml` are
-emphasised automatically.
+emphasized automatically.
 
 ### Members
 

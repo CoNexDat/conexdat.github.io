@@ -55,7 +55,7 @@
       url: "https://cnet.fi.uba.ar/SnailVis/"
       blurb:
         es: "Paradigma alternativo para visualizar la estructura interna de redes complejas."
-        en: "Alternative paradigm for visualising the inner structure of complex networks."
+        en: "Alternative paradigm for visualizing the inner structure of complex networks."
         fr: "Paradigme alternatif pour visualiser la structure interne des réseaux complexes."
   # Curated top-5 — bibliography on the area page renders these via
   # {% nocite %} + {% bibliography --cited %}, sorted by year (desc) by
@@ -103,7 +103,7 @@
         fr: "Biais, équité et valeurs"
       blurb:
         es: "Predicción de demografía, fundamentos morales y actitudes (p. ej. hacia la vacunación) a partir del comportamiento en línea."
-        en: "Predicting demographics, moral foundations, and attitudes (e.g. towards vaccination) from online behaviour."
+        en: "Predicting demographics, moral foundations, and attitudes (e.g. toward vaccination) from online behavior."
         fr: "Prédiction de la démographie, des fondements moraux et des attitudes (vaccination, etc.) à partir du comportement en ligne."
   projects:
     - title: "Twitter — Elecciones 2019"
@@ -123,7 +123,7 @@
     - schawe2023understanding   # NYT vs followers — info treatment
     - beiro2022fairness         # fairness in vulnerable-attribute prediction
     - Mussi-Reyero2021          # opinion-landscape dynamics, electoral periods
-    - kalimeri2019predicting    # demographics from digital behaviours
+    - kalimeri2019predicting    # demographics from digital behaviors
     - LFAHSK_2016               # socioeconomic correlations on CDR
 
 - slug: internet
@@ -134,7 +134,7 @@
     fr: "Internet"
   excerpt:
     es: "Tomografía de Internet y modelado de su topología (BGP, IXPs, AS-level). Diseñamos protocolos de ruteo cuyas tablas crecen sub-linealmente con el tamaño de la red."
-    en: "Internet tomography and topology modelling (BGP, IXPs, AS-level). We design routing protocols whose tables grow sub-linearly with network size."
+    en: "Internet tomography and topology modeling (BGP, IXPs, AS-level). We design routing protocols whose tables grow sub-linearly with network size."
     fr: "Tomographie d'Internet et modélisation de sa topologie (BGP, IXP, niveau AS). Conception de protocoles de routage dont les tables croissent sous-linéairement avec la taille du réseau."
   axes:
     - icon: "fas fa-route"
@@ -153,7 +153,7 @@
         fr: "Topologie AS et BGP"
       blurb:
         es: "Modelado del grafo de sistemas autónomos, descomposición en *k-núcleos* del Internet y seguimiento de los CDN en el núcleo de la red."
-        en: "Modelling the autonomous-system graph, *k-core* decomposition of the Internet, and tracking CDNs in the network core."
+        en: "Modeling the autonomous-system graph, *k-core* decomposition of the Internet, and tracking CDNs in the network core."
         fr: "Modélisation du graphe des systèmes autonomes, décomposition en *k-cœurs* d'Internet et suivi des CDN au cœur du réseau."
     - icon: "fas fa-globe-americas"
       title:
@@ -171,7 +171,7 @@
         fr: "Normes (IETF)"
       blurb:
         es: "Contribuciones al IETF — *RFC 9198 (AURA)* para estandarizar mediciones unidireccionales — y propuestas de **ruteo EGP** sub-lineal."
-        en: "IETF contributions — *RFC 9198 (AURA)* on standardising unidirectional measurements — and proposals for **sub-linear EGP routing**."
+        en: "IETF contributions — *RFC 9198 (AURA)* on standardizing unidirectional measurements — and proposals for **sub-linear EGP routing**."
         fr: "Contributions à l'IETF — *RFC 9198 (AURA)* sur la mesure unidirectionnelle — et propositions de **routage EGP** sous-linéaire."
   collaborations:
     - name:
@@ -210,7 +210,7 @@
       url: "http://lanet-vi.fi.uba.ar/i_am_here"
       blurb:
         es: "Visualizá un mapa de la topología de Internet indicando dónde estás."
-        en: "Visualise a map of the Internet topology, showing where you are."
+        en: "Visualize a map of the Internet topology, showing where you are."
         fr: "Visualisez la topologie d'Internet et le point où vous vous trouvez."
     - title: "RFC 9198 — AURA"
       url: "https://www.rfc-editor.org/rfc/rfc9198"

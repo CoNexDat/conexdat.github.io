@@ -8,9 +8,9 @@ author_profile: true
 <div class="affiliations">
   <div class="affiliations__label">Pertenencia institucional</div>
   <ul class="affiliations__list">
-    <li><a href="http://electronica.fi.uba.ar">Departamento de Electrónica</a></li>
-    <li><a href="http://www.fi.uba.ar">Facultad de Ingeniería</a></li>
-    <li><a href="http://www.uba.ar">Universidad de Buenos Aires</a></li>
+    <li><a href="https://www.fi.uba.ar/institucional/departamentos/electronica">Departamento de Electrónica</a></li>
+    <li><a href="https://www.fi.uba.ar">Facultad de Ingeniería</a></li>
+    <li><a href="https://www.uba.ar">Universidad de Buenos Aires</a></li>
     <li><a href="https://www.conicet.gov.ar">CONICET</a></li>
   </ul>
 </div>
@@ -53,4 +53,4 @@ author_profile: true
 
 ---
 
-*Grupo de investigación perteneciente al [INTECIN — Instituto de Tecnologías y Ciencias de la Ingeniería "Ing. Hilario Fernández Long"](http://intecin.fi.uba.ar).*
+*Grupo de investigación perteneciente al [INTECIN — Instituto de Tecnologías y Ciencias de la Ingeniería "Ing. Hilario Fernández Long"](https://intecin.fi.uba.ar).*

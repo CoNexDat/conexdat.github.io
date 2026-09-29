@@ -1,8 +1,9 @@
-/* Publications page behaviour (markup: _layouts/bib_entry.html +
+/* Publications page behavior (markup: _layouts/bib_entry.html +
    _includes/publications-filter.html).
    1. Toggle the hidden Abstract / BibTeX panels under each entry.
-   2. Free-text filter over author / title / venue / year.
-   3. "By person" chips, built from the authors that appear most often. */
+   2. Filter the list by free text, by topic and by person. The three filters
+      combine (AND) and are mirrored in the URL hash, e.g.
+      /publications/#topic=latam&q=Carisimo */
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.querySelector('.publications');
   if (!root) return;
@@ -19,57 +20,94 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ---- 2 + 3. Filter ---------------------------------------------------- */
+  /* ---- 2. Filters ------------------------------------------------------- */
   var bar = document.querySelector('.pub-filter');
   if (!bar) return;
   var input = bar.querySelector('.pub-filter__input');
   var clearBtn = bar.querySelector('.pub-filter__clear');
   var count = bar.querySelector('.pub-filter__count');
-  var chips = bar.querySelector('.pub-filter__chips');
+  var people = bar.querySelector('.pub-filter__people');
 
   function norm(s) {
     return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
   }
 
-  // One searchable record per entry. jekyll-scholar wraps each entry in an
-  // <li>; fall back to the .row itself if the list markup ever changes.
+  // One record per entry. jekyll-scholar wraps each entry in an <li>; fall
+  // back to the .row itself if the list markup ever changes.
   var items = Array.prototype.map.call(root.querySelectorAll('.row'), function (row) {
-    var el = row.closest('li') || row;
     var authorText = (row.querySelector('.author') || {}).textContent || '';
-    var authors = authorText.split(/,\s*|\s+and\s+/).map(function (a) { return a.trim(); }).filter(Boolean);
-    var hay = norm([
-      (row.querySelector('.title') || {}).textContent,
-      authorText,
-      (row.querySelector('.periodical') || {}).textContent
-    ].join(' '));
-    return { el: el, hay: hay, authors: authors };
+    return {
+      el: row.closest('li') || row,
+      topics: (row.getAttribute('data-topics') || '').split(/\s+/).filter(Boolean),
+      authors: authorText.split(/,\s*|\s+and\s+/).map(function (a) { return a.trim(); }).filter(Boolean),
+      hay: norm([
+        (row.querySelector('.title') || {}).textContent,
+        authorText,
+        (row.querySelector('.periodical') || {}).textContent
+      ].join(' '))
+    };
   });
   var total = items.length;
+  var topicIds = Array.prototype.map.call(bar.querySelectorAll('.pub-topic[data-topic]'), function (b) {
+    return b.dataset.topic;
+  });
+  var state = { q: '', topic: '' };
 
-  var active = '';
+  function writeHash() {
+    var parts = [];
+    if (state.topic) parts.push('topic=' + encodeURIComponent(state.topic));
+    if (state.q.trim()) parts.push('q=' + encodeURIComponent(state.q.trim()));
+    try { history.replaceState(null, '', parts.length ? '#' + parts.join('&') : location.pathname + location.search); } catch (e) {}
+  }
+
   function apply() {
-    var q = norm(active);
+    var q = norm(state.q);
     var shown = 0;
     items.forEach(function (it) {
-      var ok = !q || it.hay.indexOf(q) !== -1;
+      var ok = (!q || it.hay.indexOf(q) !== -1) && (!state.topic || it.topics.indexOf(state.topic) !== -1);
       it.el.classList.toggle('is-hidden', !ok);
       if (ok) shown++;
     });
-    clearBtn.hidden = !q;
-    count.textContent = q ? (shown ? shown + ' ' + bar.dataset.of + ' ' + total : bar.dataset.none) : '';
-    chips.querySelectorAll('.pub-chip').forEach(function (c) {
-      c.classList.toggle('is-active', !!q && norm(c.dataset.q) === q);
+    var filtering = !!(q || state.topic);
+    clearBtn.hidden = !filtering;
+    count.textContent = filtering ? (shown ? shown + ' ' + bar.dataset.of + ' ' + total : bar.dataset.none) : '';
+    document.querySelectorAll('.pub-topic[data-topic]').forEach(function (c) {
+      var on = c.dataset.topic === state.topic;
+      c.classList.toggle('is-active', on);
+      if (bar.contains(c)) c.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    try { history.replaceState(null, '', q ? '#q=' + encodeURIComponent(active.trim()) : location.pathname); } catch (e) {}
+    people.querySelectorAll('.pub-chip').forEach(function (c) {
+      var on = !!q && norm(c.dataset.q) === q;
+      c.classList.toggle('is-active', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    writeHash();
   }
-  function set(v) { active = v; input.value = v; apply(); }
 
-  input.addEventListener('input', function () { active = input.value; apply(); });
-  input.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(''); });
-  clearBtn.addEventListener('click', function () { set(''); input.focus(); });
+  function setQuery(v) { state.q = v; input.value = v; apply(); }
+  function setTopic(id) { state.topic = state.topic === id ? '' : id; apply(); }
 
-  // Chips: surnames of the authors that appear on >= 3 entries, most frequent
-  // first. Highlighted (group) authors always come first.
+  input.addEventListener('input', function () { state.q = input.value; apply(); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { state.topic = ''; setQuery(''); }
+  });
+  clearBtn.addEventListener('click', function () { state.topic = ''; setQuery(''); input.focus(); });
+
+  // Topic chips: the bar and every entry. Entry chips are real links to
+  // /publications/#topic=<id> so they also work from research-area pages; here
+  // we filter in place and scroll back to the bar.
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var chip = e.target.closest('.pub-topic[data-topic]');
+    if (!chip) return;
+    e.preventDefault();
+    var fromEntry = !bar.contains(chip);
+    setTopic(chip.dataset.topic);
+    if (fromEntry) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // People chips: surnames of the authors that appear on >= 3 entries, most
+  // frequent first. Highlighted (group) authors always come first.
   var freq = {};
   items.forEach(function (it) {
     var seen = {};
@@ -97,11 +135,26 @@ document.addEventListener('DOMContentLoaded', function () {
       b.dataset.q = last;
       b.textContent = last;
       b.title = freq[last];
-      b.addEventListener('click', function () { set(norm(active) === norm(last) ? '' : last); });
-      chips.appendChild(b);
+      b.addEventListener('click', function () { setQuery(norm(state.q) === norm(last) ? '' : last); });
+      people.appendChild(b);
     });
 
-  // Deep link: /publications/#q=Carisimo
-  var m = /[#&]q=([^&]+)/.exec(location.hash);
-  if (m) set(decodeURIComponent(m[1]));
+  // Deep links: #topic=latam, #q=Carisimo, #topic=latam&q=Carisimo. Any other
+  // hash (e.g. an entry anchor such as #AHDBV2005) is left alone.
+  function dec(v) {
+    try { return decodeURIComponent(v); } catch (e) { return v; }
+  }
+  function readHash() {
+    var h = location.hash.replace(/^#/, '');
+    if (h && !/(?:^|&)(?:topic|q)=/.test(h)) return;
+    var m;
+    state.topic = (m = /(?:^|&)topic=([^&]+)/.exec(h)) ? dec(m[1]) : '';
+    // Ignore topics that no longer exist (stale or mistyped links).
+    if (state.topic && topicIds.indexOf(state.topic) === -1) state.topic = '';
+    state.q = (m = /(?:^|&)q=([^&]+)/.exec(h)) ? dec(m[1]) : '';
+    input.value = state.q;
+    apply();
+  }
+  window.addEventListener('hashchange', readHash);
+  if (location.hash) readHash();
 });

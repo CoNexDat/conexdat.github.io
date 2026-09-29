@@ -1,0 +1,45 @@
+# =============================================================================
+# CoNexDat — publication topics ("labels"), trilingual.
+# Tag an entry in _bibliography/conexdat.bib with `topics = {id1, id2}`.
+# The publications page shows one chip per topic above the list and on each
+# entry; clicking a chip filters the list (deep link: /publications/#topic=<id>).
+# Order here is the order of the chips. Keep ids stable: they are URLs.
+# English labels use American English.
+# =============================================================================
+
+- id: complex-networks
+  label: { es: "Redes complejas", en: "Complex networks", fr: "Réseaux complexes" }
+- id: k-cores
+  label: { es: "Descomposición en k-núcleos", en: "k-core decomposition", fr: "Décomposition en k-cœurs" }
+- id: visualization
+  label: { es: "Visualización", en: "Visualization", fr: "Visualisation" }
+- id: communities
+  label: { es: "Comunidades", en: "Community detection", fr: "Détection de communautés" }
+- id: graph-theory
+  label: { es: "Teoría de grafos", en: "Graph theory", fr: "Théorie des graphes" }
+- id: internet-measurement
+  label: { es: "Mediciones de Internet", en: "Internet measurement", fr: "Mesures d'Internet" }
+- id: internet-topology
+  label: { es: "Topología de Internet", en: "Internet topology", fr: "Topologie d'Internet" }
+- id: ixp
+  label: { es: "IXPs", en: "IXPs", fr: "IXP" }
+- id: latam
+  label: { es: "América Latina", en: "Latin America", fr: "Amérique latine" }
+- id: traffic
+  label: { es: "Tráfico y latencia", en: "Traffic & latency", fr: "Trafic et latence" }
+- id: routing
+  label: { es: "Ruteo y protocolos", en: "Routing & protocols", fr: "Routage et protocoles" }
+- id: standards
+  label: { es: "Estándares IETF", en: "IETF standards", fr: "Normes IETF" }
+- id: wireless
+  label: { es: "Redes inalámbricas y multi-robot", en: "Wireless & multi-robot networks", fr: "Réseaux sans fil et multi-robots" }
+- id: social-media
+  label: { es: "Medios, redes sociales y opinión", en: "Media, social media & opinion", fr: "Médias, réseaux sociaux et opinion" }
+- id: human-behavior
+  label: { es: "Movilidad y comportamiento humano", en: "Human mobility & behavior", fr: "Mobilité et comportement humain" }
+- id: bio-physics
+  label: { es: "Sistemas biológicos y físicos", en: "Biological & physical systems", fr: "Systèmes biologiques et physiques" }
+- id: optical-security
+  label: { es: "Redes ópticas y seguridad", en: "Optical networks & security", fr: "Réseaux optiques et sécurité" }
+- id: education
+  label: { es: "Enseñanza de la ingeniería", en: "Engineering education", fr: "Enseignement de l'ingénierie" }

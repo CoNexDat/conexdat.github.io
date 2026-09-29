@@ -91,7 +91,7 @@
   period: "2011–2014"
   title:
     es: "Internet: mediciones de tráfico y topología, modelado de la red, propuesta y análisis de nuevos algoritmos de ruteo"
-    en: "Internet: traffic and topology measurements, network modelling, and proposals/analysis of new routing algorithms"
+    en: "Internet: traffic and topology measurements, network modeling, and proposals/analysis of new routing algorithms"
     fr: "Internet : mesures de trafic et de topologie, modélisation du réseau, propositions et analyse de nouveaux algorithmes de routage"
   abstract:
     es: |
@@ -105,7 +105,7 @@
       en función del tamaño de la red. Colaboran UBA, ENS Lyon (Francia) y
       LNCC (Brasil).
     en: |
-      Goals: measurement, modelling, and proposal of new routing algorithms
+      Goals: measurement, modeling, and proposal of new routing algorithms
       for the Internet. Algorithms that find routes dynamically must be
       verified on artificial networks with the same characteristics as real
       ones — which requires a good model of real networks. Probes also
@@ -138,7 +138,7 @@
     en: |
       We study Internet structure via network tomography (topology + traffic),
       propose routing protocols that scale with continuous growth, and
-      analyse it as a complex system, primarily focused on community
+      analyze it as a complex system, primarily focused on community
       detection.
     fr: |
       Nous étudions la structure d'Internet par tomographie du réseau
@@ -161,7 +161,7 @@
       ruteo en redes P2P.
     en: |
       Internet analysis (topology and traffic) and application-routing from
-      three angles: tomography (topology + utilisation exploration),
+      three angles: tomography (topology + utilization exploration),
       traffic measurement (per application, link, or destination), and P2P
       routing.
     fr: |
