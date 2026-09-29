@@ -25,6 +25,8 @@ _data/
   research_areas.yml        research areas: home cards + /research/<slug>/ pages
   highlights.yml            home-page project cards
   publication_topics.yml    publication topics (labels), trilingual
+  software.yml              /software/: web-tool cards, featured repos (pin cards), GitHub orgs
+  ietf.yml                  /ietf/: RFCs, Internet-Drafts, IETF Day links (verified facts)
   theses.yml, navigation.yml, ui-text.yml
 _news/                      one file per news item and language (inline, no pages)
 _bibliography/conexdat.bib  THE publication list (other .bib files are unused sources)
