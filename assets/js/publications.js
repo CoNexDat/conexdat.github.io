@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   });
   var total = items.length;
+  var topicIds = Array.prototype.map.call(bar.querySelectorAll('.pub-topic[data-topic]'), function (b) {
+    return b.dataset.topic;
+  });
   var state = { q: '', topic: '' };
 
   function writeHash() {
@@ -147,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var m;
     state.topic = (m = /(?:^|&)topic=([^&]+)/.exec(h)) ? dec(m[1]) : '';
     // Ignore topics that no longer exist (stale or mistyped links).
-    if (state.topic && !bar.querySelector('.pub-topic[data-topic="' + state.topic.replace(/["\\]/g, '') + '"]')) state.topic = '';
+    if (state.topic && topicIds.indexOf(state.topic) === -1) state.topic = '';
     state.q = (m = /(?:^|&)q=([^&]+)/.exec(h)) ? dec(m[1]) : '';
     input.value = state.q;
     apply();

@@ -76,7 +76,9 @@ hard-codes that origin for CSS and assets.
   a home page, a sign-in wall or a parked domain is a broken link.
 - **Publications**: add entries to `_bibliography/conexdat.bib` with a
   `topics = {id1, id2}` field using ids from `_data/publication_topics.yml` (add a new
-  topic there, in three languages, only when no existing one fits). Prefer a bare DOI
+  topic there, in three languages, only when no existing one fits). Two 1990s
+  instrumentation papers (`onditas96`, `Thermog95`) are deliberately untagged: no topic
+  fits them, and they only disappear while a topic filter is active. Prefer a bare DOI
   (`10.xxxx/…`), `eprint` + `archiveprefix = {arXiv}` for preprints, and check the key is
   not already present: the group's own exports contain duplicates.
 - Internal links are written without language prefix (`/projects/`); polyglot adds

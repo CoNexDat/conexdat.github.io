@@ -24,6 +24,19 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Check publication topic ids
+        run: |
+          # Every id in a `topics = {...}` field must exist in
+          # _data/publication_topics.yml; an unknown id renders no chip silently.
+          known=$(sed -n 's/^- id: *//p' _data/publication_topics.yml | sort -u)
+          used=$(grep -oE '^[[:space:]]*topics[[:space:]]*=[[:space:]]*\{[^}]*\}' _bibliography/conexdat.bib \
+                 | sed -E 's/.*\{(.*)\}/\1/' | tr ',' '\n' | tr -d ' ' | sed '/^$/d' | sort -u)
+          unknown=$(comm -13 <(echo "$known") <(echo "$used"))
+          if [ -n "$unknown" ]; then
+            echo "::error::Unknown publication topic id(s): $unknown"; exit 1
+          fi
+          echo "OK: $(echo "$used" | wc -l) topic ids used, all known"
+
       - name: Build site (Jekyll + polyglot + scholar)
         env:
           JEKYLL_ENV: production
