@@ -1,27 +1,36 @@
 {%- comment -%}
-  Renders the news collection filtered by language.
-  Required: include.lang (es|en|fr), optional include.limit.
-  Mirrors al-folio's news table: date | message.
+  Renders the news collection as a timeline, filtered by language.
+  Required: include.lang (es|en|fr), optional include.limit (default 10).
+  Dates are written in the page language (day, abbreviated month, year).
 {%- endcomment -%}
 {%- assign lang = include.lang | default: site.default_lang -%}
 {%- assign limit = include.limit | default: 10 -%}
 {%- assign news_items = site.news | where: "lang", lang | sort: "date" | reverse -%}
+{%- if lang == "es" -%}
+  {%- assign months = "ene,feb,mar,abr,may,jun,jul,ago,sep,oct,nov,dic" | split: "," -%}
+{%- elsif lang == "fr" -%}
+  {%- assign months = "janv.,févr.,mars,avr.,mai,juin,juil.,août,sept.,oct.,nov.,déc." | split: "," -%}
+{%- else -%}
+  {%- assign months = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: "," -%}
+{%- endif -%}
 
 {% if news_items.size > 0 %}
-  <div class="news">
-    <table>
-      {% for item in news_items limit: limit %}
-        <tr>
-          <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
-          <td>
-            {%- if item.inline -%}
-              {{ item.content | markdownify | remove: "<p>" | remove: "</p>" }}
-            {%- else -%}
-              <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-            {%- endif -%}
-          </td>
-        </tr>
-      {% endfor %}
-    </table>
-  </div>
+  <ol class="news-timeline">
+    {% for item in news_items limit: limit %}
+      {%- assign m = item.date | date: "%-m" | minus: 1 -%}
+      <li class="news-timeline__item">
+        <time class="news-timeline__date" datetime="{{ item.date | date: '%Y-%m-%d' }}">
+          <span class="news-timeline__day">{{ item.date | date: "%-d" }}</span>
+          <span class="news-timeline__month">{{ months[m] }} {{ item.date | date: "%Y" }}</span>
+        </time>
+        <div class="news-timeline__body">
+          {%- if item.inline -%}
+            {{ item.content | markdownify | remove: "<p>" | remove: "</p>" }}
+          {%- else -%}
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {%- endif -%}
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
 {% endif %}
