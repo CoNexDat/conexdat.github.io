@@ -12,6 +12,11 @@
     es: "Sistemas Complejos"
     en: "Complex Systems"
     fr: "Systèmes complexes"
+  # One line for the home-page card; `excerpt` is the longer text on /research/.
+  tagline:
+    es: "Descomposición en k-núcleos, comunidades y propagación en redes reales."
+    en: "k-core decomposition, communities, and propagation in real-world networks."
+    fr: "Décomposition en k-cœurs, communautés et propagation dans les réseaux réels."
   excerpt:
     es: "Estudiamos redes complejas con métodos como descomposición en *k-núcleos* y detección de comunidades. Aplicamos teoría de grafos y modelos de propagación a redes biológicas, sociales y tecnológicas."
     en: "We study complex networks via *k-core* decomposition and community detection. Graph theory and propagation models applied to biological, social and technological networks."
@@ -73,6 +78,11 @@
     es: "Ciencia de Datos"
     en: "Data Science"
     fr: "Science des données"
+  # One line for the home-page card; `excerpt` is the longer text on /research/.
+  tagline:
+    es: "Twitter, elecciones y movilidad humana a gran escala."
+    en: "Twitter, elections, and human mobility at scale."
+    fr: "Twitter, élections et mobilité humaine à grande échelle."
   excerpt:
     es: "Análisis a gran escala de trazas de Twitter, datos electorales y registros móviles (CDR). Inferimos movilidad humana, demanda de contenidos y dinámica de comunidades online."
     en: "Large-scale analysis of Twitter traces, electoral data, and Call Detail Records (CDR). We infer human mobility, content demand, and online community dynamics."
@@ -132,6 +142,11 @@
     es: "Internet"
     en: "Internet"
     fr: "Internet"
+  # One line for the home-page card; `excerpt` is the longer text on /research/.
+  tagline:
+    es: "Topología, tomografía y ruteo de Internet a nivel de sistemas autónomos."
+    en: "Internet topology, tomography, and routing at the autonomous-system level."
+    fr: "Topologie, tomographie et routage d'Internet au niveau des systèmes autonomes."
   excerpt:
     es: "Tomografía de Internet y modelado de su topología (BGP, IXPs, AS-level). Diseñamos protocolos de ruteo cuyas tablas crecen sub-linealmente con el tamaño de la red."
     en: "Internet tomography and topology modeling (BGP, IXPs, AS-level). We design routing protocols whose tables grow sub-linearly with network size."
@@ -231,6 +246,11 @@
     es: "Tráfico de red"
     en: "Network traffic"
     fr: "Trafic réseau"
+  # One line for the home-page card; `excerpt` is the longer text on /research/.
+  tagline:
+    es: "Tráfico autosimilar y medición de la calidad del acceso residencial."
+    en: "Self-similar traffic and quality measurement of residential Internet access."
+    fr: "Trafic autosimilaire et mesure de la qualité de l'accès résidentiel."
   excerpt:
     es: "Caracterización estadística *autosimilar* del tráfico residencial. Mediciones continuas de baja carga para evaluar QoS y detectar tráfico de IXPs y CDNs."
     en: "Statistical *self-similar* characterization of residential traffic. Continuous low-load probing for QoS assessment and IXP/CDN traffic detection."
@@ -287,6 +307,11 @@
     es: "Redes ad-hoc"
     en: "Ad-hoc networks"
     fr: "Réseaux ad-hoc"
+  # One line for the home-page card; `excerpt` is the longer text on /research/.
+  tagline:
+    es: "Ruteo bio-inspirado para redes inalámbricas sin infraestructura."
+    en: "Bio-inspired routing for infrastructure-less wireless networks."
+    fr: "Routage bio-inspiré pour les réseaux sans fil sans infrastructure."
   excerpt:
     es: "Protocolos de ruteo para redes inalámbricas sin infraestructura. Desarrollamos *ANTop* (algoritmo bio-inspirado) y lo evaluamos sobre el simulador QUENAS."
     en: "Routing protocols for infrastructure-less wireless networks. We developed *ANTop* (bio-inspired algorithm) and evaluated it on the QUENAS simulator."

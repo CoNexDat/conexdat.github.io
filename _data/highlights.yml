@@ -6,39 +6,39 @@
 
 - title: "Twitter — Elecciones 2019"
   blurb:
-    es: "Seguimiento de las Elecciones presidenciales de 2019."
-    en: "Tracking the 2019 Argentinian presidential elections."
-    fr: "Suivi des élections présidentielles argentines de 2019."
+    es: "Las elecciones presidenciales de 2019, vistas desde Twitter."
+    en: "The 2019 Argentine presidential elections, seen from Twitter."
+    fr: "Les élections présidentielles argentines de 2019, vues depuis Twitter."
   # The live site is gone (default nginx page); 2019 Wayback snapshot.
   url: "https://web.archive.org/web/20190912124205/http://elecciones2019.fi.uba.ar/"
 
 - title: "CDNs"
   blurb:
-    es: "Cómo los proveedores de contenido pasaron a estar en el centro de Internet."
-    en: "How Content Providers became central to the AS ecosystem after the rise of private CDNs."
-    fr: "Comment les fournisseurs de contenu sont devenus centraux dans l'écosystème des AS après l'essor des CDN privés."
+    es: "Cómo los proveedores de contenido llegaron al centro de Internet."
+    en: "How content providers moved to the center of the Internet."
+    fr: "Comment les fournisseurs de contenu sont arrivés au cœur d'Internet."
   # cnet.fi.uba.ar/TMA2018/ now meta-redirects here.
   url: "https://netcores.fi.uba.ar/"
 
 - title: "LaNet-vi"
   blurb:
-    es: "Software de visualización de redes grandes mediante k-núcleos."
-    en: "Large-network visualization software using k-cores and k-denses decomposition."
-    fr: "Logiciel de visualisation de grands réseaux par décomposition en k-cœurs et k-denses."
+    es: "Visualización de redes grandes mediante k-núcleos."
+    en: "Large-network visualization with k-cores."
+    fr: "Visualisation de grands réseaux par k-cœurs."
   url: "http://lanet-vi.fi.uba.ar/"
 
 - title: "I'm Here!"
   blurb:
-    es: "Visualizá un mapa de la topología de Internet indicando dónde estás."
-    en: "Visualize a map of the Internet topology, showing where you are."
-    fr: "Visualisez la topologie d'Internet et le point où vous vous trouvez."
+    es: "Un mapa de Internet que muestra dónde estás."
+    en: "A map of the Internet that shows where you are."
+    fr: "Une carte d'Internet qui montre où vous êtes."
   url: "http://lanet-vi.fi.uba.ar/i-am-here"
 
 - title: "TiX"
   blurb:
-    es: "Traffic information eXchange — herramienta para medir la calidad de su acceso a Internet."
-    en: "Traffic information eXchange — a tool to measure the quality of your Internet access."
-    fr: "Traffic information eXchange — outil de mesure de la qualité de votre accès Internet."
+    es: "Medí la calidad de tu acceso a Internet."
+    en: "Measure the quality of your Internet access."
+    fr: "Mesurez la qualité de votre accès Internet."
   url: "https://github.com/TiX-measurements"
   cta:
     es: "Código en GitHub"
@@ -47,9 +47,9 @@
 
 - title: "UBACyT"
   blurb:
-    es: "Internet: medición de QoS domiciliaria, análisis tomográfico y propuestas de algoritmos de ruteo."
-    en: "Internet: residential QoS measurement, tomographic analysis, and routing-algorithm proposals."
-    fr: "Internet : mesure de la QoS résidentielle, analyse tomographique et propositions d'algorithmes de routage."
+    es: "Calidad de servicio domiciliaria, tomografía y ruteo en Internet."
+    en: "Residential quality of service, tomography, and routing on the Internet."
+    fr: "Qualité de service résidentielle, tomographie et routage sur Internet."
   # Internal link: polyglot prefixes /en/ or /fr/ automatically.
   url: "/projects/"
   cta:

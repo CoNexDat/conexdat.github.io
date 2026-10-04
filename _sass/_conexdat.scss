@@ -410,8 +410,12 @@ html[data-theme="dark"] {
     background: rgba(255,255,255,0.10);
     color: var(--cnet-celeste);
   }
-  .news table th { color: var(--cnet-celeste); }
-  .news table td { color: #fff; a { color: var(--cnet-celeste); } }
+  .news-timeline__day,
+  .home-card__title,
+  .home-stats__num { color: var(--cnet-celeste); }
+  .home-card__icon { background: rgba(255, 255, 255, 0.12); color: var(--cnet-celeste); }
+  .page__content a.home-card { color: #fff; }
+  .news-timeline__body { color: #fff; }
   .affiliations__list li a {
     background: var(--cnet-surface);
     color: #fff;
@@ -495,37 +499,180 @@ html[data-theme="dark"] {
   }
 }
 
-// ---- News table (al-folio look — clean, no grid lines) --------------------
-.news {
-  margin: 1rem 0 2rem;
+// ---- News timeline (see _includes/news.html) ------------------------------
+// Each item is a date badge (day over abbreviated month + year) next to the
+// text; a thin vertical line runs behind the badges.
+.news-timeline {
+  list-style: none;
+  margin: 1rem 0 1.75rem;
+  padding: 0;
+  position: relative;
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    border: none;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1.7rem;
+    top: 0.75rem;
+    bottom: 1rem;
+    width: 2px;
+    background: var(--cnet-border);
+  }
 
-    th, td {
-      padding: 0.35rem 0.9rem 0.35rem 0;
-      vertical-align: top;
-      border: none;
-      background: transparent;
-    }
-    th {
-      font-weight: 500;
-      white-space: nowrap;
-      width: 1%;
-      color: var(--cnet-navy);
-      font-size: 0.85rem;
-      letter-spacing: 0.01em;
-    }
-    td {
-      font-size: 0.95rem;
-      line-height: 1.45;
-      color: var(--cnet-ink);
-      a { color: var(--cnet-link); }
-    }
+  &__item {
+    display: grid;
+    grid-template-columns: 3.4rem 1fr;
+    column-gap: 0.9rem;
+    align-items: start;
+    margin: 0 0 0.9rem;
+    &:last-child { margin-bottom: 0; }
+  }
+  &__date {
+    position: relative;             // above the vertical line
+    display: block;
+    width: 3.4rem;
+    padding: 0.3rem 0 0.35rem;
+    text-align: center;
+    border: 1px solid var(--cnet-border);
+    border-radius: 8px;
+    background: var(--cnet-surface);
+    line-height: 1.1;
+  }
+  &__day {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cnet-navy);
+    font-variant-numeric: tabular-nums;
+  }
+  &__month {
+    display: block;
+    margin-top: 0.1rem;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    white-space: nowrap;
+  }
+  &__body {
+    padding-top: 0.55rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--cnet-ink);
   }
 }
+
+// ---- Home page (see _includes/home.html) ----------------------------------
+// The header (H1 + affiliation pills) stays as short as possible so the
+// research-area cards are visible on landing.
+.affiliations--compact { margin: -0.5rem 0 1rem; }
+.page__content .home-section-title { margin-top: 0.3rem; }
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  margin: 1rem 0 1.25rem;
+  @media (min-width: 600px) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 980px) { grid-template-columns: repeat(3, 1fr); }
+}
+
+// Whole card is one link: icon, title, one line of text, "more" footer.
+.page__content a.home-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.95rem 1.05rem 0.85rem;
+  border: 1px solid var(--cnet-border);
+  border-radius: 8px;
+  background: var(--cnet-surface);
+  color: var(--cnet-ink);
+  text-decoration: none;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+
+  &:hover, &:focus-visible {
+    border-color: var(--cnet-celeste);
+    box-shadow: 0 4px 14px rgba(0, 57, 117, 0.18);
+    transform: translateY(-1px);
+    text-decoration: none;
+    .home-card__more i { transform: translateX(3px); }
+  }
+}
+.home-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-bottom: 0.15rem;
+  border-radius: 50%;
+  background: rgba(116, 172, 223, 0.2);
+  color: var(--cnet-navy);
+  font-size: 0.95rem;
+}
+.home-card__title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--cnet-navy);
+}
+.home-card__text {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.home-card__more {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--global-link-color);
+  i {
+    font-size: 0.75em;
+    margin-left: 0.2em;
+    transition: transform 0.15s ease;
+  }
+}
+
+// Figures strip under the research areas (counts computed at build time).
+.home-stats {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 0.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  border-top: 1px solid var(--cnet-border);
+  border-bottom: 1px solid var(--cnet-border);
+  @media (min-width: 600px) { grid-template-columns: repeat(4, 1fr); }
+
+  li { margin: 0; text-align: center; }
+  a {
+    display: block;
+    text-decoration: none;
+    &:hover .home-stats__num { color: var(--global-link-color); }
+  }
+  &__num {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--cnet-navy);
+    font-variant-numeric: tabular-nums;
+    transition: color 0.15s ease;
+  }
+  &__label {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+  }
+}
+
+.home-more { margin: -0.5rem 0 1.5rem; }
+.home-intecin { margin-top: 1.5rem; font-size: 0.9rem; }
 
 // Small outlined buttons used under publications and IETF documents.
 @mixin cnet-small-buttons {

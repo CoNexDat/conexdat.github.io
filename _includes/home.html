@@ -1,0 +1,67 @@
+{%- comment -%}
+  Home page body, shared by _pages/home.md, home.en.md and home.fr.md.
+  Required: include.lang (es|en|fr). Labels live in _data/home.yml; cards come
+  from _data/research_areas.yml (tagline) and _data/highlights.yml; the news
+  timeline from _news/; the recent papers from jekyll-scholar. The page title
+  (H1) is rendered by the layout, so the first thing below it is the research
+  areas grid.
+{%- endcomment -%}
+{%- assign lang = include.lang | default: site.default_lang -%}
+{%- assign t = site.data.home -%}
+{%- assign year_now = site.time | date: "%Y" | plus: 0 -%}
+{%- assign years = year_now | minus: t.since -%}
+
+<div class="affiliations affiliations--compact">
+  <div class="affiliations__label">{{ t.affiliations_label[lang] }}</div>
+  <ul class="affiliations__list">
+    <li><a href="https://www.fi.uba.ar/institucional/departamentos/electronica">Departamento de Electrónica</a></li>
+    <li><a href="https://www.fi.uba.ar">Facultad de Ingeniería</a></li>
+    <li><a href="https://www.uba.ar">Universidad de Buenos Aires</a></li>
+    <li><a href="https://www.conicet.gov.ar">CONICET</a></li>
+  </ul>
+</div>
+
+<h2 id="areas" class="home-section-title">{{ t.areas_label[lang] }}</h2>
+
+<div class="home-grid home-grid--areas">
+  {%- for a in site.data.research_areas -%}
+  <a class="home-card" href="/research/{{ a.slug }}/">
+    <span class="home-card__icon"><i class="{{ a.icon }}" aria-hidden="true"></i></span>
+    <span class="home-card__title">{{ a.title[lang] }}</span>
+    <span class="home-card__text">{{ a.tagline[lang] }}</span>
+    <span class="home-card__more">{{ t.more_label[lang] }} <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+  </a>
+  {%- endfor -%}
+</div>
+
+<ul class="home-stats">
+  <li><a href="/publications/"><span class="home-stats__num">{% bibliography_count --file conexdat %}</span><span class="home-stats__label">{{ t.stats.publications[lang] }}</span></a></li>
+  <li><a href="/theses/"><span class="home-stats__num">{{ site.data.theses | size }}</span><span class="home-stats__label">{{ t.stats.theses[lang] }}</span></a></li>
+  <li><a href="/projects/"><span class="home-stats__num">{{ site.data.projects | size }}</span><span class="home-stats__label">{{ t.stats.projects[lang] }}</span></a></li>
+  <li><span class="home-stats__num">{{ years }}</span><span class="home-stats__label">{{ t.stats.years[lang] }}</span></li>
+</ul>
+
+<h2 id="news">{{ t.news_label[lang] }}</h2>
+
+{% include news.html lang=lang limit=5 %}
+
+<h2 id="recent">{{ t.recent_label[lang] }}</h2>
+
+<div class="publications publications--home">
+{% bibliography --file conexdat --max 3 %}
+</div>
+<p class="home-more"><a class="btn btn--info" href="/publications/">{{ t.all_publications_label[lang] }} &raquo;</a></p>
+
+<h2 id="highlights">{{ t.highlights_label[lang] }}</h2>
+
+<div class="home-grid home-grid--projects">
+  {%- for h in site.data.highlights -%}
+  <a class="home-card" href="{{ h.url }}">
+    <span class="home-card__title">{{ h.title }}</span>
+    <span class="home-card__text">{{ h.blurb[lang] }}</span>
+    <span class="home-card__more">{{ h.cta[lang] | default: t.visit_label[lang] }} <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+  </a>
+  {%- endfor -%}
+</div>
+
+<p class="home-intecin"><em>{{ t.intecin[lang] }} <a href="https://intecin.fi.uba.ar">INTECIN — Instituto de Tecnologías y Ciencias de la Ingeniería "Ing. Hilario Fernández Long"</a>.</em></p>

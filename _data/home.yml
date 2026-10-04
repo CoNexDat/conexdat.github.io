@@ -1,0 +1,68 @@
+# =============================================================================
+# CoNexDat — home page labels (rendered by _includes/home.html).
+# The three _pages/home*.md files only set front matter and include that file,
+# so every label lives here in the three languages.
+# =============================================================================
+
+affiliations_label:
+  es: "Pertenencia institucional"
+  en: "Affiliations"
+  fr: "Affiliations institutionnelles"
+
+# Section headings
+areas_label:
+  es: "Áreas de investigación"
+  en: "Research areas"
+  fr: "Axes de recherche"
+news_label:
+  es: "Noticias"
+  en: "News"
+  fr: "Actualités"
+recent_label:
+  es: "Publicaciones recientes"
+  en: "Recent publications"
+  fr: "Publications récentes"
+highlights_label:
+  es: "Proyectos destacados"
+  en: "Featured projects"
+  fr: "Projets phares"
+
+# Link labels
+more_label:
+  es: "Saber más"
+  en: "Learn more"
+  fr: "En savoir plus"
+all_publications_label:
+  es: "Ver todas las publicaciones"
+  en: "See all publications"
+  fr: "Voir toutes les publications"
+visit_label:
+  es: "Ir al sitio"
+  en: "Visit site"
+  fr: "Visiter le site"
+
+# Figures strip. Counts come from the bibliography and _data/ at build time;
+# `since` is the year of the oldest entry in _bibliography/conexdat.bib.
+since: 1995
+stats:
+  publications:
+    es: "publicaciones"
+    en: "publications"
+    fr: "publications"
+  theses:
+    es: "tesis dirigidas"
+    en: "theses supervised"
+    fr: "thèses dirigées"
+  projects:
+    es: "proyectos financiados"
+    en: "funded projects"
+    fr: "projets financés"
+  years:
+    es: "años de investigación"
+    en: "years of research"
+    fr: "années de recherche"
+
+intecin:
+  es: "Grupo de investigación perteneciente al"
+  en: "Research group within"
+  fr: "Groupe de recherche affilié à l'"
