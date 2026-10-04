@@ -28,9 +28,9 @@
         en: "k-core decomposition"
         fr: "Décomposition en k-cœurs"
       blurb:
-        es: "Herramienta para revelar jerarquías y visualizar redes muy grandes — base teórica del software [LaNet-vi](http://lanet-vi.fi.uba.ar/)."
-        en: "Reveals hierarchies and scales to very large networks — the theoretical backbone of the [LaNet-vi](http://lanet-vi.fi.uba.ar/) software."
-        fr: "Révèle les hiérarchies et passe à l'échelle pour les très grands réseaux — fondement théorique du logiciel [LaNet-vi](http://lanet-vi.fi.uba.ar/)."
+        es: "Herramienta para revelar jerarquías y visualizar redes muy grandes, base teórica del software [LaNet-vi](http://lanet-vi.fi.uba.ar/)."
+        en: "Reveals hierarchies and scales to very large networks, the theoretical backbone of the [LaNet-vi](http://lanet-vi.fi.uba.ar/) software."
+        fr: "Révèle les hiérarchies et passe à l'échelle pour les très grands réseaux, fondement théorique du logiciel [LaNet-vi](http://lanet-vi.fi.uba.ar/)."
     - icon: "fas fa-circle-nodes"
       title:
         es: "Detección de comunidades"
@@ -116,7 +116,7 @@
         en: "Predicting demographics, moral foundations, and attitudes (e.g. toward vaccination) from online behavior."
         fr: "Prédiction de la démographie, des fondements moraux et des attitudes (vaccination, etc.) à partir du comportement en ligne."
   projects:
-    - title: "Twitter — Elecciones 2019"
+    - title: "Twitter: Elecciones 2019"
       url: "https://web.archive.org/web/20190912124205/http://elecciones2019.fi.uba.ar/"
       blurb:
         es: "Seguimiento de las elecciones presidenciales argentinas de 2019."
@@ -185,14 +185,14 @@
         en: "Standards (IETF)"
         fr: "Normes (IETF)"
       blurb:
-        es: "Contribuciones al IETF — *RFC 9198 (AURA)* para estandarizar mediciones unidireccionales — y propuestas de **ruteo EGP** sub-lineal. [Más sobre el IETF](/ietf/)."
-        en: "IETF contributions — *RFC 9198 (AURA)* on standardizing unidirectional measurements — and proposals for **sub-linear EGP routing**. [More on the IETF](/ietf/)."
-        fr: "Contributions à l'IETF — *RFC 9198 (AURA)* sur la mesure unidirectionnelle — et propositions de **routage EGP** sous-linéaire. [En savoir plus sur l'IETF](/ietf/)."
+        es: "Contribuciones al IETF (*RFC 9198 (AURA)*, para estandarizar mediciones unidireccionales) y propuestas de **ruteo EGP** sub-lineal. [Más sobre el IETF](/ietf/)."
+        en: "IETF contributions (*RFC 9198 (AURA)*, on standardizing unidirectional measurements) and proposals for **sub-linear EGP routing**. [More on the IETF](/ietf/)."
+        fr: "Contributions à l'IETF (*RFC 9198 (AURA)*, sur la mesure unidirectionnelle) et propositions de **routage EGP** sous-linéaire. [En savoir plus sur l'IETF](/ietf/)."
   collaborations:
     - name:
-        es: "Primeros IXPs de Bolivia y Paraguay — Internet Society"
-        en: "First IXPs of Bolivia and Paraguay — Internet Society"
-        fr: "Premiers IXP de Bolivie et du Paraguay — Internet Society"
+        es: "Primeros IXPs de Bolivia y Paraguay (Internet Society)"
+        en: "First IXPs of Bolivia and Paraguay (Internet Society)"
+        fr: "Premiers IXP de Bolivie et du Paraguay (Internet Society)"
       blurb:
         es: "Contribuimos al diseño, puesta en marcha y medición de los **primeros Internet Exchange Points (IXPs)** nacionales de **Bolivia** y **Paraguay**, en el marco del programa de la **Internet Society**. El trabajo combina mediciones activas de red con un análisis económico y regulatorio del impacto de los IXPs sobre el acceso a Internet en países en desarrollo. Colaboramos con el [Dr. Hernán Galperin](https://annenberg.usc.edu/faculty/hernan-galperin) (USC Annenberg, ex-Universidad de San Andrés)."
         en: "We contributed to the design, deployment, and measurement of the **first national Internet Exchange Points (IXPs)** of **Bolivia** and **Paraguay**, under the **Internet Society** program. The work combines active network measurement with an economic and regulatory analysis of how IXPs change Internet access in developing countries. In collaboration with [Dr. Hernán Galperin](https://annenberg.usc.edu/faculty/hernan-galperin) (USC Annenberg, formerly Universidad de San Andrés)."
@@ -227,12 +227,12 @@
         es: "Visualizá un mapa de la topología de Internet indicando dónde estás."
         en: "Visualize a map of the Internet topology, showing where you are."
         fr: "Visualisez la topologie d'Internet et le point où vous vous trouvez."
-    - title: "RFC 9198 — AURA"
+    - title: "RFC 9198 (AURA)"
       url: "https://www.rfc-editor.org/rfc/rfc9198"
       blurb:
-        es: "Advanced Unidirectional Route Assessment — estándar propuesto del IETF (grupo IPPM, 2022)."
-        en: "Advanced Unidirectional Route Assessment — IETF Proposed Standard (IPPM working group, 2022)."
-        fr: "Advanced Unidirectional Route Assessment — norme proposée de l'IETF (groupe IPPM, 2022)."
+        es: "Advanced Unidirectional Route Assessment, estándar propuesto del IETF (grupo IPPM, 2022)."
+        en: "Advanced Unidirectional Route Assessment, IETF Proposed Standard (IPPM working group, 2022)."
+        fr: "Advanced Unidirectional Route Assessment, norme proposée de l'IETF (groupe IPPM, 2022)."
   papers:
     - CDFDPAH20      # First Look at Latin American IXPs (CCR 2020)
     - CSAHD19        # CDNs in IPv4/IPv6 Internet cores
@@ -284,13 +284,13 @@
         en: "Stochastic influence of cross traffic, even in the presence of IXPs and CDNs."
         fr: "Influence stochastique du trafic concurrent, même en présence d'IXP et de CDN."
   projects:
-    - title: "TiX — Traffic information eXchange"
+    - title: "TiX (Traffic information eXchange)"
       url: "https://github.com/TiX-measurements"
       blurb:
         es: "Herramienta para medir la calidad del acceso domiciliario a Internet."
         en: "Tool for measuring the quality of residential Internet access."
         fr: "Outil pour mesurer la qualité de l'accès résidentiel à Internet."
-    - title: "UBACyT — Mediciones QoS y ruteo"
+    - title: "UBACyT: Mediciones QoS y ruteo"
       url: "/projects/"
       blurb:
         es: "Mediciones de QoS domiciliaria, análisis tomográfico y propuestas de algoritmos de ruteo."

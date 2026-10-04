@@ -415,7 +415,8 @@ html[data-theme="dark"] {
   .home-stats__num { color: var(--cnet-celeste); }
   .home-card__icon { background: rgba(255, 255, 255, 0.12); color: var(--cnet-celeste); }
   .page__content a.home-card { color: #fff; }
-  .news-timeline__body { color: #fff; }
+  .news-timeline__title { color: #fff; }
+  .page__content a.news-timeline__title:hover { color: var(--cnet-celeste); }
   .affiliations__list li a {
     background: var(--cnet-surface);
     color: #fff;
@@ -554,12 +555,34 @@ html[data-theme="dark"] {
     color: var(--global-text-color-light);
     white-space: nowrap;
   }
-  &__body {
-    padding-top: 0.55rem;
+  &__day--month {
     font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--cnet-ink);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding-top: 0.15rem;
   }
+  &__body {
+    padding-top: 0.3rem;
+    line-height: 1.45;
+  }
+  // Title: a plain bold link, no underline until hover (the markdown body
+  // used to carry bold underlined links, which read as a 1990s page).
+  &__title {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cnet-navy);
+  }
+  &__text {
+    margin-top: 0.1rem;
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    p { margin: 0; }
+  }
+}
+.page__content a.news-timeline__title {
+  text-decoration: none;
+  &:hover, &:focus-visible { color: var(--global-link-color); text-decoration: underline; }
 }
 
 // ---- Home page (see _includes/home.html) ----------------------------------

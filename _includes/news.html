@@ -1,7 +1,9 @@
 {%- comment -%}
   Renders the news collection as a timeline, filtered by language.
   Required: include.lang (es|en|fr), optional include.limit (default 10).
-  Dates are written in the page language (day, abbreviated month, year).
+  Each item in _news/ has front matter `date`, `lang`, `title`, `link` and
+  optional `month_only: true` (badge shows month and year, no day); the body
+  is one short sentence. Dates are written in the page language.
 {%- endcomment -%}
 {%- assign lang = include.lang | default: site.default_lang -%}
 {%- assign limit = include.limit | default: 10 -%}
@@ -18,17 +20,26 @@
   <ol class="news-timeline">
     {% for item in news_items limit: limit %}
       {%- assign m = item.date | date: "%-m" | minus: 1 -%}
+      {%- assign y = item.date | date: "%Y" -%}
       <li class="news-timeline__item">
+        {%- if item.month_only -%}
+        <time class="news-timeline__date" datetime="{{ item.date | date: '%Y-%m' }}">
+          <span class="news-timeline__day news-timeline__day--month">{{ months[m] }}</span>
+          <span class="news-timeline__month">{{ y }}</span>
+        </time>
+        {%- else -%}
         <time class="news-timeline__date" datetime="{{ item.date | date: '%Y-%m-%d' }}">
           <span class="news-timeline__day">{{ item.date | date: "%-d" }}</span>
-          <span class="news-timeline__month">{{ months[m] }} {{ item.date | date: "%Y" }}</span>
+          <span class="news-timeline__month">{{ months[m] }} {{ y }}</span>
         </time>
+        {%- endif -%}
         <div class="news-timeline__body">
-          {%- if item.inline -%}
-            {{ item.content | markdownify | remove: "<p>" | remove: "</p>" }}
+          {%- if item.link and item.link != "" -%}
+            <a class="news-timeline__title" href="{{ item.link }}">{{ item.title }}</a>
           {%- else -%}
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            <span class="news-timeline__title">{{ item.title }}</span>
           {%- endif -%}
+          <div class="news-timeline__text">{{ item.content | markdownify }}</div>
         </div>
       </li>
     {% endfor %}

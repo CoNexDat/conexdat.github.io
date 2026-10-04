@@ -9,7 +9,7 @@ site_theme               : "default"
 title                    : "CoNexDat"
 title_separator          : "|"
 name                     : &name "CoNexDat"
-description              : &description "Grupo de Redes Complejas y Comunicación de Datos — Departamento de Electrónica, Facultad de Ingeniería, UBA"
+description              : &description "Grupo de Redes Complejas y Comunicación de Datos, Departamento de Electrónica, Facultad de Ingeniería, UBA"
 url                      : "https://conexdat.github.io"
 baseurl                  : ""
 repository               : "conexdat/conexdat.github.io"
@@ -187,8 +187,8 @@ cnet:
   # Per-language meta description (seo.html falls back to top-level `description`)
   description:
     es: *description
-    en: "Complex Networks and Data Communication Group — Electronics Department, School of Engineering, University of Buenos Aires"
-    fr: "Groupe Réseaux Complexes et Communication de Données — Département d'Électronique, Faculté d'Ingénierie, Université de Buenos Aires"
+    en: "Complex Networks and Data Communication Group, Electronics Department, School of Engineering, University of Buenos Aires"
+    fr: "Groupe Réseaux Complexes et Communication de Données, Département d'Électronique, Faculté d'Ingénierie, Université de Buenos Aires"
 
 # ---- Archives (kept simple) -------------------------------------------------
 category_archive:

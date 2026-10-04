@@ -5,10 +5,10 @@ title: "Contact"
 author_profile: true
 ---
 
-**CoNexDat — Groupe de Réseaux Complexes et Communication de Données**
+**CoNexDat: Groupe de Réseaux Complexes et Communication de Données**
 
 [Departamento de Electrónica](https://www.fi.uba.ar/institucional/departamentos/electronica)
-[Facultad de Ingeniería](https://www.fi.uba.ar) — UBA
+[Facultad de Ingeniería](https://www.fi.uba.ar), UBA
 Av. Paseo Colón 850, 1063 Buenos Aires, Argentine
 
 Pour toute question sur le groupe, contactez son directeur,
