@@ -56,11 +56,18 @@
 
 <div class="home-grid home-grid--projects">
   {%- for h in site.data.highlights -%}
+  {%- if h.url and h.url != "" -%}
   <a class="home-card" href="{{ h.url }}">
     <span class="home-card__title">{{ h.title }}</span>
     <span class="home-card__text">{{ h.blurb[lang] }}</span>
     <span class="home-card__more">{{ h.cta[lang] | default: t.visit_label[lang] }} <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
   </a>
+  {%- else -%}
+  <div class="home-card">
+    <span class="home-card__title">{{ h.title }}</span>
+    <span class="home-card__text">{{ h.blurb[lang] }}</span>
+  </div>
+  {%- endif -%}
   {%- endfor -%}
 </div>
 

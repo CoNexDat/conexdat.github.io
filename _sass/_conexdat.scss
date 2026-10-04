@@ -511,7 +511,7 @@ html[data-theme="dark"] {
   &::before {
     content: "";
     position: absolute;
-    left: 1.7rem;
+    left: 2.1rem;
     top: 0.75rem;
     bottom: 1rem;
     width: 2px;
@@ -520,7 +520,7 @@ html[data-theme="dark"] {
 
   &__item {
     display: grid;
-    grid-template-columns: 3.4rem 1fr;
+    grid-template-columns: 4.2rem 1fr;
     column-gap: 0.9rem;
     align-items: start;
     margin: 0 0 0.9rem;
@@ -529,7 +529,7 @@ html[data-theme="dark"] {
   &__date {
     position: relative;             // above the vertical line
     display: block;
-    width: 3.4rem;
+    width: 4.2rem;            // wide enough for "JANV. 2023" and "SEPT. 2025"
     padding: 0.3rem 0 0.35rem;
     text-align: center;
     border: 1px solid var(--cnet-border);
@@ -578,6 +578,16 @@ html[data-theme="dark"] {
 }
 
 // Whole card is one link: icon, title, one line of text, "more" footer.
+// (A highlight without a url renders the same box as a plain <div>.)
+.home-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.95rem 1.05rem 0.85rem;
+  border: 1px solid var(--cnet-border);
+  border-radius: 8px;
+  background: var(--cnet-surface);
+}
 .page__content a.home-card {
   display: flex;
   flex-direction: column;
